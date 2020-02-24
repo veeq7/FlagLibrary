@@ -9,12 +9,10 @@ namespace FlagLibrary.Connections
 {
     public class XMLConnection
     {
-        string filePath = "";
-        XmlDocument xmlDoc;
+        XmlDocument xmlDoc = new XmlDocument();
 
         public XMLConnection(string filePath)
         {
-            this.filePath = filePath;
             try
             {
                 xmlDoc.Load(filePath);
@@ -24,6 +22,7 @@ namespace FlagLibrary.Connections
                 Console.WriteLine(e.Message);
             }
         }
+
         public List<FlagList> GetFlagLists()
         {
             List<FlagList> list = new List<FlagList>();
