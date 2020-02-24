@@ -5,13 +5,15 @@ using System.Text;
 namespace FlagLibrary.Flags
 {
    
-    public class Flag
+    public class FlagDescriptor
     {
-        public int value = 0;
-
+        public int bitID = -1;
+        public List<int> bitRefs = new List<int>();
         public string description = "";
         public Dictionary<int, string> bitDescriptions = new Dictionary<int, string>();
 
+        /*
+        public int value = 0;
         public void SetBit(int bit, bool value)
         {
             if (value)
@@ -48,5 +50,6 @@ namespace FlagLibrary.Flags
         {
             return bitDescriptions[value];
         }
+        */
     }
 }

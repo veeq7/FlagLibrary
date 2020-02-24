@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlagLibrary.Flags;
+using FlagLibrary.Connections;
 
 namespace FlagLibTest
 {
@@ -11,9 +12,20 @@ namespace FlagLibTest
     {
         static void Main(string[] args)
         {
-            Flag f = new Flag();
-            f.SetValue(0, 1, 0, 1);
-            Console.WriteLine(f.value);
+            XMLConnection xml = new XMLConnection("C:\\Users\\praktykant\\source\\repos\\FlagLibrary2\\flags.xml");
+            List<FlagList> list = xml.GetFlagLists();
+            foreach (FlagList fl in list) {
+                Console.WriteLine(fl.name);
+                foreach (KeyValuePair<int, FlagDescriptor> flag in fl.flags)
+                {
+                    Console.WriteLine("    " + flag.Value.description);
+                    foreach (KeyValuePair<int, string> bitDesc in flag.Value.bitDescriptions)
+                    {
+                        Console.WriteLine("        " + bitDesc.Value);
+                    }
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }

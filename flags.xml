@@ -1,0 +1,1333 @@
+<Flags>
+<Flag Column="pd_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>Pomiar niezalezny od ilosci</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>Wzorzec pomiarowy</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Nieaktywne (przy rejestracji KKW pokazujemy tylko karty pomiaru aktywne)</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>Widelki ukryte przy rejestracji</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>Tworzenie definicji przy zamykaniu technologii</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Tworzenie definicji przy generowaniu KKW</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Aktualizacja definicji przy zamykaniu technologii</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Aktualizacja definicji przy generowaniu KKW</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>Pomiar partii</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>Tworzenie definicji przy zamykaniu dokumentu</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>Aktualizacja definicji przy zamykaniu dokumentu</Comment>
+	</Bit>
+	<Bit Index="11">
+		<Comment>Blokada wykonania kolejnych czynnosci na danej operacji przy negatywnym wyniku pomiaru</Comment>
+	</Bit>
+	<Bit Index="12">
+		<Comment>Blokada wykonania kolejnych czynnosci na danej operacji przy braku pomiaru</Comment>
+	</Bit>
+	<Bit Index="13">
+		<Comment>Wymagane dokonanie pomiaru</Comment>
+	</Bit>
+	<Bit Index="14">
+		<Comment>Rodzaj operacji: Operacja UWAGA!!! Nagacja warunku 0=Tak 1=Nie</Comment>
+	</Bit>
+	<Bit Index="15">
+		<Comment>Wydanie</Comment>
+	</Bit>
+	<Bit Index="16">
+		<Comment>Przyjecie</Comment>
+	</Bit>
+	<Bit Index="17">
+		<Comment>Widelki ukryte przy rejestracji (slownik)</Comment>
+	</Bit>
+	<Bit Index="18">
+		<Comment>prosty</Comment>
+	</Bit>
+</Flag>
+		
+
+<Flag Column="pd_czestotliwosci" ToCheck="1" >
+	<Tables></Tables>		
+ 	<Bit Index="0">
+		<Comment>Pomiar pierwszej sztuki</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>Po XXX operacjach</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Pomiar ostatniej sztuki (wg ilosci operacji)</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>Przed rozpoczeciem pierwszej sztuki</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>Na poczatku zmiany</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Start operacji</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Stop operacji</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Rozpoczecie przezbrojenia</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>Zakonczenie przezbrojenia</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>Po uplywie XXX min</Comment>
+	</Bit>
+</Flag>
+ 
+<Flag Column="pd_kontrole" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0,1">
+		<Option value="0">nigdy</Option>
+		<Option value="1">zawsze</Option>
+		<Option value="2">warunkowo</Option>
+		<Option value="3">tylko kontroler</Option>
+		<Comment>TODO</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Pomiar pierwszej sztuki</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>Pomiar ostatniej sztuki (wg ilosci operacji)</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>Przed rozpoczeciem pierwszej sztuki</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Na poczatku zmiany</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Start operacji</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Stop operacji</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>Rozpoczecie przezbrojenia</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>Zakonczenie przezbrojenia </Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="11">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="12">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="13">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="14">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="15">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="16">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="17">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="18">
+		<Comment>Po XXX operacjach</Comment>
+	</Bit>
+	<Bit Index="19">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+	<Bit Index="20">
+		<Comment>Po uplywie XXX min</Comment>
+	</Bit>
+	<Bit Index="21">
+		<Comment>TYLKO kontroler</Comment>
+	</Bit>
+</Flag>
+ 
+<Flag Column="pw_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>wymaga kontroli jakosci</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>widelki ukryte przy rejestracji</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>pomiar z poza kolejnosci (z ctrl+ins na liscie)</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>pomiar niezalezny od ilosci</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>pomiar partii</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>pomiar tylko dla kontrolera</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Pomiar wykonany</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Negatywny wynik pomiaru</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>Rodzaj operacji: Operacja UWAGA!!! Nagacja warunku 0=Tak 1=Nie</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>Wydanie</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>Przyjecie</Comment>
+	</Bit>
+	<Bit Index="11">
+		<Comment>widelki ukryte przy rejestracji (slownik)</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="pr_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>1: plan pomiarow wykonany</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="th_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>technologia nieaktywna</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>technologia domyslna</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>technologia zatwierdzona (tylko z takich mozna wykonywac KKW)</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>normatywy wykonania ustawiane na KKW z technologii brane domyslne ustawienia w momencie tworzenia KKW</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Sposob rozliczenia FV </Comment>
+		<Option value="0">uslugowo</Option>
+		<Option value="1">RBH</Option>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>ilosc operacji na naglowku operacji w relacji do ilosci wyrobu na naglowku technologii</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>realizowane przez triggery przy zapisie operacji i zmianie lp operacji</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>jest jakis plik podpiety pod dana technologie (zalacznik)</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>posiada szczegoly kalkulacji</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>kalkulacja jest szablonem</Comment>
+	</Bit>
+	<Bit Index="11">
+		<Option value="0">ul zwykly</Option>
+		<Option value="1">ul dziesietny</Option>
+		<Comment>przelicznik technologi:</Comment>
+	</Bit>
+	<Bit Index="12">
+		<Comment>wazniejsza jest sama jej zmiana, gdyz uruchamia notify, ktory odswieza DT</Comment>
+	</Bit>
+	<Bit Index="13">
+		<Comment>technologia utworzona z excela</Comment>
+	</Bit>
+	<Bit Index="14">
+		<Comment>jawna rejestracja wyrobu</Comment>
+	</Bit>
+	<Bit Index="15">
+		<Comment>kalkulacja zbiorcza</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="top_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>operacja technologiczna nie posiada skryptu</Comment>
+		<Option value="1">operacja technologiczna posiada skrypt</Option>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>operacja ma domyslny szablon</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Zapamietaj wybor drukarki pod operacje</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>operacja ma domyslny szablon wydruku z rej. prac.</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>ilosc kopii wydruku zalezna od ilosci wykonanaje</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>operacja ma domyslny szablon wydruku z kontroli</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>operacja ma domyslne stanowisko</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>operacja ma ustawiona opcje 'Przy plan. i wyk. uwzgledniaj wszystkie stanowiska tego samego rodzaju'</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>operacja ma domyslnego kooperanta</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>operacja ma domyslny szablon wydruku dokumentacji</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>operacja ma domyslny szablon wydruku kooperacji</Comment>
+	</Bit>
+	<Bit Index="11">
+		<Comment>operacja ma domyslny szablon wydruku kooperacji (przyjecia)</Comment>
+	</Bit>
+	<Bit Index="12">
+		<Comment>przy wyborze tej operacji zmien nazwe technoelemu wedlug pola top_nazwamakro</Comment>
+	</Bit>
+	<Bit Index="13">
+		<Comment>Blokada rejestracji ponad plan</Comment>
+	</Bit>
+	<Bit Index="14">
+		<Comment>Blokada rejestracji bez wykonania wszystkich rozchodow</Comment>
+	</Bit>
+	<Bit Index="15">
+		<Comment>przy wyborze tej operacji zmien tpz technoelemu wedlug pola top_tpz</Comment>
+	</Bit>
+	<Bit Index="16">
+		<Comment>przy wyborze tej operacji zmien tpj technoelemu wedlug pola top_tpj</Comment>
+	</Bit>
+	<Bit Index="17">
+		<Comment>przy wyborze tej operacji zmien wydajnosc technoelemu wedlug pola top_wydajnosc</Comment>
+	</Bit>
+	<Bit Index="18">
+		<Comment>przy wyborze tej operacji zmien ilosc osob technoelemu wedlug pola top_iloscosob</Comment>
+	</Bit>
+	<Bit Index="19">
+		<Comment>przy wyborze tej operacji zmien zaangazowanie technoelemu wedlug pola top_zaangazpracownika</Comment>
+	</Bit>
+	<Bit Index="20">
+		<Comment>przy wyborze tej operacji zmien koszt/h technoelemu wedlug pola top_kosztnah</Comment>
+	</Bit>
+	<Bit Index="21">
+		<Comment>przy wyborze tej operacji zmien koszt/j technoelemu wedlug pola top_kosztnaj</Comment>
+	</Bit>
+	<Bit Index="22">
+		<Comment>przy wyborze tej operacji zmien koszt stan./h technoelemu wedlug pola top_kosztstannah</Comment>
+	</Bit>
+	<Bit Index="23">
+		<Comment>kooperacja: przy wyborze tej operacji zmien nazwe technoelemu wedlug pola top_nazwamakro_koop</Comment>
+	</Bit>
+	<Bit Index="24">
+		<Comment>kooperacja: przy wyborze tej operacji zmien tpz technoelemu wedlug pola top_tpz_koop</Comment>
+	</Bit>
+	<Bit Index="25">
+		<Comment>kooperacja: przy wyborze tej operacji zmien tpj technoelemu wedlug pola top_tpj_koop</Comment>
+	</Bit>
+	<Bit Index="26">
+		<Comment>kooperacja: przy wyborze tej operacji zmien wydajnosc technoelemu wedlug pola top_wydajnosc_koop</Comment>
+	</Bit>
+	<Bit Index="27">
+		<Comment>kooperacja: przy wyborze tej operacji zmien koszt/j technoelemu wedlug pola top_kosztnaj_koop</Comment>
+	</Bit>
+	<Bit Index="28">
+		<Comment>kooperacja: przy wyborze tej operacji zmien czas realizacji technoelemu wedlug pola top_koopczasreal</Comment>
+	</Bit>
+	<Bit Index="29">
+		<Comment>przy wyborze tej operacji zmien jednostke miary technoelemu wedlug pola tjn_idjedn</Comment>
+	</Bit>
+	<Bit Index="30">
+		<Comment>przy wyborze tej operacji zmien ciag technologiczny technoelemu wedlug pola ct_idciagu</Comment>
+	</Bit>
+	<Bit Index="31">
+		<Comment>kooperacja: przy wyborze tej operacji zmien jednostke miary technoelemu wedlug pola tjn_idjedn_koop</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="top_flaga2" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>kooperacja: przy wyborze tej operacji zmien ciag technologiczny technoelemu wedlug pola ct_idciagu_koop</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>jest uzyta w L-ce</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="top_the_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>przeniesienie do magazynu z etapu</Comment>
+	</Bit>
+	<Bit Index="4">
+		<Comment>WYCOFANE (dawniej Rejestracja brakow)</Comment>
+	</Bit>
+	<Bit Index="5">
+		<Comment>Rejestracja maszyn (stanowisk)</Comment>
+	</Bit>
+	<Bit Index="6">
+		<Comment>Rejestracja pracownikow (szczegolowa)</Comment>
+	</Bit>
+	<Bit Index="7">
+		<Comment>Rejestracja roboczogodzin (wg. pracownikow) </Comment>
+	</Bit>
+	<Bit Index="8">
+		<Comment>Realizacja przez plan techniczny</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>Rejestracja rozpoczecia i zakoczenia wykonania</Comment>
+	</Bit>
+	<Bit Index="12">
+		<Comment>Przekazanie towarow z noda wykonania</Comment>
+	</Bit>
+	<Bit Index="13">
+		<Comment>Rejestracja wykonania i planowania procentowo</Comment>
+	</Bit>
+	<Bit Index="14">
+		<Comment>Przy rejestracji z czytnika pokazywac zdjecie wyrobu (do potwierdzenia)</Comment>
+	</Bit>
+	<Bit Index="15">
+		<Comment>Przy rejestracji wykonania przez czytnik mozliwosc rejestracji wielu pracownikow pracownikow (przed oknem potwierdzajacym operacje dialog z wyborem pracownikow)</Comment>
+	</Bit>
+	<Bit Index="16">
+		<Comment>Przy przeniesieniu wyrobu na magazyn generowanie obiektu serwisowego</Comment>
+	</Bit>
+	<Bit Index="19">
+		<Comment>Rejestracja tpz</Comment>
+	</Bit>
+	<Bit Index="20">
+		<Comment>WYCOFANE (Wymagana kontrola jakosci)</Comment>
+	</Bit>
+	<Bit Index="21">
+		<Comment>Rejestracje wykonania w innej jednostce</Comment>
+	</Bit>
+	<Bit Index="24,25">
+		<Comment>Typ rejestracji TPZ</Comment>
+	</Bit>
+ 	<Bit Index="29">
+		<Comment>mozliwosc okreslenia odrebnych ustawien tpz</Comment>
+	</Bit>
+ 	<Bit Index="30">
+		<Comment>odrebne ustawienia tpz</Comment>
+	</Bit>
+</Flag>
+ 
+<Flag Column="top_the_flaga_koop" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Option value="4">WYCOFANE (dawniej Rejestracja brakow)</Option>
+		<Option value="12">Przekazanie towarow z noda wykonania</Option>
+		<Comment>przeniesienie do magazynu z etapu</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="the_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>przeniesienie do magazynu z etapu</Comment>
+	</Bit>
+ 	<Bit Index="1,2,3">
+		<Comment>Informacja NextBegin</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>WYCOFANE (dawniej Rejestracja brakow)</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Rejestracja maszyn (stanowisk)</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Rejestracja pracownikow (szczegolowa)</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Rejestracja roboczogodzin (wg. pracownikow) </Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>Realizacja przez plan techniczny</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>Brak korelacji start=end</Comment>
+	</Bit>
+ 	<Bit Index="10">
+		<Comment>Rejestracja rozpoczecia i zakoczenia wykonania</Comment>
+	</Bit>
+ 	<Bit Index="11">
+		<Comment>Element nieaktywny!</Comment>
+	</Bit>
+ 	<Bit Index="12">
+		<Comment>Przekazanie towarow z noda wykonania</Comment>
+	</Bit>
+ 	<Bit Index="13">
+		<Comment>Rejestracja wykonania i planowania procentowo</Comment>
+	</Bit>
+ 	<Bit Index="14">
+		<Comment>Przy rejestracji z czytnika pokazywac zdjecie wyrobu (do potwierdzenia)</Comment>
+	</Bit>
+ 	<Bit Index="15">
+		<Comment>Przy rejestracji wykonania przez czytnik mozliwosc rejestracji wielu pracownikow pracownikow (przed oknem potwierdzajacym operacje dialog z wyborem pracownikow)</Comment>
+	</Bit>
+ 	<Bit Index="16">
+		<Comment>Przy przeniesieniu wyrobu na magazyn generowanie obiektu serwisowego</Comment>
+	</Bit>
+ 	<Bit Index="17">
+		<Comment>Element jest robocizna (element technologii-kalkulacji)</Comment>
+	</Bit>
+ 	<Bit Index="18">
+		<Comment>Stanowisko pracy: Przy plan. i wyk. uwzgledniaj wszystkie stanowiska tego samego rodzaju</Comment>
+	</Bit>
+ 	<Bit Index="19">
+		<Comment>Rejestracja tpz</Comment>
+	</Bit>
+ 	<Bit Index="20">
+		<Comment>WYCOFANE (Wymagana kontrola jakosci)</Comment>
+	</Bit>
+ 	<Bit Index="21">
+		<Comment>Rejestracje wykonania w innej jednostce</Comment>
+	</Bit>
+ 	<Bit Index="22">
+		<Comment>Kalkulacja KKW przy wykonaniu</Comment>
+	</Bit>
+ 	<Bit Index="23">
+		<Comment>Operacja rej odpadow</Comment>
+	</Bit>
+ 	<Bit Index="24,25">
+		<Comment>Typ rejestracji TPZ</Comment>
+	</Bit>
+ 	<Bit Index="26">
+		<Comment>operacja utworzona z excela</Comment>
+	</Bit>
+ 	<Bit Index="27">
+		<Comment>operacja w technologii z jawna rej wyrobu</Comment>
+	</Bit>
+ 	<Bit Index="28">
+		<Comment>blokada dodania jawnego wyrobu przy insercie (ustawiane przy kopiowaniu i generowaniu z technologii)</Comment>
+	</Bit>
+ 	<Bit Index="29">
+		<Comment>mozliwosc okreslenia odrebnych ustawien tpz</Comment>
+	</Bit>
+ 	<Bit Index="30">
+		<Comment>odrebne ustawienia tpz</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="top_the_flaga2" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>Rejestracja ilosci dobrych</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Rejestracja ilosci nienaprawialnych</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>Rejestracja ilosci naprawialnych</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Rejestracja ilosci do weryfikacji</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="top_the_flaga2_koop" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>Rejestracja ilosci dobrych</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Rejestracja ilosci nienaprawialnych</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>Rejestracja ilosci naprawialnych</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Rejestracja ilosci do weryfikacji</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+</Flag>
+ 
+<Flag Column="the_flaga2" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>Rejestracja ilosci dobrych</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Rejestracja ilosci nienaprawialnych</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>Rejestracja ilosci naprawialnych</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Rejestracja ilosci do weryfikacji</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+</Flag>
+<Flag Column="kwh_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>Produkcja zamknieta przez uzytkownika</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>Produkcja zamknieta automatycznie (bo wyzerowala sie) (nie wykorzystywane)</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Byla proba wydrukowania KKW</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>Jest choc jeden nod z rozpoczetym planowaniem (=>kkw rozpoczete planowanie)</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>Jest choc jeden nod z rozpoczetym wykonaniem (=>kkw rozpoczete) </Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Wszystkie nody wykonane (=> kkw zakonczone) (=> kkw zakonczone)</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>Wszystkie nody rozplanowane na calosc (=> kkw rozplanowane)</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>Przewodnik wystawiany z reki, brak technologii</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>Choc jeden z pierwszych nodow (bez poprzednikow) ma ustawiona date zakonczenia operacji</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>KKW jest dyspozycja</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>Przyjmowanie wyrobow bez wskazania sposobu pakowania KKW</Comment>
+	</Bit>
+	<Bit Index="11">
+		<Comment>KKW utworzone z excela</Comment>
+	</Bit>
+	<Bit Index="12,13,14">
+		<Option value="0">wg. Planu</Option>
+		<Option value="1">wg. Wykonania</Option>
+		<Option value="2">wg. Dyspozycji</Option>
+		<Option value="3">wg. Dokumentow</Option>
+		<Option value="4">wg. Dokumentow zamknietych</Option>
+		<Comment>Podsumowanie na KKW Dyspozycji</Comment>
+	</Bit>
+	</Flag>
+  
+<Flag Column="kwe_flaga" ToCheck="1" >
+	<Tables></Tables>
+  	<Bit Index="0">
+		<Comment>KKW Head rozliczony przez uzytkownika</Comment>
+	</Bit>
+  	<Bit Index="1">
+		<Comment>KKW Head rozliczony automatycznie (bo przekazano wszystko)</Comment>
+	</Bit>
+  	<Bit Index="2">
+		<Comment>opcja juz nie uzywana, w programie jest brana pod uwage opcja z the_flaga</Comment>
+	</Bit>
+  	<Bit Index="3">
+		<Comment>nod posiada choc jeden plan</Comment>
+	</Bit>
+  	<Bit Index="4">
+		<Comment>rozpoczeto wykonanie (przynajmniej zarejestrowano start wykonania)</Comment>
+	</Bit>
+  	<Bit Index="5">
+		<Comment>wykonano wszystko co bylo rozplanowane</Comment>
+	</Bit>
+  	<Bit Index="6">
+		<Comment>zmieniono ilosc przeniesionych wyrobow przez nod wykonania (w powiazaniu z the_flaga)</Comment>
+	</Bit>
+  	<Bit Index="7">
+		<Comment>nod rozplanowany w calosci</Comment>
+	</Bit>
+ 	<Bit Index="11">
+		<Comment>Element nieaktywny!</Comment>
+	</Bit>
+ 	<Bit Index="12">
+		<Comment>uzytkownik musi sam tworzyc relacje poprzenik-nastepnik</Comment>
+	</Bit>
+ 	<Bit Index="13">
+		<Comment>Operacja jest domslna dla jakiegos spinacza</Comment>
+	</Bit>
+ 	<Bit Index="14">
+		<Comment>Stanowisko ustawione z dyspozycji</Comment>
+	</Bit>
+ 	<Bit Index="15">
+		<Comment>Wykonano przezbrojenie</Comment>
+	</Bit>
+ 	<Bit Index="16">
+		<Comment>operacja KKW z jawna rej wyrobu</Comment>
+	</Bit>
+</Flag>
+ 
+<Flag Column="knw_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>odnotowano rozpoczecie wykonania</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>do czasu</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>wykonanie na kubelku</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>wykonanie w procentach</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>wykonanie jest przezbrojeniem (rejestracja TPZ)</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>szcegoly w bitch od 14</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>1: wykonanie skontrolowane</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>wykonanie jest wydaniem do kontahenta (kooperacja)</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>zaangazowania pracownikow nie sa synchronizowane (knw_zaangazpracwykonanie i knw_zaangazpracownika moga miec rozne wartosci)</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>dokumenty magazynowe zostaly automatycznie wygenerowane</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>ustawiane przy zamykaniu/wykonaniu KKW</Comment>
+	</Bit>
+	<Bit Index="11">
+		<Comment>Wykonanie ostatniej operacji (przyjecie na PW) rozmiarowkowe, bez wyboru kwhr_headrozma (wyroby rodzielam na kilka headrozmow)</Comment>
+	</Bit>
+	<Bit Index="12">
+		<Comment>Wykonanie utworzone na podstawie MES (odpowiedz na pytanie programu)</Comment>
+	</Bit>
+	<Bit Index="13">
+		<Comment>Wykonanie BeginEnd utworzone na podstawie MES </Comment>
+	</Bit>
+	<Bit Index="14">
+		<Comment>Kontrola Jakosci </Comment>
+	</Bit>
+	<Bit Index="15">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+	<Bit Index="16">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+	<Bit Index="17">
+		<Comment>Kontrola Jakosci</Comment>
+	</Bit>
+</Flag>
+ 
+<Flag Column="trr_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0,1">
+		<Option value="1">iloscwyk</Option>
+		<Option value="2">braki</Option>
+		<Comment>iloscwyk+braki</Comment>
+	</Bit>
+	<Bit Index="2">
+		<Comment>rozchody wzgledem kwe_iloscstart (nie powinno byc nigdzie ustawione)</Comment>
+	</Bit>
+	<Bit Index="3">
+		<Comment>Element nieaktywny (bo nieaktywny nod)</Comment>
+	</Bit>
+	<Bit Index="4">
+		<Option value="0">drukowac na wydruku KKW</Option>
+		<Option value="1">pominac w trakcie wydruku KKW</Option>
+		<Comment>TODO</Comment>
+	</Bit>
+	<Bit Index="5">
+		<Comment>Narzedzie domyslne</Comment>
+	</Bit>
+	<Bit Index="6">
+		<Comment>Material domyslny (dla kalkulacji)</Comment>
+	</Bit>
+	<Bit Index="7">
+		<Comment>Rozchod posiada zamienniki </Comment>
+	</Bit>
+	<Bit Index="8">
+		<Comment>Rozchod z rozmiarowka</Comment>
+	</Bit>
+	<Bit Index="9">
+		<Option value="0">tworz dla elementu pomiary partii</Option>
+		<Option value="1">pominac przy tworzeniu pomiarow partii</Option>
+		<Comment>TODO</Comment>
+	</Bit>
+ 	<Bit Index="10">
+		<Comment>materialowka utworzona z excela</Comment>
+	</Bit>
+ 	<Bit Index="11">
+		<Comment>Jawny przychod wyrobu</Comment>
+	</Bit>
+ 	<Bit Index="12">
+		<Comment>rejestracja jako brak</Comment>
+	</Bit>
+ 	<Bit Index="13">
+		<Comment>przy rejestracji zakoncz wykonanie</Comment>
+	</Bit>
+ 	<Bit Index="14">
+		<Comment>1: polaczono z planem zlecenia (przez tr_powiazanieplanprzychodtech)</Comment>
+	</Bit>
+</Flag>
+  
+<Flag Column="knr_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>KKW Head rozliczony przez uzytkownika</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>KKW Head rozliczony automatycznie (bo przekazano wszystko) </Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>Rozchody zamkniete (nie trzeba juz nic generowac, i nie wchodzi do BackOrder'u!)</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>Rozchody wzgledem kwe_iloscstart</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>Element nieaktywny (bo nieaktywny nod)</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>Mamy szukac realizacji planu zlecenia do zwiazania z danym przychodem</Comment>
+	</Bit>
+ 	<Bit Index="6,7,8">
+		<Option value="0">z technologii</Option>
+		<Option value="1">rozchod opakowania</Option>
+		<Option value="2">dodatkowy (dodany z reki)</Option>
+		<Comment>Rodzaj rozchodu:</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>nie uzywany     </Comment>
+	</Bit>
+ 	<Bit Index="10">
+		<Comment>do rozchowania</Comment>
+	</Bit>
+				    1 - nie do rozchodowania (zamienniki tech)
+ 	<Bit Index="11">
+		<Comment>1: nie wchodzi do automatycznych rozchodow </Comment>
+	</Bit>
+ 	<Bit Index="12">
+		<Comment>NodRec z rozmiarowka</Comment>
+	</Bit>
+ 	<Bit Index="13">
+		<Comment>1: chwilowa blokada automatycznych rozchodow (przy wykonywaniu automatycnych rozchodow tych rozchodow nie uwgledniamy, ta funkcja po wykonaniu zeruje ten bit, czyli w nastepnych automatycznych rochodach juz rozchod normalnie uczestniczy). Rozwiazanie chwilowe by mozna bylo przy wykonaniu jak robimy rozchod automatycznie oznaczac by rozchod nie podlegal dla tego wykonania automatycznym rozchodom)</Comment>
+	</Bit>
+ 	<Bit Index="14">
+		<Comment>1: NodRec polaczony z planem zlecenia (przez tr_powiazanieplanprzychod)</Comment>
+	</Bit>
+ 	<Bit Index="15">
+		<Comment>NodRec z rozmiarowka (ale na jeden towar)</Comment>
+	</Bit>
+ 	<Bit Index="16,17">
+		<Comment>Sposob wyliczania partii:</Comment>
+		<Option value="0">brak</Option>
+		<Option value="1">recznie - id const</Option>
+		<Option value="2">poprzez paramatry</Option>
+	</Bit>
+</Flag>
+
+
+ 
+  
+<Flag Column="knpn_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>Nastepnik nieaktywny</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>Poprzednik nieaktywny</Comment>
+	</Bit>
+ 	<Bit Index="2,3,4">
+		<Option value="0">liczenie od ilosci nastepnika</Option>
+		<Option value="4">liczenie od ilosci wyrobu</Option>
+		<Option value="5">Powiazanie tymczasowe</Option>
+		<Option value="16">nie wywoluj triggerow z kkwnod</Option>
+		<Comment>rodzaj liczenia wagi galezi powiazania</Comment>
+	</Bit>
+</Flag>
+     
+<Flag Column="knp_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>bo nod nieaktywny)</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>1 plan wykonany </Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>1 plan zmianowy (definiujemy zmiane)</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>wykonano choc jeden element</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>wykonano wszystko co bylo rozplanowane</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>plan kubelkowy, wybrane stanowisko jest grupa maszyn</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>oznaczenie moze miec wplyw przy hurtowym usuwanu planow (zaznaczanie planow ktore maja byc nieusuwane przy ponownym rozplanowaniu)</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>plan procentowy</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>czy czas zawiera TPZ</Comment>
+	</Bit>
+ 	<Bit Index="14">
+		<Comment>nie wywoluj triggerow,</Comment>
+	</Bit>
+ 	<Bit Index="15">
+		<Comment>nie wywoluj przeliczenia dat KKW </Comment>
+	</Bit>
+ 	<Bit Index="16">
+		<Comment>nie wywoluj przeliczenia kkwnod </Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="tsp_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>1 czasy domyslne z elementu technologii</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>1 maszyna/kooperant domyslny dla noda</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>1 ustawienie klientow dla kooperacji</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>1 uwzglednij w planowaniu wszystkie maszyny z tej grupy maszyn (rodzajow)</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>1 dodany automatycznie (usuwany przy zmianie na kontrolce)</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>stanowisko utworzone z excela</Comment>
+	</Bit>
+ 	<Bit Index="14">
+		<Comment>nie wywoluj triggerow</Comment>
+	</Bit>
+ </Flag>
+
+
+<Flag Column="sp_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>rejestrujemy na wykonaniu jesli jest maszyna start rozpoczecia pracy i zakonczenia</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>grupa maszyn (brygada)</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>stanowisko aktywne</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>stanowisko produkcyjne</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>stanowisko serwisowe</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="kwd_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>pracownik zakonczyl prace</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>rejestrujemy poczatek i koniec </Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>wykonanie jest przezbrojeniem (rejestracja TPZ)</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="vmp_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>wariant domyslny dla technologii</Comment>
+	</Bit>
+</Flag>
+
+
+<Flag Column="zm_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>zmiana aktywna</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="kb_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>sa jakies plany do tego kubelka</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>sa jakies wykonania do tego kubelka</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>kubelek zamkniety, nie do edycji</Comment>
+	</Bit>
+</Flag>
+ 
+
+<Flag Column="kwc_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>1 rozchody pod zamowienia</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>1 zamowienie pod uslugi dla kooperacji</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>zezwolenie na zmiane mimo zamkniecia dokumentu</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>sytuacja aktualnie wykorzystana dla obslugi korekt oraz zamowien z KKW)</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>dokument (tg_transakcje) zamkniety</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>nie zezwalaj na zmiane ilosci na ruchu przy update</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>nie aktualizuj transelemow (czyli to samo co bit 3)</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>funkcja dla bitu 6 by mimo braku synchronizacji ilosci ustawily sie flagi transelemu</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>przy insercie nie uaktualniaj jej na podstawie dyspozycji</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>ruch narzedziowy+</Comment>
+	</Bit>
+ 	<Bit Index="10">
+		<Comment>ruch narzedziowy-</Comment>
+	</Bit>
+ 	<Bit Index="11">
+		<Comment>ruch automatycznego RW (w wariancie MMkowym)</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="nrw_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>1 ruch narzedzia jest juz zamkniety (nie aktualizuje wykonan)</Comment>
+	</Bit>
+</Flag>
+ 
+<Flag Column="thpn_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0,1,2">
+		<Comment>rodzaj liczenia wagi galezi powiazania:</Comment>
+		<Option value="0">liczenie od ilosci nastepnika</Option>
+		<Option value="1">liczenie od ilosci wyrobu</Option>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>relacja ustawiajaca ilosci poprzednika przeniosiona z operacji, dla technologii gdzie ilosc podajemy na operacji (tylko jedna relacja moze miec ilosc przeniosiana, inne maja miec zera)</Comment>
+	</Bit>
+</Flag>
+  
+<Flag Column="dmag_flaga" ToCheck="1" >
+	<Tables></Tables>
+ 	<Bit Index="0">
+		<Comment>1: rozchody pod zamowienia</Comment>
+	</Bit>
+ 	<Bit Index="1">
+		<Comment>1: zamowienie pod uslugi dla kooperacji</Comment>
+	</Bit>
+ 	<Bit Index="2">
+		<Comment>1: Wykonanie (knw_idelemu) czytane jako kontekst w ramach, krtorego dyspozycja zostala wprowadzona</Comment>
+	</Bit>
+ 	<Bit Index="3">
+		<Comment>1: Dyspozycja dla rozmiarowki</Comment>
+	</Bit>
+ 	<Bit Index="4">
+		<Comment>1: Rekord wywodzi sie z elementu nieaktywnego</Comment>
+	</Bit>
+ 	<Bit Index="5">
+		<Comment>1: Rekord powstal z migracji</Comment>
+	</Bit>
+ 	<Bit Index="6">
+		<Comment>1: Dyspozycja ma staly id partii</Comment>
+	</Bit>
+ 	<Bit Index="7">
+		<Comment>1: Dyspozycja naglowkowa</Comment>
+	</Bit>
+ 	<Bit Index="8">
+		<Comment>1: nie aktualizuj transelemow</Comment>
+	</Bit>
+ 	<Bit Index="9">
+		<Comment>1: dyspozycja 1:1 do ostatniego wykonania (mam operacje PW z przyjeciem wg wykonania)</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>dmag_typ=3)</Comment>
+	</Bit>
+	<Bit Index="11">
+		<Comment>1: dyspozycja tworzy pomiary partii</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="hm_typ" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>czas wolny dla stanowiska (czas niepracujacy)</Comment>
+	</Bit>
+	<Bit Index="1">
+		<Comment>czas zajety dla stanowiska przez rezerwacje zasobow (dla planowania produkcji tak samo jak czas wolny)</Comment>
+	</Bit>
+	<Bit Index="2">
+		<Comment>czas zajetosci zasobu wynikajacego z planow na produkcji dla stanowiska</Comment>
+	</Bit>
+	<Bit Index="3">
+		<Comment>czas nieplanowany (awaria)</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="pp_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>0: Obniza OEE 1: nie obniza OEE</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="hm_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>Harmnogram (awaria) utworzony na podstawie MES (odpowiedz na pytanie programu)</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="kwnn_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>Wykonanie nienormatywne utworzony na podstawie MES (odpowiedz na pytanie programu)</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="sk_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>1 nod struktury zatwierdzony</Comment>
+	</Bit>
+	<Bit Index="1">
+		<Comment>1 wybrana technologia jako domyslna z wyrobu/poproduktu</Comment>
+	</Bit>
+	<Bit Index="2,3">
+		<Comment>rodzaj rekordu</Comment>
+		<Option value="0">material/surowiec</Option>
+		<Option value="1">wyrob/polprodukt</Option>
+		<Option value="2">element - moze byc tylko lisciem, ma dodatkowe bardzo szerokie informacje</Option>
+		<Option value="3">kooperacja</Option>
+	</Bit>
+	<Bit Index="4">
+		<Option value="0">element aktywny</Option>
+		<Option value="1">element nieaktywny</Option>
+		<Comment>Wraz z bitem 0 oznaczaja status struktury</Comment>
+	</Bit>
+	<Bit Index="5">
+		<Comment>ostatnia zatwierdzona struktura na dany towar</Comment>
+	</Bit>
+	<Bit Index="6">
+		<Comment>struktura kalkulacyjna</Comment>
+	</Bit>
+	<Bit Index="7">
+		<Comment>wymus ustawienie sk_wersjalp</Comment>
+	</Bit>
+	<Bit Index="14">
+		<Comment>nie wywoluj triggerow,</Comment>
+	</Bit>
+</Flag>
+
+
+
+<Flag Column="ppp_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>sterowanie trigerami od strony tg_planzlecenia (przy kasowaniu planu zlecenia by wysterowac tr_nodrec)</Comment>
+	</Bit>
+	<Bit Index="1">
+		<Comment>wymuszenie aktualizacji nodrec na podstawie tego rekordu</Comment>
+	</Bit>
+
+	<Bit Index="14">
+		<Comment>nie wywoluj triggerow,</Comment>
+	</Bit>
+</Flag>
+	
+	
+<Flag Column="mesh_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>Mes jest aktywny</Comment>
+	</Bit>
+</Flag>
+    	
+<Flag Column="mese_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>czujnik jest aktywny (sumarycznie czujnik jest aktywny gdy bit 0 i 1 sa ustawione)</Comment>
+	</Bit>
+	<Bit Index="1">
+		<Comment>Mes do ktorego podpiety jest ten czujnik jest aktywny (sumarycznie czujnik jest aktywny gdy bit 0 i 1 sa ustawione)    	</Comment>
+	</Bit>
+	<Bit Index="2,3,4">
+		<Comment> tryb w jakim pracuje czujnik. Liczba tutaj zapisana odpowiada enum MesSensorTypeWork</Comment>
+	</Bit>
+</Flag>
+
+	
+<Flag Column="mess_rodzaj_stanu" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0,1">
+		<Comment>przestoj</Comment>
+        <Option value="1">praca/mikro przestoj</Option>
+		<Option value="2">przestoj/mikro praca</Option>
+		<Option value="3">praca</Option>
+	</Bit>
+	<Bit Index="2,3,4,5,6,7">
+		<Comment>praca normatywna/przestoj planowany</Comment>
+	</Bit>
+        <Option value="1">praca nienormatywna/przestoj nieplanowany </Option>
+		<Option value="2">przestoj przezbrojenie (tylko dla przestoju)</Option>
+		<Option value="3">czujnik nieaktywny</Option>
+		<Option value="63">stan nieznany</Option>
+	<Bit Index="8">
+		<Comment>dane sa poprawnie pobierane</Comment>
+	</Bit>
+                      - 1 - jest problem z pobieraniem danych (sa nieaktualne)
+</Flag>
+
+<Flag Column="mess_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>stan jest zamkniety i zadne dane nie beda juz w nim zmieniane</Comment>
+	</Bit>
+	<Bit Index="1">
+		<Comment>stan zostal dodany automatycznie, celem uspojnienia danych</Comment>
+	</Bit>
+	<Bit Index="2">
+		<Comment>konieczne pytanie do operatora na poczatku stanu</Comment>
+	</Bit>
+	<Bit Index="3">
+		<Comment>operator odpowiedzial na pytanie na poczatku stanu </Comment>
+	</Bit>
+	<Bit Index="4">
+		<Comment>konieczne pytanie do operatora na koniec stanu</Comment>
+	</Bit>
+	<Bit Index="5">
+		<Comment>operator odpowiedzial na pytanie na koniec stanu</Comment>
+	</Bit>
+	<Bit Index="6,7,8">
+		<Comment>tryb w jakim pracowal czujnik w chwili zapisania stanu. Liczba tutaj zapisana odpowiada enum MesSensorTypeWork</Comment>
+	</Bit>
+	<Bit Index="9">
+		<Comment>pierwszy stan dla danego wykonania</Comment>
+	</Bit>
+	<Bit Index="10">
+		<Comment>ostatni stan dla danego wykonania</Comment>
+	</Bit>
+</Flag>
+
+<Flag Column="mesn_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0,1">
+		<Option value="0">wzgledem czasu tpj (tryb impulsowy lub czasowy)</Option>
+		<Option value="1">wzgledem liczby impulsow (tylko tryb impulsowy)</Option>
+		<Comment>sposob liczenia ilosci operacji</Comment>
+	</Bit>
+	<Bit Index="2,3,4">
+		<Comment>sposob liczenia normatywu (praca normatywna/praca nienormatywna). Liczba tutaj zapisana odpowiada enum MesNormType</Comment>
+	</Bit>
+	<Bit Index="5">
+		<Comment>lamanie stanu miedzy praca normatywna a nienormatywna. </Comment>
+		<Option value="0">False - podczas przejscia z pracy normatywnej na nienormatywna nastepuje lamanie stanu</Option>
+		<Option value="1">True - podczas przejscia z pracy normatywnej na nienormatywna stan nie zostanie zlamany, lecz stan pracy normatywnej zostanie zmieniony na stan pracy nienormatywnej</Option>
+	</Bit>
+	<Bit Index="6">
+		<Comment>RequiredRecalculate, wymuszenie wywolania funkcji RecalculateNorm</Comment>
+	</Bit>
+	<Bit Index="7,8,9">
+		<Comment>sposob obliczania parametrow normatywu (reczna, na podstawie wydajnosci zdafiniowanej w technologi, kkw).   Liczba tutaj zapisana odpowiada enum MesNormRecalculateType  </Comment>
+	</Bit>
+</Flag>
+			
+	
+<Flag Column="messa_flaga" ToCheck="1" >
+	<Tables></Tables>
+	<Bit Index="0">
+		<Comment>wolny</Comment>
+	</Bit>
+	<Bit Index="1">
+		<Comment>wolny</Comment>
+	</Bit>
+	<Bit Index="2">
+		<Comment>konieczne pytanie do operatora na poczatku stanu</Comment>
+	</Bit>
+	<Bit Index="3">
+		<Comment>operator odpowiedzial na pytanie na poczatku stanu </Comment>
+	</Bit>
+	<Bit Index="4,5,6">
+		<Comment>tryb w jakim pracowal czujnik w chwili zapisania aktualnego stanu. Liczba tutaj zapisana odpowiada enum MesSensorTypeWork</Comment>
+	</Bit>
+	<Bit Index="7">
+		<Comment>pierwszy stan dla danego wykonania</Comment>
+	</Bit>
+	<Bit Index="8">
+		<Comment>ostatni stan dla danego wykonania</Comment>
+	</Bit>
+</Flag>
+</Flags>
