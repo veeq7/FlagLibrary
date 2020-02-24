@@ -38,7 +38,8 @@ namespace FlagLibrary.Connections
                         if (Bit.Name != "Bit")
                             continue;
 
-                        FlagDescriptor flag = MakeFlag(Bit, ref flagList);
+                        FlagDescriptor flag = MakeFlag(Bit);
+                        flagList.flags.Add(flag.bitID, flag);
                     }
                     list.Add(flagList);
                 }
@@ -46,11 +47,11 @@ namespace FlagLibrary.Connections
             return list;
         }
 
-        FlagDescriptor MakeFlag(XmlNode Bit, ref FlagList flagList)
+        FlagDescriptor MakeFlag(XmlNode Bit)
         {
             FlagDescriptor flag = new FlagDescriptor();
             string[] indexes = Bit.Attributes["Index"].Value.Split(',');
-            flag.bitID = int.Parse(Bit.Attributes["Index"].Value.Split(',')[0]);
+            flag.bitID = int.Parse(indexes[0]);
             foreach (XmlNode Attribute in Bit.ChildNodes)
             {
                 if (Attribute.Name == "Comment")
@@ -62,7 +63,6 @@ namespace FlagLibrary.Connections
                     flag.bitDescriptions.Add(int.Parse(Attribute.Attributes["value"].Value), Attribute.InnerText);
                 }
             }
-            flagList.flags.Add(flag.bitID, flag);
             return flag;
         }
     }
