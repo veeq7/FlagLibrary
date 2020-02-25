@@ -115,7 +115,6 @@ namespace BitwiseCalculatorUI
         /// </summary>
         void TxtBoxBitsKeyPress(object sender, KeyPressEventArgs e)
         {
-
             string text = txtBoxBits.Text;
 
             if (e.KeyChar == 8) return;
@@ -124,7 +123,6 @@ namespace BitwiseCalculatorUI
             {
                 e.KeyChar = (char)0;
             }
-            
         }
         /// <summary>
         /// Method convert string to int and return binary
