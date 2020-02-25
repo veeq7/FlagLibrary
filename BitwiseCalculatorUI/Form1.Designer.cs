@@ -39,6 +39,7 @@
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFindXML = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnSetOne = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,13 +158,27 @@
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(391, 173);
+            this.btnReset.Location = new System.Drawing.Point(458, 173);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(95, 27);
+            this.btnReset.Size = new System.Drawing.Size(28, 27);
             this.btnReset.TabIndex = 6;
-            this.btnReset.Text = "Zerowanie";
+            this.btnReset.Text = "0";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_onClick);
+            // 
+            // btnSetOne
+            // 
+            this.btnSetOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnSetOne.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnSetOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetOne.ForeColor = System.Drawing.Color.White;
+            this.btnSetOne.Location = new System.Drawing.Point(425, 173);
+            this.btnSetOne.Name = "btnSetOne";
+            this.btnSetOne.Size = new System.Drawing.Size(27, 27);
+            this.btnSetOne.TabIndex = 7;
+            this.btnSetOne.Text = "1";
+            this.btnSetOne.UseVisualStyleBackColor = false;
+            this.btnSetOne.Click += new System.EventHandler(this.btnSetOne_onClick);
             // 
             // Form1
             // 
@@ -171,6 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.btnSetOne);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnFindXML);
             this.Controls.Add(this.dataGridView);
@@ -204,6 +220,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.Button btnSetOne;
     }
 }
 

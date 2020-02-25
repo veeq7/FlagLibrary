@@ -150,9 +150,19 @@ namespace BitwiseCalculatorUI
             string text = txtBoxBits.Text;
 
             if (e.KeyChar == 8) return;
-
-            if (e.KeyChar < '0' || e.KeyChar > '9')
+            else if (e.KeyChar < '0' || e.KeyChar > '9')
             {
+                if (e.KeyChar == '-')
+                {
+                    if (text[0] == '-')
+                    {
+                        txtBoxBits.Text = text.Substring(1);
+                    }
+                    else
+                    {
+                        txtBoxBits.Text = '-' + text;
+                    }
+                }
                 e.KeyChar = (char)0;
             }
         }
@@ -196,7 +206,7 @@ namespace BitwiseCalculatorUI
                 bin += bttn.Text;
             }
 
-            txtBoxBits.Text = Convert.ToInt64(bin, 2).ToString();
+            txtBoxBits.Text = Convert.ToInt32(bin, 2).ToString();
             ShowBits();
         }
 
@@ -245,23 +255,17 @@ namespace BitwiseCalculatorUI
 
         private void btnReset_onClick(object sender, EventArgs e)
         {
+            SetAllBits(false);
+        }
+        private void btnSetOne_onClick(object sender, EventArgs e)
+        {
+            SetAllBits(true);
+        }
 
-            for (int i = 0; i < 32; i++)
-            {
-                Button bttn = this.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
-
-                if (bttn.Text == "1")
-                {
-                    bttn.Text = "0";
-                }
-                else
-                {
-                    bttn.Text = "0";
-                }
-                
-
-            }
-            txtBoxBits.Text = "0";
+        private void SetAllBits(bool isOne)
+        {
+            if (isOne) txtBoxBits.Text = "-1";
+            else txtBoxBits.Text = "0";
             ShowBits();
         }
     }
