@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using FlagLibrary.Utils;
 
 namespace FlagLibrary.Flags
 {
@@ -9,6 +10,7 @@ namespace FlagLibrary.Flags
         public int value { get; set; }
 
         public int bitNumber { get; set; }
+        public int bitSize { get; set; }
         public Dictionary<string, int> options {get; set;}
     }
 
@@ -33,6 +35,7 @@ namespace FlagLibrary.Flags
             ParsedFlagData data = new ParsedFlagData();
             data.description = flag.description;
             data.bitNumber = flag.bitRefs[0];
+            data.bitSize = 0 << flag.bitRefs.Count;
             data.options = GetParsedFlagOptions(flag);
             if (flag.bitDescriptions.ContainsKey(flagValue))
                 data.currentOption = flag.bitDescriptions[flagValue];

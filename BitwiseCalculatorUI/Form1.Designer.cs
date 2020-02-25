@@ -50,7 +50,7 @@
             this.comboBoxFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.comboBoxFlaga.ForeColor = System.Drawing.Color.DarkGray;
             this.comboBoxFlaga.FormattingEnabled = true;
-            this.comboBoxFlaga.Location = new System.Drawing.Point(174, 59);
+            this.comboBoxFlaga.Location = new System.Drawing.Point(18, 58);
             this.comboBoxFlaga.Name = "comboBoxFlaga";
             this.comboBoxFlaga.Size = new System.Drawing.Size(160, 33);
             this.comboBoxFlaga.Sorted = true;
@@ -74,7 +74,7 @@
             this.lblFlaga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.lblFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblFlaga.ForeColor = System.Drawing.Color.White;
-            this.lblFlaga.Location = new System.Drawing.Point(62, 59);
+            this.lblFlaga.Location = new System.Drawing.Point(12, 9);
             this.lblFlaga.Name = "lblFlaga";
             this.lblFlaga.Size = new System.Drawing.Size(90, 31);
             this.lblFlaga.TabIndex = 2;
@@ -123,14 +123,17 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(935, 356);
             this.dataGridView.TabIndex = 4;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // Description
             // 
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // CurrentOption
             // 
+            this.CurrentOption.FillWeight = 87.37472F;
             this.CurrentOption.HeaderText = "Current option";
             this.CurrentOption.Name = "CurrentOption";
             this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -148,9 +151,9 @@
             this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindXML.ForeColor = System.Drawing.Color.White;
-            this.btnFindXML.Location = new System.Drawing.Point(627, 127);
+            this.btnFindXML.Location = new System.Drawing.Point(184, 58);
             this.btnFindXML.Name = "btnFindXML";
-            this.btnFindXML.Size = new System.Drawing.Size(376, 33);
+            this.btnFindXML.Size = new System.Drawing.Size(139, 33);
             this.btnFindXML.TabIndex = 5;
             this.btnFindXML.TabStop = false;
             this.btnFindXML.Text = "Wybierz plik XML";
@@ -163,7 +166,7 @@
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(505, 127);
+            this.btnReset.Location = new System.Drawing.Point(514, 127);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 33);
             this.btnReset.TabIndex = 6;
@@ -222,10 +225,12 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnFindXML;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSetOne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaxSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
-        private System.Windows.Forms.Button btnSetOne;
     }
 }
 
