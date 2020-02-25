@@ -1,14 +1,10 @@
-﻿using System;
+﻿using FlagLibrary.Connections;
+using FlagLibrary.Flags;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FlagLibrary.Connections;
-using FlagLibrary.Flags;
 
 namespace BitwiseCalculatorUI
 {
@@ -38,7 +34,7 @@ namespace BitwiseCalculatorUI
         private void Form1_Load(object sender, EventArgs e)
         {
             CreateBitButtons();
- 
+
             txtBoxBits.KeyPress += TxtBoxBitsKeyPress;
             this.AcceptButton = btnShow;
         }
@@ -80,7 +76,7 @@ namespace BitwiseCalculatorUI
                 this.Controls.Add(btn);
             }
         }
-        
+
         /// <summary>
         /// Method called after clicking 'Wyświetl button'
         /// shows bits
@@ -113,10 +109,12 @@ namespace BitwiseCalculatorUI
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
             dataGridView.DataSource = flagDataList;
-            //foreach (ParsedFlagData data in flagDataList)
-            //{
-            //    MessageBox.Show(data.description);
-            //}
+            dataGridView.Columns[2].Width = 50;
+            dataGridView.Columns[2].ReadOnly = false;
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                row.ReadOnly = false;
+            }
 
             SetBitsButton();
         }
@@ -125,21 +123,21 @@ namespace BitwiseCalculatorUI
         /// </summary>
         private void SetBitsButton()
         {
-            
-            string text= DecToBin();
+
+            string text = DecToBin();
             for (int i = 0; i < 32; i++)
             {
                 Button btn = this.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
                 btn.Text = "0";
             }
 
-            for (int i = 0; i<text.Length; i++)
+            for (int i = 0; i < text.Length; i++)
             {
                 Button btn = this.Controls.Find("btn" + (i + 32 - text.Length).ToString(), true).FirstOrDefault() as Button;
                 string bits = text;
                 btn.Text = bits.Substring(i, 1);
             }
-            
+
         }
         /// <summary>
         /// Method whenever user click bad char when it is not displane
@@ -150,7 +148,7 @@ namespace BitwiseCalculatorUI
 
             if (e.KeyChar == 8) return;
 
-            if (e.KeyChar <'0'|| e.KeyChar > '9')
+            if (e.KeyChar < '0' || e.KeyChar > '9')
             {
                 e.KeyChar = (char)0;
             }
@@ -178,7 +176,7 @@ namespace BitwiseCalculatorUI
         {
             Button btn = (Button)sender;
 
-            if(btn.Text == "1")
+            if (btn.Text == "1")
             {
                 btn.Text = "0";
             }
@@ -203,7 +201,10 @@ namespace BitwiseCalculatorUI
         {
             string selectedFlagName = comboBoxFlaga.Items[comboBoxFlaga.SelectedIndex].ToString();
             if (flagLists.ContainsKey(selectedFlagName))
+            {
                 selectedFlagList = flagLists[selectedFlagName];
+                ShowBits();
+            }
         }
 
         private void btnFindXML_Click(object sender, EventArgs e)

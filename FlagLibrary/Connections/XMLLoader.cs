@@ -1,10 +1,8 @@
-﻿using System;
+﻿using FlagLibrary.Flags;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Xml;
-using FlagLibrary.Flags;
-using System.Windows.Forms;
 using System.Linq;
+using System.Xml;
 
 namespace FlagLibrary.Connections
 {

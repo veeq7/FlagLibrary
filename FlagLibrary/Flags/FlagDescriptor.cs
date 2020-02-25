@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace FlagLibrary.Flags
 {
-   
+
     public class FlagDescriptor
     {
         // includes first bit
@@ -19,14 +17,40 @@ namespace FlagLibrary.Flags
 
             foreach (int bitRef in bitRefs)
             {
-                value += GetBit(i32, 1 << bitRef);
+                value += GetBit(i32, bitRef);
             }
 
             return value;
         }
 
+        public int GetModifiedValue(int i32, int value)
+        {
+            int newi32 = i32;
+
+            foreach (int bitRef in bitRefs)
+            {
+                int bit = GetBit(value, i32);
+                if (bit == 0)
+                {
+                    newi32 &= (~bit);
+                }
+                else
+                {
+                    newi32 |= bit;
+                }
+            }
+
+            return newi32;
+        }
+
+        int GetFlagBit(int bit)
+        {
+            return 1 << bit;
+        }
+
         public int GetBit(int value, int i32)
         {
+            i32 = 1 << i32;
             return (value & i32) != 0 ? 1 : 0;
         }
     }
