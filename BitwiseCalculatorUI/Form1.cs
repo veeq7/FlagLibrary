@@ -230,7 +230,7 @@ namespace BitwiseCalculatorUI
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "XML (*.xml)|*.xml";
-            dlg.Title = "Select meme";
+            dlg.Title = "Select XML file with Flag Definitions";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
