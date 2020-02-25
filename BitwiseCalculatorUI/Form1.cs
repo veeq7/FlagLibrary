@@ -38,7 +38,7 @@ namespace BitwiseCalculatorUI
 
             LoadFilePathFromTxt();
             txtBoxBits.KeyPress += TxtBoxBitsKeyPress;
-            this.AcceptButton = btnShow;
+            AcceptButton = btnShow;
         }
 
         // not used, but may be useful
@@ -84,7 +84,7 @@ namespace BitwiseCalculatorUI
         private void CreateBitButtons()
         {
             Point origin = new Point(27, 164);
-            System.Windows.Forms.ToolTip toolTipSystem = new System.Windows.Forms.ToolTip();
+            ToolTip toolTipSystem = new ToolTip();
             for (int i = 0; i < 32; i++)
             {
 
@@ -100,22 +100,19 @@ namespace BitwiseCalculatorUI
                 btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
                 toolTipSystem.SetToolTip(btn, "Bit " + (32 - i) + " - " + (1 << (31 - i)));
 
-
                 SetColor(btn, i);
-
-
 
                 btn.FlatAppearance.BorderSize = 0;
                 btn.MouseClick += BtnMouseClick;
 
-                System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
-                System.Drawing.Graphics formGraphics;
+                SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+                Graphics formGraphics;
                 formGraphics = this.CreateGraphics();
                 formGraphics.FillRectangle(myBrush, new Rectangle(0, 0, 200, 300));
                 myBrush.Dispose();
                 formGraphics.Dispose();
 
-                this.Controls.Add(btn);
+                Controls.Add(btn);
             }
         }
 
@@ -141,7 +138,7 @@ namespace BitwiseCalculatorUI
         }
 
         /// <summary>
-        /// Method refresch bit table and makes checkbox
+        /// Method refresh bit table and makes checkbox
         /// </summary>
         void ShowBits()
         {
@@ -167,8 +164,9 @@ namespace BitwiseCalculatorUI
                     c.Items.Add(kv.Key);
                 }
 
-                c.Value = c.Items[0];
-                dataGridView.Rows[i].Cells[1] = c;
+                //.Value = c.Items[0];
+                c.Value = flagDataList[i].currentOption;
+                dataGridView.Rows[i].Cells[3] = c;
                 dataGridView.Rows[i].Height = 35;
 
             }

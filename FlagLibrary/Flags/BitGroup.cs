@@ -36,7 +36,7 @@ namespace FlagLibrary.Flags
                 int bit = GetBit(value, i32, bitIndex++);
                 if (bit == 0)
                 {
-                    newi32 &= (~bit);
+                    newi32 &= ~(bit);
                 }
                 else
                 {

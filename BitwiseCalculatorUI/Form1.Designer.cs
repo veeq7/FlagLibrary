@@ -56,11 +56,15 @@
             // comboBoxFlaga
             // 
             this.comboBoxFlaga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.comboBoxFlaga.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.comboBoxFlaga.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.comboBoxFlaga.ForeColor = System.Drawing.Color.DarkGray;
             this.comboBoxFlaga.FormattingEnabled = true;
+            this.comboBoxFlaga.IntegralHeight = false;
+            this.comboBoxFlaga.ItemHeight = 25;
             this.comboBoxFlaga.Location = new System.Drawing.Point(27, 85);
+            this.comboBoxFlaga.MaxDropDownItems = 12;
             this.comboBoxFlaga.Name = "comboBoxFlaga";
             this.comboBoxFlaga.Size = new System.Drawing.Size(160, 33);
             this.comboBoxFlaga.Sorted = true;
@@ -310,7 +314,6 @@
             // 
             this.CurrentOption.FillWeight = 75F;
             this.CurrentOption.HeaderText = "Current option";
-            this.CurrentOption.MaxDropDownItems = 32;
             this.CurrentOption.Name = "CurrentOption";
             this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
