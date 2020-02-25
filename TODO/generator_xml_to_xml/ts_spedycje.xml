@@ -1,0 +1,263 @@
+<DB>
+  <Table DataType="130" Name="ts_spedycje" Key="sp_idspedytora" EntityName="Spedycja" EntitiesName="Spedycje" HasDT="1" HasEntity="1" AcceptZeroID="0" Browsable="3">
+    <Comment></Comment>
+    <!--================================================== Browsable=3 ==================================================-->
+    <Column Name="sp_cecha1" EntityName="Cecha1" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_cecha2" EntityName="Cecha2" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_cecha3" EntityName="Cecha3" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_is_wardostawy" EntityName="CzyWarunkiDostawy" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+    </Column>
+    <Column Name="sp_dodatkoweopcje" EntityName="DodatkoweOpcje" ReadOnly="1" Browsable="3">
+      <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+    </Column>
+    <Column Name="sp_domyslne_opakowanie" EntityName="DomyslneOpakowanie" ReadOnly="1" Browsable="3">
+      <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">Integer, Nullable</MDT>
+    </Column>
+    <Column Name="sp_flaga" EntityName="Flaga" ReadOnly="1" Browsable="3">
+      <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+	        <Flag Index="0" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>przy zamknieciu fv utworz list przewozowy jezeli nie ma</Comment>
+            </Flag>		
+            <Flag Index="1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>przy zamknieciu wz utworz list przewozowy jezeli nie ma</Comment>
+            </Flag>		
+            <Flag Index="2,3" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>typ wyliczania kosztow transportu</Comment>                
+                <Option Value="0" Name="OdWartosci">Od wartości</Option>
+				<Option Value="1" Name="OdWagi">Od wagi</Option>
+            </Flag>		
+            <Flag Index="4" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>koszt "paletowy"</Comment>
+            </Flag>		
+            <Flag Index="5" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>domyslna forma płatnosci dla danych do listu przewozowego: 0 - gotowka, przelew</Comment>
+            </Flag>		
+            <Flag Index="6" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>domyslny platnik dla danych do listu przewozowego: 0 - nadawca, odbiorca</Comment>
+            </Flag>		
+            <Flag Index="7" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>sposob liczenia kwoty ubezpiecenia (powiazane z bitem 8 sp_flaga2)</Comment>
+            </Flag>		
+            <Flag Index="8" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie "do pobrania"</Comment>
+            </Flag>		
+            <Flag Index="9" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatycznie pobranie wagi dla listu przewozowego z dokumentów</Comment>
+            </Flag>		
+            <Flag Index="10" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wartosc pobrania uzalezniona od formy platnosci </Comment>
+            </Flag>		
+            <Flag Index="11" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>uzywa pola N1 </Comment>
+            </Flag>		
+            <Flag Index="12" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>uzywa pola N2 </Comment>
+            </Flag>		
+            <Flag Index="13" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie osoby </Comment>
+            </Flag>		
+            <Flag Index="14" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie maila</Comment>
+            </Flag>		
+            <Flag Index="15" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie telefonu</Comment>
+            </Flag>		
+            <Flag Index="16" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>powiadomienie mail (odbiorcy o wyslaniu)</Comment>
+            </Flag>		
+            <Flag Index="17" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>powiadomienie SMS (odbiorcy o wyslaniu)</Comment>
+            </Flag>		
+            <Flag Index="18" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>potwierdzenie dostarczenia przez mail (nadawcy o dostarczeniu)</Comment>
+            </Flag>		
+            <Flag Index="19" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>potwierdzenie dostarczenia przez tel (nadawcy o dostarczeniu)</Comment>
+            </Flag>		
+            <Flag Index="20" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>doliczanie narzutu do wagi</Comment>
+            </Flag>		
+            <Flag Index="21" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>adres dostarczenia lokalny (wraz z bitem 29)</Comment>
+            </Flag>		
+            <Flag Index="22" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie adresu dostarczenia (tylko jesli lokalny)</Comment>
+            </Flag>		
+            <Flag Index="23" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie wartosci paczki</Comment>
+            </Flag>		
+            <Flag Index="24" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>domyslny platnik trzecia strona: (bit 6 musi byc=0)</Comment>
+            </Flag>		
+            <Flag Index="25" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne ustawienie stalej wagi</Comment>
+            </Flag>		
+            <Flag Index="26" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>pobranie wg dok magazynowych</Comment>
+            </Flag>		
+            <Flag Index="27" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wartosc wg dok magazynowych</Comment>
+            </Flag>		
+            <Flag Index="28" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie "do pobrania" przy wysylaniu</Comment>
+            </Flag>		
+            <Flag Index="29" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>adres dostarczenia punkt wydania (bit 21 zeruje)</Comment>
+            </Flag>		
+    </Column>
+    <Column Name="sp_mailpotw" EntityName="MailPotwierdzenie" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_nazwa" EntityName="Nazwa" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String</MDT>
+    </Column>
+    <Column Name="sp_n1" EntityName="NazwaNrRef1" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_n2" EntityName="NazwaNrRef2" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_nie_uzywa_opakowan" EntityName="NieUzywaOpakowan" ReadOnly="1" Browsable="3">
+      <DB>Type: Int32, Nullable: 0, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+    </Column>
+    <Column Name="sp_wartosc_n1" EntityName="NrRef1" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_wartosc_n2" EntityName="NrRef2" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_is_rodzajtransp" EntityName="RodzajTransportu" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+    </Column>
+    <Column Name="sp_telpotw" EntityName="TelefonPotwierdzenie" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_typ" EntityName="Typ" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String</MDT>
+    </Column>
+    <Column Name="sp_tytulpobrania" EntityName="TytulPobrania" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String, Nullable</MDT>
+    </Column>
+    <Column Name="sp_ubezpieczenie" EntityName="Ubezpieczenie" ReadOnly="1" Browsable="3">
+      <DB>Type: Decimal, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">Numeric</MDT>
+    </Column>
+    <Column Name="sp_ubezpieczenie2" EntityName="Ubezpieczenie2" ReadOnly="1" Browsable="3">
+      <DB>Type: Decimal, Nullable: 1, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">Numeric</MDT>
+    </Column>
+    <Column Name="sp_urzadnadania" EntityName="UrzadNadania" ReadOnly="1" Browsable="3">
+      <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">Integer, Nullable</MDT>
+    </Column>
+    <Column Name="sp_usluga" EntityName="Usluga" ReadOnly="1" Browsable="3">
+      <DB>Type: Int32, Nullable: 1, Default: 1, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">Integer</MDT>
+    </Column>
+    <Column Name="sp_usluga2" EntityName="Usluga2" ReadOnly="1" Browsable="3">
+      <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+    </Column>
+    <Column Name="sp_waganarzut" EntityName="WagaNarzut" ReadOnly="1" Browsable="3">
+      <DB>Type: Decimal, Nullable: 1, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">Numeric</MDT>
+    </Column>
+    <Column Name="sp_wagastala" EntityName="WagaStala" ReadOnly="1" Browsable="3">
+      <DB>Type: Decimal, Nullable: 1, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">Numeric</MDT>
+    </Column>
+    <Column Name="sp_wlasciwosc_opakowan" EntityName="WlasciwoscOpakowan" ReadOnly="1" Browsable="3">
+      <DB>Type: PgSqlArray[Int32], Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+    </Column>
+    <Column Name="sp_zawartosc" EntityName="Zawartosc" ReadOnly="1" Browsable="3">
+      <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+      <Comment></Comment>
+      <MDT Standard="1">String</MDT>
+    </Column>
+    <!--================================================== Browsable=0 ==================================================-->
+    <Column Name="sp_flaga2" EntityName="Flaga2" ReadOnly="1" Browsable="0">
+      <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+      <Comment></Comment>
+	              <Flag Index="0,1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie osoby nadawcy </Comment>
+                <Option Value="0" Name="Brak">Brak</Option>
+                <Option Value="1" Name="PrzyTworzeniu">Przy tworzeniu</Option>
+            </Flag>		
+            <Flag Index="2,3" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie maila nadawcy </Comment>
+                <Option Value="0" Name="Brak">Brak</Option>
+                <Option Value="1" Name="ZKartyOsKontakowej">Z karty os. kontakowej</Option>
+                <Option Value="2" Name="Wskazany">Wskazany</Option>
+            </Flag>		
+            <Flag Index="4,5" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie telefonu nadawcy </Comment>
+                <Option Value="0" Name="Brak">Brak</Option>
+                <Option Value="1" Name="ZKartyOsKontakowej">Z karty os. kontakowej</Option>
+                <Option Value="2" Name="Wskazany">Wskazany</Option>
+            </Flag>		
+            <Flag Index="6,7" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>Automatyczne pobranie wartosci ubezpieczenia </Comment>
+                <Option Value="0" Name="Brak">Brak</Option>
+                <Option Value="1" Name="PrzyTworzeniu">Przy tworzeniu</Option>
+                <Option Value="2" Name="PrzyWyslaniu">Przy wyslaniu</Option>
+            </Flag>		
+            <Flag Index="8" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>sposob liczenia kwoty ubezpiecenia (powiazane z bitem 7 sp_flaga) </Comment>
+            </Flag>	
+    </Column>
+    <!--================================================================================================================================-->
+    <!--========================================================== References ==========================================================-->
+    <!--================================================================================================================================-->
+    <!--================================================== Browsable=3 ==================================================-->
+    <Column Name="sp_mvidklienta" Reference="ts_multivals" EntityName="KlientWDID" ReadOnly="1" Browsable="3">
+      <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: mv.ts_multivals</DB>
+      <Comment></Comment>
+      <MDT Standard="1">Integer, Nullable</MDT>
+    </Column>
+  </Table>
+</DB>

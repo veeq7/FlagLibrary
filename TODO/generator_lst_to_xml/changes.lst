@@ -1,0 +1,95 @@
+k_flaga
+ 0 bit: fiskalizacja,
+ 1 bit: wymaga numeru zamówienia,
+ 2 bit: wymaga numeru dostawy,
+ 3 bit: wymaga wlasnych kodow towarow
+ 4 bit: upowaznienie do wystawiania FV bez podpisu odbiorcy
+ 5 bit: przypominaj uwagi przy wystawianiu dokumentow
+ 6 bit: 0 - zatwierdzanie wynagrodzen dopiero po zaplaceniu za fakture, 1 zawsze mozliwosc zatwierdzania wynagrodzen
+ 7 bit: nie uwzgledniony w raporcie "Tyskie"
+ 8 bit: wolne (oznaczalo kiedys - klient uczestniczy w wymianie WWW/Palmtop)
+ 9, 10 bit: rodzaj kartoteki
+            0 - firma
+        1 - osoba fizyczna
+        2 - rolnik ryczaltowy
+        3 - miejsce dostawy
+ 11 (2048)     : 1 - dla rolnikow czy maja umowe na inny termin zaplaty niz ustawowy (14 dni)
+ 14 (16384)    : nie wywoluj triggerow,
+ 23 (8388608)  : Klient tymczasowy
+ 24 (16777216) : 1 - klient ma podpiete wyliczne wartosci dowolne
+ 25 (33554432) : 1 - klient powiazany kapitalowo z nami
+ 26 (67108864) : 1 - inny adres korespondencyjny
+ 27            : 1 - klient certyfikowany  (nieuzywany, przeniesione na k_blokady bit 0)
+ 28            : 1 - blokowanie nadrealizacji ZO
+ 29            : 1 - blokowanie nadrealizacji ZW
+ 30            : 1 - przenoszenie kosztow transportu FZ->PZ
+ 31            : 1 - klient uczestniczy w faktoringu
+
+k_blokady:
+0 bit:  1 - klient certyfikowany
+1 bit:  1 - blokuj OF
+2 bit:  1 - blokuj ZO
+3 bit:  1 - blokuj FV,PR,WZ
+4 bit:  1 - blokuj ZW
+5 bit:  1 - blokuj FZ,PZ,KO,PW
+6 bit:
+7 bit:  1 - calkowita blokada sprzedazy
+8 bit:  1 - VAT OO na usługi wymienione w zal.14 Ustawy o VAT zgodnie z art.17 pkt1 ust 8 tejze ustawy
+
+k_flaga2:
+0 bit: rozliczenia z klientem z uzyciem metody split payment
+1 bit: 1- blokowanie nadrealizacji RE-/RE+
+
+sp_flaga:
+0          (1): 1 - przy zamknieciu fv utworz list przewozowy jezeli nie ma
+1          (2): 1 - przy zamknieciu wz utworz list przewozowy jezeli nie ma
+2,3       (12): typ wyliczania kosztow transportu
+                 0: od wartosci
+                 1: od wagi
+4         (16): 1 - koszt "paletowy"
+5         (32): domyslna forma płatnosci dla danych do listu przewozowego: 0 - gotowka, 1 - przelew
+6         (64): domyslny platnik dla danych do listu przewozowego: 0 - nadawca, 1 - odbiorca
+7        (128): sposob liczenia kwoty ubezpiecenia (powiazane z bitem 8 sp_flaga2)
+8        (256): 1 - automatyczne pobranie "do pobrania"
+9        (512): 1 - automatycznie pobranie wagi dla listu przewozowego z dokumentów
+10      (1024): 1 - wartosc pobrania uzalezniona od formy platnosci    
+11      (2048): 1 - uzywa pola N1    
+12      (4096): 1 - uzywa pola N2    
+13      (8192): 1 - automatyczne pobranie osoby    
+14     (16384): 1 - automatyczne pobranie maila
+15     (32768): 1 - automatyczne pobranie telefonu
+16     (65536): 1 - powiadomienie mail (odbiorcy o wyslaniu)
+17    (131072): 1 - powiadomienie SMS (odbiorcy o wyslaniu)
+18    (262144): 1 - potwierdzenie dostarczenia przez mail (nadawcy o dostarczeniu)
+19    (524288): 1 - potwierdzenie dostarczenia przez tel  (nadawcy o dostarczeniu)
+20   (1048576): 1 - doliczanie narzutu do wagi
+21   (2097152): 1 - adres dostarczenia lokalny (wraz z bitem 29)
+22   (4194304): 1 - automatyczne pobranie adresu dostarczenia (tylko jesli lokalny)
+23   (8388608): 1 - automatyczne pobranie wartosci paczki
+24  (16777216): 1 - domyslny platnik trzecia strona: (bit 6 musi byc=0)
+25            : 1 - automatyczne ustawienie stalej wagi
+26            : 1 - pobranie wg dok magazynowych
+27            : 1 - wartosc wg dok magazynowych
+28            : 1 - automatyczne pobranie "do pobrania" przy wysylaniu
+29            : 1 - adres dostarczenia punkt wydania (bit 21 zeruje)
+
+sp_flaga2
+0,1    (3): automatyczne pobranie osoby nadawcy  
+			0: Brak
+			1: Przy tworzeniu
+2,3   (12): automatyczne pobranie maila nadawcy
+			0: Brak
+			1: Z karty os. kontakowej
+			2: Wskazany
+4,5   (48): automatyczne pobranie telefonu nadawcy
+			0: Brak
+			1: Z karty os. kontakowej
+			2: Wskazany
+6,7  (192): Automatyczne pobranie wartosci ubezpieczenia
+			0: Brak
+			1: Przy tworzeniu
+			2: Przy wyslaniu
+8    (256): sposob liczenia kwoty ubezpiecenia  (powiazane z bitem 7 sp_flaga):
+			0: kwota stala
+			1: wg wartosci
+			2: wg pobrania

@@ -1,0 +1,229 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+k_blokady:			
+            <Flag Index="0" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient certyfikowany</Comment>
+            </Flag>		
+            <Flag Index="1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj OF</Comment>
+            </Flag>		
+            <Flag Index="2" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj ZO</Comment>
+            </Flag>		
+            <Flag Index="3" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj FV,PR,WZ</Comment>
+            </Flag>		
+            <Flag Index="4" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj ZW</Comment>
+            </Flag>		
+            <Flag Index="5" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj FZ,PZ,KO,PW</Comment>
+            </Flag>		            
+            <Flag Index="7" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - calkowita blokada sprzedazy</Comment>
+            </Flag>
+            <Flag Index="8" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - VAT OO na usługi wymienione w zal.14 Ustawy o VAT zgodnie z art.17 pkt1 ust 8 tejze ustawy</Comment>
+            </Flag>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+k_flaga
+            <Flag Index="0" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>fiskalizacja</Comment>
+            </Flag>
+            <Flag Index="1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wymaga numeru zamówienia</Comment>
+            </Flag>
+            <Flag Index="2" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wymaga numeru dostawy</Comment>
+            </Flag>
+            <Flag Index="3" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wymaga wlasnych kodow towarow</Comment>
+            </Flag>
+            <Flag Index="4" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>upowaznienie do wystawiania FV bez podpisu odbiorcy</Comment>
+            </Flag>
+            <Flag Index="5" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>przypominaj uwagi przy wystawianiu dokumentow</Comment>
+            </Flag>
+            <Flag Index="6" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>0 - zatwierdzanie wynagrodzen dopiero po zaplaceniu za fakture, 1 zawsze mozliwosc zatwierdzania wynagrodzen</Comment>
+            </Flag>
+            <Flag Index="7" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>nie uwzgledniony w raporcie "Tyskie"</Comment>
+            </Flag>
+            <Flag Index="8" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wolne (oznaczalo kiedys - klient uczestniczy w wymianie WWW/Palmtop)</Comment>
+            </Flag>
+            <Flag Index="9,10" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>rodzaj kartoteki</Comment>
+                <Option Value="0" Name="Firma">Firma, np. sp z o.o., działalność gospodarcza.</Option>
+                <Option Value="1" Name="OsobaFizyczna">Osoba fizyczna.</Option>
+                <Option Value="2" Name="RolnikRyczaltowy">Rolnik ryczałtowy.</Option>
+                <Option Value="3" Name="MiejsceDostawy">Miejsce dostawy.</Option>
+            </Flag>
+            <Flag Index="11" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - dla rolnikow czy maja umowe na inny termin zaplaty niz ustawowy (14 dni)</Comment>
+            </Flag>
+            <Flag Index="14" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>nie wywoluj triggerow,</Comment>
+            </Flag>
+            <Flag Index="23" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>Klient tymczasowy</Comment>
+            </Flag>
+            <Flag Index="24" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient ma podpiete wyliczne wartosci dowolne</Comment>
+            </Flag>
+            <Flag Index="25" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient powiazany kapitalowo z nami</Comment>
+            </Flag>
+            <Flag Index="26" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - inny adres korespondencyjny</Comment>
+            </Flag>
+            <Flag Index="27" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient certyfikowany  (nieuzywany, przeniesione na k_blokady bit 0)</Comment>
+            </Flag>
+            <Flag Index="28" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokowanie nadrealizacji ZO</Comment>
+            </Flag>
+            <Flag Index="29" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokowanie nadrealizacji ZW</Comment>
+            </Flag>
+            <Flag Index="30" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - przenoszenie kosztow transportu FZ->PZ</Comment>
+            </Flag>
+            <Flag Index="31" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient uczestniczy w faktoringu</Comment>
+            </Flag>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+k_flaga2
+            <Flag Index="0" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>rozliczenia z klientem z uzyciem metody split payment</Comment>
+            </Flag>
+            <Flag Index="1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1- blokowanie nadrealizacji RE-/RE+</Comment>
+            </Flag>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sp_flaga2
+            <Flag Index="0" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>przy zamknieciu fv utworz list przewozowy jezeli nie ma</Comment>
+            </Flag>		
+            <Flag Index="1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>przy zamknieciu wz utworz list przewozowy jezeli nie ma</Comment>
+            </Flag>		
+            <Flag Index="2,3" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>typ wyliczania kosztow transportu</Comment>                
+                <Option Value="0" Name="OdWartosci">Od wartości</Option>
+				<Option Value="1" Name="OdWagi">Od wagi</Option>
+            </Flag>		
+            <Flag Index="4" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>koszt "paletowy"</Comment>
+            </Flag>		
+            <Flag Index="5" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>domyslna forma płatnosci dla danych do listu przewozowego: 0 - gotowka, przelew</Comment>
+            </Flag>		
+            <Flag Index="6" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>domyslny platnik dla danych do listu przewozowego: 0 - nadawca, odbiorca</Comment>
+            </Flag>		
+            <Flag Index="7" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>sposob liczenia kwoty ubezpiecenia (powiazane z bitem 8 sp_flaga2)</Comment>
+            </Flag>		
+            <Flag Index="8" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie "do pobrania"</Comment>
+            </Flag>		
+            <Flag Index="9" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatycznie pobranie wagi dla listu przewozowego z dokumentów</Comment>
+            </Flag>		
+            <Flag Index="10" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wartosc pobrania uzalezniona od formy platnosci </Comment>
+            </Flag>		
+            <Flag Index="11" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>uzywa pola N1 </Comment>
+            </Flag>		
+            <Flag Index="12" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>uzywa pola N2 </Comment>
+            </Flag>		
+            <Flag Index="13" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie osoby </Comment>
+            </Flag>		
+            <Flag Index="14" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie maila</Comment>
+            </Flag>		
+            <Flag Index="15" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie telefonu</Comment>
+            </Flag>		
+            <Flag Index="16" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>powiadomienie mail (odbiorcy o wyslaniu)</Comment>
+            </Flag>		
+            <Flag Index="17" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>powiadomienie SMS (odbiorcy o wyslaniu)</Comment>
+            </Flag>		
+            <Flag Index="18" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>potwierdzenie dostarczenia przez mail (nadawcy o dostarczeniu)</Comment>
+            </Flag>		
+            <Flag Index="19" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>potwierdzenie dostarczenia przez tel (nadawcy o dostarczeniu)</Comment>
+            </Flag>		
+            <Flag Index="20" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>doliczanie narzutu do wagi</Comment>
+            </Flag>		
+            <Flag Index="21" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>adres dostarczenia lokalny (wraz z bitem 29)</Comment>
+            </Flag>		
+            <Flag Index="22" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie adresu dostarczenia (tylko jesli lokalny)</Comment>
+            </Flag>		
+            <Flag Index="23" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie wartosci paczki</Comment>
+            </Flag>		
+            <Flag Index="24" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>domyslny platnik trzecia strona: (bit 6 musi byc=0)</Comment>
+            </Flag>		
+            <Flag Index="25" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne ustawienie stalej wagi</Comment>
+            </Flag>		
+            <Flag Index="26" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>pobranie wg dok magazynowych</Comment>
+            </Flag>		
+            <Flag Index="27" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wartosc wg dok magazynowych</Comment>
+            </Flag>		
+            <Flag Index="28" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie "do pobrania" przy wysylaniu</Comment>
+            </Flag>		
+            <Flag Index="29" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>adres dostarczenia punkt wydania (bit 21 zeruje)</Comment>
+            </Flag>		
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+sp_flaga2	
+            <Flag Index="0,1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie osoby nadawcy </Comment>
+                <Option Value="0" Name="Brak">Brak</Option>
+                <Option Value="1" Name="PrzyTworzeniu">Przy tworzeniu</Option>
+            </Flag>		
+            <Flag Index="2,3" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie maila nadawcy </Comment>
+                <Option Value="0" Name="Brak">Brak</Option>
+                <Option Value="1" Name="ZKartyOsKontakowej">Z karty os. kontakowej</Option>
+                <Option Value="2" Name="Wskazany">Wskazany</Option>
+            </Flag>		
+            <Flag Index="4,5" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>automatyczne pobranie telefonu nadawcy </Comment>
+                <Option Value="0" Name="Brak">Brak</Option>
+                <Option Value="1" Name="ZKartyOsKontakowej">Z karty os. kontakowej</Option>
+                <Option Value="2" Name="Wskazany">Wskazany</Option>
+            </Flag>		
+            <Flag Index="6,7" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>Automatyczne pobranie wartosci ubezpieczenia </Comment>
+                <Option Value="0" Name="Brak">Brak</Option>
+                <Option Value="1" Name="PrzyTworzeniu">Przy tworzeniu</Option>
+                <Option Value="2" Name="PrzyWyslaniu">Przy wyslaniu</Option>
+            </Flag>		
+            <Flag Index="8" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>sposob liczenia kwoty ubezpiecenia (powiazane z bitem 7 sp_flaga) </Comment>
+            </Flag>		
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
