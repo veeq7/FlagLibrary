@@ -52,5 +52,12 @@ namespace FlagLibrary.Flags
             i32 = MathUtils.GetBitValue(i32);
             return ((value & i32) != 0 ? 1 : 0) << bitIndex;
         }
+
+        public void SetDefaultBitDescriptions()
+        {
+            bitDescriptions.Clear();
+            bitDescriptions.Add(0, "Off");
+            bitDescriptions.Add(1, "On");
+        }
     }
 }

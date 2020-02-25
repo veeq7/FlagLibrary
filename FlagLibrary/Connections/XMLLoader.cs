@@ -27,13 +27,13 @@ namespace FlagLibrary.Connections
             Dictionary<string, FlagList> list = new Dictionary<string, FlagList>();
             foreach (XmlNode Flag in xmlDoc.DocumentElement.ChildNodes)
             {
-                if (TryReadFlag(Flag, list))
+                if (ReadFlagHeader(Flag, list))
                     continue;
             }
             return list;
         }
 
-        private bool TryReadFlag(XmlNode Flag, Dictionary<string, FlagList> list)
+        private bool ReadFlagHeader(XmlNode Flag, Dictionary<string, FlagList> list)
         {
             if (Flag.Name != "Flag")
                 return false;
@@ -45,7 +45,7 @@ namespace FlagLibrary.Connections
                 if (Bit.Name != "Bit")
                     continue;
 
-                BitGroup flag = MakeFlag(Bit);
+                BitGroup flag = GetFlagFromNode(Bit);
                 flagList.flags.Add(flag);
             }
 
@@ -53,7 +53,7 @@ namespace FlagLibrary.Connections
             return true;
         }
 
-        BitGroup MakeFlag(XmlNode Bit)
+        BitGroup GetFlagFromNode(XmlNode Bit)
         {
             BitGroup flag = new BitGroup();
             string[] indexes = Bit.Attributes["Index"].Value.Split(',');
@@ -69,6 +69,10 @@ namespace FlagLibrary.Connections
                 {
                     flag.bitDescriptions.Add(int.Parse(Attribute.Attributes["value"].Value), Attribute.InnerText);
                 }
+            }
+            if (flag.bitDescriptions.Count == 0)
+            {
+                flag.SetDefaultBitDescriptions();
             }
             return flag;
         }

@@ -106,28 +106,42 @@ namespace BitwiseCalculatorUI
         /// </summary>
         void ShowBits()
         {
-            if (selectedFlagList == null) return;
+            if (selectedFlagList == null)
+                return;
 
             int value = GetValueFromTextBox();
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
             dataGridView.Rows.Clear();
-            dataGridView.Columns[0].ReadOnly = true;    
+            dataGridView.Columns[0].ReadOnly = true;
 
-            for (int i = 0; i< flagDataList.Count; i++)
+
+            for (int i = 0; i < flagDataList.Count; i++)
             {
                 int row = dataGridView.Rows.Add(flagDataList[i].description, flagDataList[i].currentOption, flagDataList[i].value);
 
                 dataGridView.Rows[i].Cells[1].Value = null; //this is important.
                 DataGridViewComboBoxCell c = new DataGridViewComboBoxCell();
 
-                foreach(KeyValuePair<string, int> kv in flagDataList[i].options)
+                foreach (KeyValuePair<string, int> kv in flagDataList[i].options)
                 {
                     c.Items.Add(kv.Key);
                 }
-                
+
+                c.Value = c.Items[0];
                 dataGridView.Rows[i].Cells[1] = c;
+
             }
+            /*dataGridView.Columns[0].ReadOnly = true;
+            dataGridView.Columns[1].ReadOnly = true;
+            dataGridView.Columns[2].ReadOnly = true;
+            dataGridView.Columns[3].ReadOnly = true;
+
+
+            for(int i = 0; i< flagDataList.Count; i++)
+            {
+                int row = dataGridView.Rows.Add(flagDataList[i].bitNumber, flagDataList[i].bitSize, flagDataList[i].description, flagDataList[i].currentOption, flagDataList[i].value);
+            }*/
 
             SetBitsButton();
         }
@@ -278,6 +292,11 @@ namespace BitwiseCalculatorUI
             if (isOne) txtBoxBits.Text = "-1";
             else txtBoxBits.Text = "0";
             ShowBits();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

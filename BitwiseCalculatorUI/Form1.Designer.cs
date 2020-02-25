@@ -34,12 +34,12 @@
             this.lblBity = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.btnFindXML = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnSetOne = new System.Windows.Forms.Button();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFindXML = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSetOne = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.comboBoxFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.comboBoxFlaga.ForeColor = System.Drawing.Color.DarkGray;
             this.comboBoxFlaga.FormattingEnabled = true;
-            this.comboBoxFlaga.Location = new System.Drawing.Point(174, 59);
+            this.comboBoxFlaga.Location = new System.Drawing.Point(18, 58);
             this.comboBoxFlaga.Name = "comboBoxFlaga";
             this.comboBoxFlaga.Size = new System.Drawing.Size(160, 33);
             this.comboBoxFlaga.Sorted = true;
@@ -74,7 +74,7 @@
             this.lblFlaga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.lblFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblFlaga.ForeColor = System.Drawing.Color.White;
-            this.lblFlaga.Location = new System.Drawing.Point(62, 59);
+            this.lblFlaga.Location = new System.Drawing.Point(12, 9);
             this.lblFlaga.Name = "lblFlaga";
             this.lblFlaga.Size = new System.Drawing.Size(90, 31);
             this.lblFlaga.TabIndex = 2;
@@ -123,6 +123,27 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(935, 356);
             this.dataGridView.TabIndex = 4;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // CurrentOption
+            // 
+            this.CurrentOption.FillWeight = 87.37472F;
+            this.CurrentOption.HeaderText = "Current option";
+            this.CurrentOption.Name = "CurrentOption";
+            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Value
+            // 
+            this.Value.FillWeight = 30F;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
             // 
             // btnFindXML
             // 
@@ -130,9 +151,9 @@
             this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindXML.ForeColor = System.Drawing.Color.White;
-            this.btnFindXML.Location = new System.Drawing.Point(627, 127);
+            this.btnFindXML.Location = new System.Drawing.Point(184, 58);
             this.btnFindXML.Name = "btnFindXML";
-            this.btnFindXML.Size = new System.Drawing.Size(376, 33);
+            this.btnFindXML.Size = new System.Drawing.Size(139, 33);
             this.btnFindXML.TabIndex = 5;
             this.btnFindXML.TabStop = false;
             this.btnFindXML.Text = "Wybierz plik XML";
@@ -166,25 +187,6 @@
             this.btnSetOne.Text = "1";
             this.btnSetOne.UseVisualStyleBackColor = false;
             this.btnSetOne.Click += new System.EventHandler(this.btnSetOne_onClick);
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // CurrentOption
-            // 
-            this.CurrentOption.HeaderText = "Current option";
-            this.CurrentOption.Name = "CurrentOption";
-            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Value
-            // 
-            this.Value.FillWeight = 30F;
-            this.Value.HeaderText = "Value";
-            this.Value.Name = "Value";
             // 
             // Form1
             // 
@@ -224,6 +226,8 @@
         private System.Windows.Forms.Button btnFindXML;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnSetOne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaxSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
