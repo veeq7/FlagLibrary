@@ -1,0 +1,604 @@
+<DB>
+    <Table DataType="1" Name="tb_klient" Key="k_idklienta" EntityName="Klient" EntitiesName="Klienci" HasDT="1" HasEntity="1" AcceptZeroID="0" Browsable="3">
+        <Comment></Comment>
+        <!--================================================== Browsable=3 ==================================================-->
+        <Column Name="k_kodpocztowy" EntityName="AdresKodPocztowy" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_kodpocztowykor" EntityName="AdresKorespondencjiKodPocztowy" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="0">String, Nullable</MDT>
+        </Column>
+        <Column Name="k_miejscowosckor" EntityName="AdresKorespondencjiMiejscowosc" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="0">String, Nullable</MDT>
+        </Column>
+        <Column Name="k_nrdomukor" EntityName="AdresKorespondencjiNrDomu" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="0">String, Nullable</MDT>
+        </Column>
+        <Column Name="k_nrlokalukor" EntityName="AdresKorespondencjiNrLokalu" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="0">String, Nullable</MDT>
+        </Column>
+        <Column Name="pw_idpowiatukor" EntityName="AdresKorespondencjiPowiat" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="0">FKeyInt, Nullable</MDT>
+        </Column>
+        <Column Name="rj_idregionukor" EntityName="AdresKorespondencjisRegion" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="0">FKeyInt, Nullable</MDT>
+        </Column>
+        <Column Name="k_ulicakor" EntityName="AdresKorespondencjiUlica" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="0">String, Nullable</MDT>
+        </Column>
+        <Column Name="k_miejscowosc" EntityName="AdresMiejscowosc" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 0, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_nrdomu" EntityName="AdresNrDomu" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_nrlokalu" EntityName="AdresNrLokalu" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 0, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="rj_idregionu" EntityName="AdresRegion" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_ulica" EntityName="AdresUlica" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 0, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_blokady" EntityName="Blokady" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>			
+            <Flag Index="0" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient certyfikowany</Comment>
+            </Flag>		
+            <Flag Index="1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj OF</Comment>
+            </Flag>		
+            <Flag Index="2" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj ZO</Comment>
+            </Flag>		
+            <Flag Index="3" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj FV,PR,WZ</Comment>
+            </Flag>		
+            <Flag Index="4" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj ZW</Comment>
+            </Flag>		
+            <Flag Index="5" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokuj FZ,PZ,KO,PW</Comment>
+            </Flag>		            
+            <Flag Index="7" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - calkowita blokada sprzedazy</Comment>
+            </Flag>
+            <Flag Index="8" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - VAT OO na usługi wymienione w zal.14 Ustawy o VAT zgodnie z art.17 pkt1 ust 8 tejze ustawy</Comment>
+            </Flag>
+        </Column>
+        <Column Name="k_czykobieta" EntityName="CzyKobieta" ReadOnly="1" Browsable="3">
+            <DB>Type: Boolean, Nullable: 1, Default: true, Reference: None</DB>
+            <Comment></Comment>
+            <MDT>Nullable</MDT>
+        </Column>
+        <Column Name="k_osfizyczna" EntityName="CzyOsobaFizyczna" ReadOnly="1" Browsable="3">
+            <DB>Type: Boolean, Nullable: 1, Default: false, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_zgodanaprzetw" EntityName="CzyZgodaNaWysylanieOfertMarketingowych" ReadOnly="1" Browsable="3">
+            <DB>Type: Boolean, Nullable: 1, Default: true, Reference: None</DB>
+            <Comment></Comment>
+            <MDT>Nullable</MDT>
+        </Column>
+        <Column Name="k_dataostmod" EntityName="DataCzasOstatniejModyfikacji" ReadOnly="1" Browsable="3">
+            <DB>Type: DateTime, Nullable: 1, Default: now(), Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_istniejeod" EntityName="DataIstniejeOd" ReadOnly="1" Browsable="3">
+            <DB>Type: DateTime, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Nullable</MDT>
+        </Column>
+        <Column Name="k_datakoncesji" EntityName="DataKoncesji" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_datawpr" EntityName="Datawpr" ReadOnly="1" Browsable="3">
+            <DB>Type: DateTime, Nullable: 1, Default: now(), Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_dlaczegoodszedl" EntityName="DlaczegoOdszedl" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="p_dodajacy" EntityName="Dodajacy" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_dostawa" EntityName="Dostawa" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_dostodb" EntityName="Dostodb" ReadOnly="1" Browsable="3">
+            <DB>Type: Int64, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_eksportowosc" EntityName="Eksportowosc" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 0, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Integer, NotNull</MDT>
+        </Column>
+        <Column Name="k_email" EntityName="Email" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_flaga" EntityName="Flaga" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <Flag Index="0" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>fiskalizacja</Comment>
+            </Flag>
+            <Flag Index="1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wymaga numeru zamówienia</Comment>
+            </Flag>
+            <Flag Index="2" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wymaga numeru dostawy</Comment>
+            </Flag>
+            <Flag Index="3" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wymaga wlasnych kodow towarow</Comment>
+            </Flag>
+            <Flag Index="4" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>upowaznienie do wystawiania FV bez podpisu odbiorcy</Comment>
+            </Flag>
+            <Flag Index="5" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>przypominaj uwagi przy wystawianiu dokumentow</Comment>
+            </Flag>
+            <Flag Index="6" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>0 - zatwierdzanie wynagrodzen dopiero po zaplaceniu za fakture, 1 zawsze mozliwosc zatwierdzania wynagrodzen</Comment>
+            </Flag>
+            <Flag Index="7" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>nie uwzgledniony w raporcie "Tyskie"</Comment>
+            </Flag>
+            <Flag Index="8" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>wolne (oznaczalo kiedys - klient uczestniczy w wymianie WWW/Palmtop)</Comment>
+            </Flag>
+            <Flag Index="9,10" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>rodzaj kartoteki</Comment>
+                <Option Value="0" Name="Firma">Firma, np. sp z o.o., działalność gospodarcza.</Option>
+                <Option Value="1" Name="OsobaFizyczna">Osoba fizyczna.</Option>
+                <Option Value="2" Name="RolnikRyczaltowy">Rolnik ryczałtowy.</Option>
+                <Option Value="3" Name="MiejsceDostawy">Miejsce dostawy.</Option>
+            </Flag>
+            <Flag Index="11" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - dla rolnikow czy maja umowe na inny termin zaplaty niz ustawowy (14 dni)</Comment>
+            </Flag>
+            <Flag Index="14" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>nie wywoluj triggerow,</Comment>
+            </Flag>
+            <Flag Index="23" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>Klient tymczasowy</Comment>
+            </Flag>
+            <Flag Index="24" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient ma podpiete wyliczne wartosci dowolne</Comment>
+            </Flag>
+            <Flag Index="25" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient powiazany kapitalowo z nami</Comment>
+            </Flag>
+            <Flag Index="26" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - inny adres korespondencyjny</Comment>
+            </Flag>
+            <Flag Index="27" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient certyfikowany  (nieuzywany, przeniesione na k_blokady bit 0)</Comment>
+            </Flag>
+            <Flag Index="28" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokowanie nadrealizacji ZO</Comment>
+            </Flag>
+            <Flag Index="29" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - blokowanie nadrealizacji ZW</Comment>
+            </Flag>
+            <Flag Index="30" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - przenoszenie kosztow transportu FZ->PZ</Comment>
+            </Flag>
+            <Flag Index="31" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1 - klient uczestniczy w faktoringu</Comment>
+            </Flag>
+        </Column>
+        <Column Name="k_geox" EntityName="Geox" ReadOnly="1" Browsable="3">
+            <DB>Type: Decimal, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Geo</MDT>
+        </Column>
+        <Column Name="k_geoy" EntityName="Geoy" ReadOnly="1" Browsable="3">
+            <DB>Type: Decimal, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Geo</MDT>
+        </Column>
+        <Column Name="tgc_idgrupy" EntityName="Grupa" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_haslo" EntityName="Haslo" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1">String, OnlyInsert</MDT>
+        </Column>
+        <Column Name="pwep_idpunktu" EntityName="Idpunktu" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: ts_punktywydaniaeprzesylek</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Integer, Nullable</MDT>
+        </Column>
+        <Column Name="k_iln" EntityName="Iln" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_imie" EntityName="Imie" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_kod" EntityName="Kod" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: ''::character varying, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_kodobcy" EntityName="KodObcy" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_kolor" EntityName="Kolor" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: (power((2)::double precision, (24)::double precision) - (1)::double precision), Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_koncesje" EntityName="Koncesje" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_kontokh2" EntityName="KontoKH2" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_kredytdni" EntityName="KredytDni" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 14, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_limitkredyt" EntityName="KredytLimit" ReadOnly="1" Browsable="3">
+            <DB>Type: Decimal, Nullable: 1, Default: 999999999.00, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_limitmaxopoznienia" EntityName="Limitmaxopoznienia" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 99999999, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_limitprzeterminowanych" EntityName="Limitprzeterminowanych" ReadOnly="1" Browsable="3">
+            <DB>Type: Decimal, Nullable: 1, Default: 999999999.00, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_nasznumer" EntityName="NaszNumer" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_nazwa" EntityName="Nazwa" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 0, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_nazwisko" EntityName="Nazwisko" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_nip" EntityName="Nip" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_nipprefix" EntityName="Nipprefix" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_nsdbhash" EntityName="Nsdbhash" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_idodbiorcy" EntityName="Odbiorca" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Nullable</MDT>
+        </Column>
+        <Column Name="k_opis" EntityName="Opis" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_osobaodbierajaca" EntityName="OsobaOdbierajaca" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_platnosc" EntityName="Platnosc" ReadOnly="1" Browsable="3">
+            <DB>Type: Int16, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_potrzeby" EntityName="Potrzeby" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_procenthan" EntityName="ProcentHAN" ReadOnly="1" Browsable="3">
+            <DB>Type: Decimal, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_regon" EntityName="Regon" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_inforejestr" EntityName="RejestrInfo" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="rk_idrodzajklienta" EntityName="RodzajKlienta" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_rolnikumowaplatnosc" EntityName="RolnikUmowaPlatnosc" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="sp_idspedytora" EntityName="Spedytor" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="sk_idstatusu" EntityName="Status" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Integer</MDT>
+        </Column>
+        <Column Name="k_www" EntityName="StronaWWW" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_telefon" EntityName="Telefon" ReadOnly="1" Browsable="3">
+            <DB>Type: String, Nullable: 1, Default: ''::text, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_upust" EntityName="Upust" ReadOnly="1" Browsable="3">
+            <DB>Type: Decimal, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="wk_idwagi" EntityName="Waga" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_wsksplaty" EntityName="Wsksplaty" ReadOnly="1" Browsable="3">
+            <DB>Type: Decimal, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_wsksplaty_dataobl" EntityName="Wsksplaty_dataobl" ReadOnly="1" Browsable="3">
+            <DB>Type: DateTime, Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_zadluzenie" EntityName="Zadluzenie" ReadOnly="1" Browsable="3">
+            <DB>Type: PgSqlArray[Decimal], Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_zadluzenieniezamk" EntityName="ZadluzenienieZamkniete" ReadOnly="1" Browsable="3">
+            <DB>Type: PgSqlArray[Decimal], Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="k_zaliczka" EntityName="Zaliczka" ReadOnly="1" Browsable="3">
+            <DB>Type: PgSqlArray[Decimal], Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <!--================================================== Browsable=0 ==================================================-->
+        <Column Name="k_flaga2" EntityName="Flaga2" ReadOnly="1" Browsable="0">
+            <DB>Type: Int32, Nullable: 0, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <Flag Index="0" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>rozliczenia z klientem z uzyciem metody split payment</Comment>
+            </Flag>
+            <Flag Index="1" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">
+                <Comment>1- blokowanie nadrealizacji RE-/RE+</Comment>
+            </Flag>
+        </Column>
+        <Column Name="k_hashtags" EntityName="Hashtags" ReadOnly="1" Browsable="0">
+            <DB>Type: String, Nullable: 0, Default: ''::tsvector, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1">HashTags, NotNull</MDT>
+        </Column>
+        <Column Name="sch_idschematu" EntityName="Idschematu" ReadOnly="1" Browsable="0">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: ts_schematy_wymiany</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Integer, Nullable</MDT>
+        </Column>
+        <Column Name="k_niezafaktwz" EntityName="Niezafaktwz" ReadOnly="1" Browsable="0">
+            <DB>Type: PgSqlArray[Decimal], Nullable: 1, Default: NULL, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="gpi_lastcheck_euronip" EntityName="OstatniePotwierdzenieEuroNIP" ReadOnly="1" Browsable="0">
+            <Comment>Ostatnie potwierdzenie rejestracji EuroNIP-u</Comment>
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: tb_govapi</DB>
+        </Column>
+        <Column Name="gpi_lastcheck" EntityName="OstatniePotwierdzenieStatusuVAT" ReadOnly="1" Browsable="0">
+            <Comment>Ostatnie potwierdzenie statusu jako platnik VAT</Comment>
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: tb_govapi</DB>
+        </Column>
+        <Column Name="k_permissions" EntityName="Permissions" ReadOnly="1" Browsable="0">
+            <DB>Type: String, Nullable: 0, Default: '''all'''::tsvector, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="zi_idzrodla" EntityName="Zrodlo" ReadOnly="1" Browsable="0">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <!--================================================================================================================================-->
+        <!--========================================================== References ==========================================================-->
+        <!--================================================================================================================================-->
+        <!--================================================== Browsable=3 ==================================================-->
+        <Column Name="pw_idpowiatu" Reference="ts_powiaty" EntityName="AdresPowiat" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: ts_powiaty</DB>
+            <Comment>Kraj klienta</Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="k_jegoagent" Reference="tb_klient" EntityName="Agent" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: None</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="lk_czdomyslny" Reference="tb_ludzieklienta" EntityName="CzyDomyslny" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: tb_ludzieklienta</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="st_idstatusu" Reference="ts_statusy" EntityName="Idstatusu" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: ts_statusy</DB>
+            <Comment></Comment>
+        </Column>
+        <Column Name="wl_idwaluty" Reference="tg_waluty" EntityName="Idwaluty" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: tg_waluty</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Integer, Nullable</MDT>
+        </Column>
+        <Column Name="k_idplatnik" Reference="tb_klient" EntityName="Platnik" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: tb_klient</DB>
+            <Comment></Comment>
+            <MDT Standard="1">Nullable</MDT>
+        </Column>
+        <Column Name="p_idpracownika" Reference="tb_pracownicy" EntityName="Pracownik" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: 0, Reference: tb_pracownicy</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="ros_idrodzaju" Reference="ts_rodzajeodsetek" EntityName="RodzajOdsetek" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 0, Default: 0, Reference: ts_rodzajeodsetek</DB>
+            <Comment></Comment>
+            <MDT Standard="1" />
+        </Column>
+        <Column Name="zrdo_id" Reference="tb_zgodyrodo" EntityName="ZgodaRODO" ReadOnly="1" Browsable="3">
+            <DB>Type: Int32, Nullable: 1, Default: NULL, Reference: tb_zgodyrodo</DB>
+            <Comment></Comment>
+        </Column>
+        <OtherColumn Name="_k_blok_nadreal_re" DB="1" Type="bool">
+            <Comment>Możliwośc nadrealizacji RE-/RE+ klienta</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_blok_nadreal_zo" DB="1" Type="bool">
+            <Comment>Możliwośc nadrealizacji ZO klienta</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_blok_nadreal_zw" DB="1" Type="bool">
+            <Comment>Możliwośc nadrealizacji ZW klienta</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_drukkod" DB="1" Type="bool">
+            <Comment></Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_faktoring" DB="1" Type="bool">
+            <Comment>Klient uczestniczy w faktoringu (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_fiskalizacja" DB="1" Type="bool">
+            <Comment>Fiskalizacja (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_innyadreskor" DB="1" Type="bool">
+            <Comment>Klient posiada inny adres do korespondencji niż adres główny (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_powiazanykapitalowo" DB="1" Type="bool">
+            <Comment></Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_rolnikumowa" DB="1" Type="bool">
+            <Comment>Czy termin płatności wynika z umowy (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_splitpayment" DB="1" Type="bool">
+            <Comment></Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_transpfzpz" DB="1" Type="bool">
+            <Comment></Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_upowaznieniefv" DB="1" Type="bool">
+            <Comment></Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_vatoouslug" DB="1" Type="bool">
+            <Comment></Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_wymaganydostawy" DB="1" Type="bool">
+            <Comment>Wymagany kod dostawy (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_wymaganykodzam" DB="1" Type="bool">
+            <Comment>Wymagany kod zamówienia (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_wynagrodzenie" DB="1" Type="bool">
+            <Comment></Comment>
+        </OtherColumn>
+        <OtherColumn Name="_k_wyswietluwagi" DB="1" Type="bool">
+            <Comment>Wyświetlanie uwag (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_klpole_blokady_0" DB="1" Type="bool">
+            <Comment>Klient certyfikowany (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_klpole_blokady_1" DB="1" Type="bool">
+            <Comment>Blokada ofert (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_klpole_blokady_2" DB="1" Type="bool">
+            <Comment>Blokada ZO (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_klpole_blokady_3" DB="1" Type="bool">
+            <Comment>Blokada FV/PR/WZ (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_klpole_blokady_4" DB="1" Type="bool">
+            <Comment>Blokada ZW (checkbox)</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_klpole_blokady_5" DB="1" Type="bool">
+            <Comment>Blokada FZ/PZ</Comment>
+        </OtherColumn>
+        <OtherColumn Name="_klpole_blokady_7" DB="1" Type="bool">
+            <Comment>Blokada sprzedaży</Comment>
+        </OtherColumn>
+        <OtherColumn Name="k_datawyddoktozsamosci" DB="1" Type="string">
+            <Comment>Data wydania dokumentu tożsamości rolnika</Comment>
+        </OtherColumn>
+        <OtherColumn Name="k_nrdoktozsamosci" DB="1" Type="string">
+            <Comment>Numer dokumentu tożsamości rolnika</Comment>
+        </OtherColumn>
+        <OtherColumn Name="k_organwyddoktozsamosci" DB="1" Type="string">
+            <Comment>Organ wydający dokument tożsamości rolnika</Comment>
+        </OtherColumn>
+    </Table>
+</DB>
