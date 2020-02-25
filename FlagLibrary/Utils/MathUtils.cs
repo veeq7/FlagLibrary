@@ -12,5 +12,9 @@ namespace FlagLibrary.Utils
         {
             return value < min ? min : value > max ? max : value;
         }
+        public static int GetBitValue(int bit)
+        {
+            return 1 << bit;
+        }
     }
 }

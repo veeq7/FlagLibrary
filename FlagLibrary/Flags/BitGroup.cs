@@ -4,7 +4,7 @@ using FlagLibrary.Utils;
 namespace FlagLibrary.Flags
 {
 
-    public class Flag
+    public class BitGroup
     {
         // includes first bit
         public List<int> bitRefs = new List<int>();
@@ -16,9 +16,10 @@ namespace FlagLibrary.Flags
         {
             int value = 0;
 
+            int bitIndex = 0;
             foreach (int bitRef in bitRefs)
             {
-                value += GetBit(i32, bitRef);
+                value += GetBit(i32, bitRef, bitIndex++);
             }
 
             return value;
@@ -29,9 +30,10 @@ namespace FlagLibrary.Flags
             int newi32 = i32;
             value = MathUtils.Clamp(value, 0, maxSize);
 
+            int bitIndex = 0;
             foreach (int bitRef in bitRefs)
             {
-                int bit = GetBit(value, i32);
+                int bit = GetBit(value, i32, bitIndex++);
                 if (bit == 0)
                 {
                     newi32 &= (~bit);
@@ -45,15 +47,10 @@ namespace FlagLibrary.Flags
             return newi32;
         }
 
-        int GetFlagBit(int bit)
+        public int GetBit(int value, int i32, int bitIndex)
         {
-            return 1 << bit;
-        }
-
-        public int GetBit(int value, int i32)
-        {
-            i32 = 1 << i32;
-            return (value & i32) != 0 ? 1 : 0;
+            i32 = MathUtils.GetBitValue(i32);
+            return ((value & i32) != 0 ? 1 : 0) << bitIndex;
         }
     }
 }

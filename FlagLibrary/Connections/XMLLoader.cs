@@ -27,27 +27,35 @@ namespace FlagLibrary.Connections
             Dictionary<string, FlagList> list = new Dictionary<string, FlagList>();
             foreach (XmlNode Flag in xmlDoc.DocumentElement.ChildNodes)
             {
-                if (Flag.Name == "Flag")
-                {
-                    FlagList flagList = new FlagList();
-                    flagList.name = Flag.Attributes["Column"].Value;
-                    foreach (XmlNode Bit in Flag.ChildNodes)
-                    {
-                        if (Bit.Name != "Bit")
-                            continue;
-
-                        Flag flag = MakeFlag(Bit);
-                        flagList.flags.Add(flag);
-                    }
-                    list.Add(flagList.name, flagList);
-                }
+                if (TryReadFlag(Flag, list))
+                    continue;
             }
             return list;
         }
 
-        Flag MakeFlag(XmlNode Bit)
+        private bool TryReadFlag(XmlNode Flag, Dictionary<string, FlagList> list)
         {
-            Flag flag = new Flag();
+            if (Flag.Name != "Flag")
+                return false;
+
+            FlagList flagList = new FlagList();
+            flagList.name = Flag.Attributes["Column"].Value;
+            foreach (XmlNode Bit in Flag.ChildNodes)
+            {
+                if (Bit.Name != "Bit")
+                    continue;
+
+                BitGroup flag = MakeFlag(Bit);
+                flagList.flags.Add(flag);
+            }
+
+            list.Add(flagList.name, flagList);
+            return true;
+        }
+
+        BitGroup MakeFlag(XmlNode Bit)
+        {
+            BitGroup flag = new BitGroup();
             string[] indexes = Bit.Attributes["Index"].Value.Split(',');
             flag.bitRefs = GetBitRefs(indexes);
             flag.maxSize = flag.bitRefs.Count() << 0;

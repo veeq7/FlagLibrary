@@ -113,11 +113,6 @@ namespace BitwiseCalculatorUI
 
             dataGridView.DataSource = flagDataList;
             dataGridView.Columns[2].Width = 50;
-            dataGridView.Columns[2].ReadOnly = false;
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                row.ReadOnly = false;
-            }
 
             SetBitsButton();
         }
@@ -241,6 +236,11 @@ namespace BitwiseCalculatorUI
                     
                 }
             }
+        }
+
+        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView.Update();
         }
     }
 }

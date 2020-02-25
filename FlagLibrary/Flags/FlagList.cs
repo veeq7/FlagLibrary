@@ -12,20 +12,20 @@ namespace FlagLibrary.Flags
     public class FlagList
     {
         public string name;
-        public List<Flag> flags = new List<Flag>();
+        public List<BitGroup> flags = new List<BitGroup>();
         public int value = 0;
 
         public List<ParsedFlagData> Parse(int value)
         {
             List<ParsedFlagData> list = new List<ParsedFlagData>();
-            foreach (Flag flag in flags)
+            foreach (BitGroup flag in flags)
             {
                 list.Add(ParseFlag(flag, flag.GetValue(value)));
             }
             return list;
         }
 
-        private ParsedFlagData ParseFlag(Flag flag, int flagValue)
+        private ParsedFlagData ParseFlag(BitGroup flag, int flagValue)
         {
             ParsedFlagData data = new ParsedFlagData();
             data.description = flag.description;
