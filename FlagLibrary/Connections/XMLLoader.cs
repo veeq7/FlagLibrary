@@ -39,7 +39,7 @@ namespace FlagLibrary.Connections
                             continue;
 
                         FlagDescriptor flag = MakeFlag(Bit);
-                        flagList.flags.Add(flag.bitID, flag);
+                        flagList.flags.Add(flag);
                     }
                     list.Add(flagList);
                 }
@@ -70,7 +70,7 @@ namespace FlagLibrary.Connections
         List<int> GetBitRefs(string[] indexes)
         {
             List<int> list = new List<int>();
-            foreach (string index in indexes)//.Skip(1))
+            foreach (string index in indexes)
             {
                 list.Add(int.Parse(index));
             }
