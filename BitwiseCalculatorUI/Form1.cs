@@ -242,5 +242,27 @@ namespace BitwiseCalculatorUI
                 }
             }
         }
+
+        private void btnReset_onClick(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < 32; i++)
+            {
+                Button bttn = this.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
+
+                if (bttn.Text == "1")
+                {
+                    bttn.Text = "0";
+                }
+                else
+                {
+                    bttn.Text = "0";
+                }
+                
+
+            }
+            txtBoxBits.Text = "0";
+           ShowBits();
+        }
     }
 }
