@@ -114,12 +114,8 @@ namespace BitwiseCalculatorUI
             dataGridView.Rows.Clear();
 
             //dataGridView.DataSource = flagDataList;
-            dataGridView.Columns[0].Width = 200;
-            //dataGridView.Columns[2].ReadOnly = false;
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                row.ReadOnly = false;
-            }
+            dataGridView.Columns[0].ReadOnly = true;
+            dataGridView.Columns[1].ReadOnly = true;
 
             DataGridViewRow roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
 
