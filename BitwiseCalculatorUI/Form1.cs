@@ -36,7 +36,7 @@ namespace BitwiseCalculatorUI
                 Button btn = new Button();
                 btn.Name = "btn" + i;
                 btn.Location = new Point(65 + i * 13, 127);
-                btn.Text = "0";                                                                   //zmien na "1"
+                btn.Text = "0";
                 btn.TextAlign = ContentAlignment.MiddleCenter;
                 btn.Size = new Size(17, 25);
                 btn.FlatStyle = FlatStyle.Flat;
@@ -62,7 +62,7 @@ namespace BitwiseCalculatorUI
                 this.Controls.Add(btn);
             }
         }
-
+        
         /// <summary>
         /// Method called after clicking 'Wyświetl button'
         /// shows bits
@@ -72,6 +72,9 @@ namespace BitwiseCalculatorUI
             ShowBits();
         }
 
+        /// <summary>
+        /// Method refresch bit table and makes checkbox
+        /// </summary>
         void ShowBits()
         {
             List<Values> values = new List<Values>();
@@ -86,9 +89,12 @@ namespace BitwiseCalculatorUI
 
             SetBitsButton();
         }
-
+        /// <summary>
+        /// Method makes 32 buttons for bit table
+        /// </summary>
         private void SetBitsButton()
         {
+            
             string text= DecToBin();
             for (int i = 0; i < 32; i++)
             {
@@ -102,8 +108,11 @@ namespace BitwiseCalculatorUI
                 string bits = text;
                 btn.Text = bits.Substring(i, 1);
             }
+            
         }
-
+        /// <summary>
+        /// Method whenever user click bad char when it is not displane
+        /// </summary>
         void TxtBoxBitsKeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -117,7 +126,9 @@ namespace BitwiseCalculatorUI
             }
             
         }
-
+        /// <summary>
+        /// Method convert string to int and return binary
+        /// </summary>
         string DecToBin()
         {
             try
@@ -131,7 +142,9 @@ namespace BitwiseCalculatorUI
                 return "0";
             }
         }
-
+        /// <summary>
+        /// Method check button value and change on click
+        /// </summary>
         void BtnMouseClick(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
