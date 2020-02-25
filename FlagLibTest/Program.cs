@@ -14,18 +14,18 @@ namespace FlagLibTest
         {
             XMLLoader xml = new XMLLoader("C:\\Users\\praktykant\\source\\repos\\FlagLibrary2\\flags.xml");
             List<FlagList> list = xml.GetFlagLists();
-            foreach (FlagList fl in list) {
+            foreach (FlagList fl in list)
+            {
                 Console.WriteLine(fl.name);
-                foreach (KeyValuePair<int, FlagDescriptor> flag in fl.flags)
+                Console.WriteLine();
+                foreach (ParsedFlagData data in fl.Parse(7))
                 {
-                    Console.WriteLine("    " + flag.Value.description);
-                    foreach (KeyValuePair<int, string> bitDesc in flag.Value.bitDescriptions)
-                    {
-                        Console.WriteLine("        " + bitDesc.Value);
-                    }
+                    Console.WriteLine("   " + "Wartość: " + data.value);
+                    Console.WriteLine("   " + "Opis: " + data.description);
+                    Console.WriteLine("   " + "Opcja: " + data.currentOption);
                     Console.WriteLine();
                 }
             }
-        }
+        }  
     }
 }

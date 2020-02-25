@@ -16,22 +16,24 @@ namespace FlagLibrary.Flags
     public class FlagList
     {
         public string name;
-        public Dictionary<int, FlagDescriptor> flags = new Dictionary<int, FlagDescriptor>();
+        public List<FlagDescriptor> flags = new List<FlagDescriptor>();
         public int value = 0;
 
-        int key = 0;
-        
         public List<ParsedFlagData> Parse(int value)
         {
             List<ParsedFlagData> list = new List<ParsedFlagData>();
+            foreach (FlagDescriptor flag in flags)
+            {
+                list.Add(ParseFlag(flag, flag.GetValue(value)));
+            }
             return list;
         }
 
-        public ParsedFlagData ParseFlag(FlagDescriptor flag, int flagValue)
+        private ParsedFlagData ParseFlag(FlagDescriptor flag, int flagValue)
         {
             ParsedFlagData data = new ParsedFlagData();
             data.description = flag.description;
-            if (flag.bitDescriptions[flagValue] != null)
+            if (flag.bitDescriptions.ContainsKey(flagValue))
                 data.currentOption = flag.bitDescriptions[flagValue];
             else
                 data.currentOption = "";
@@ -39,12 +41,8 @@ namespace FlagLibrary.Flags
             return data;
         }
 
-        public int GetValue(FlagDescriptor flag)
-        {
-            return 0;
-        }
 
-        public void SetBit(int bit, bool value)
+        /*public void SetBit(int bit, bool value)
         {
             if (value)
             {
@@ -75,6 +73,6 @@ namespace FlagLibrary.Flags
             }
 
             value = val;
-        }
+        }*/
     }
 }
