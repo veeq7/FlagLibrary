@@ -225,7 +225,7 @@ namespace BitwiseCalculatorUI
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "XML (*.xml)|*.xml";
-            dlg.Title = "Select meme";
+            dlg.Title = "Wybierz plik XML zawierający definicje flag";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -254,9 +254,9 @@ namespace BitwiseCalculatorUI
             }
         }
 
-        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e) // DO USUNIĘCIA, NIE POTRZEBNE
         {
-            dataGridView.Update();
+            dataGridView.Update(); 
         }
     }
 }
