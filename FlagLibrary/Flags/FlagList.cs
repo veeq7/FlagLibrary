@@ -8,9 +8,9 @@ namespace FlagLibrary.Flags
 {
     public struct ParsedFlagData
     {
-        public string description;
-        public string currentOption;
-        public int value;
+        public string description { get; set; }
+        public string currentOption { get; set; }
+        public int value { get; set; }
     }
 
     public class FlagList

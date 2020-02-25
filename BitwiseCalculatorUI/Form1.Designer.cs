@@ -41,57 +41,11 @@
             // 
             this.comboBoxFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.comboBoxFlaga.FormattingEnabled = true;
-            this.comboBoxFlaga.Items.AddRange(new object[] {
-            "pd_flaga",
-            "pd_czestotliwosc",
-            "pd_kontrole",
-            "pw_flaga",
-            "pr_flaga",
-            "th_flaga",
-            "top_flaga",
-            "top_flaga2",
-            "top_the_flaga",
-            "top_the_flaga_koop",
-            "the_flaga",
-            "top_the_flaga2",
-            "top_the_flaga2_koop",
-            "the_flaga2",
-            "kwh_flaga",
-            "kwe_flaga",
-            "knw_flaga",
-            "trr_flaga",
-            "knr_flaga",
-            "knpn_flaga",
-            "knp_flaga",
-            "tsp_flaga",
-            "sp_flaga",
-            "kwd_flaga",
-            "vmp_flaga",
-            "zm_flaga",
-            "kb_flaga",
-            "kwc_flaga",
-            "nrw_flaga",
-            "thpn_flaga",
-            "dmag_flaga",
-            "hm_typ",
-            "pp_flaga",
-            "hm_flaga",
-            "kwnn_flaga",
-            "sk_flaga",
-            "ppp_flaga",
-            "ct_flaga",
-            "dmag_typ",
-            "kwe_nodtype",
-            "mesh_flaga",
-            "mese_flaga",
-            "mess_rodzaj_stanu",
-            "mess_flaga",
-            "mesn_flaga",
-            "messa_flaga"});
             this.comboBoxFlaga.Location = new System.Drawing.Point(174, 59);
             this.comboBoxFlaga.Name = "comboBoxFlaga";
             this.comboBoxFlaga.Size = new System.Drawing.Size(160, 33);
             this.comboBoxFlaga.TabIndex = 0;
+            this.comboBoxFlaga.SelectedIndexChanged += new System.EventHandler(this.comboBoxFlaga_SelectedIndexChanged);
             // 
             // txtBoxBits
             // 

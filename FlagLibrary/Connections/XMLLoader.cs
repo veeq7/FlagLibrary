@@ -24,9 +24,9 @@ namespace FlagLibrary.Connections
             }
         }
 
-        public List<FlagList> GetFlagLists()
+        public Dictionary<string, FlagList> GetFlagLists()
         {
-            List<FlagList> list = new List<FlagList>();
+            Dictionary<string, FlagList> list = new Dictionary<string, FlagList>();
             foreach (XmlNode Flag in xmlDoc.DocumentElement.ChildNodes)
             {
                 if (Flag.Name == "Flag")
@@ -41,7 +41,7 @@ namespace FlagLibrary.Connections
                         FlagDescriptor flag = MakeFlag(Bit);
                         flagList.flags.Add(flag);
                     }
-                    list.Add(flagList);
+                    list.Add(flagList.name, flagList);
                 }
             }
             return list;

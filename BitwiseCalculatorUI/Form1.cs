@@ -7,14 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FlagLibrary.Connections;
+using FlagLibrary.Flags;
 
 namespace BitwiseCalculatorUI
 {
     public partial class Form1 : Form
     {
+        string filePath = "flags.xml";
+        Dictionary<string, FlagList> flagLists;
+        FlagList selectedFlagList;
+
         public Form1()
         {
             InitializeComponent();
+            InitializeFlagLists();
+        }
+
+        void InitializeFlagLists()
+        {
+            XMLLoader xml = new XMLLoader(filePath);
+            flagLists = xml.GetFlagLists();
+            foreach (KeyValuePair<string, FlagList> pair in flagLists)
+            {
+                comboBoxFlaga.Items.Add(pair.Key);
+            }
+            comboBoxFlaga.SelectedIndex = 0;
+            selectedFlagList = flagLists[comboBoxFlaga.Items[0].ToString()];
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -72,20 +91,31 @@ namespace BitwiseCalculatorUI
             ShowBits();
         }
 
+        int GetValueFromTextBox()
+        {
+            try
+            {
+                return int.Parse(txtBoxBits.Text);
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
         /// <summary>
         /// Method refresch bit table and makes checkbox
         /// </summary>
         void ShowBits()
         {
-            List<Values> values = new List<Values>();
+            int value = GetValueFromTextBox();
+            List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
-            Values v = new Values();
-            v.name = "asd";
-            v.value = true;
-
-            values.Add(v);
-            dataGridView.DataSource = values;
-            dataGridView.Columns[0].Width = 50;
+            dataGridView.DataSource = flagDataList;
+            //foreach (ParsedFlagData data in flagDataList)
+            //{
+            //    MessageBox.Show(data.description);
+            //}
 
             SetBitsButton();
         }
@@ -166,6 +196,13 @@ namespace BitwiseCalculatorUI
 
             txtBoxBits.Text = Convert.ToInt64(bin, 2).ToString();
             
+        }
+
+        private void comboBoxFlaga_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedFlagName = comboBoxFlaga.Items[comboBoxFlaga.SelectedIndex].ToString();
+            if (flagLists.ContainsKey(selectedFlagName))
+                selectedFlagList = flagLists[selectedFlagName];
         }
     }
 }

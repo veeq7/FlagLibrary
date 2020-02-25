@@ -50,7 +50,6 @@
     <Compile Include="Connections\XMLLoader.cs" />
     <Compile Include="Flags\FlagDescriptor.cs" />
     <Compile Include="Flags\FlagList.cs" />
-    <Compile Include="Flags\FlagUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
