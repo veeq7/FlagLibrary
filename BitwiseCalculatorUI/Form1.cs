@@ -112,16 +112,21 @@ namespace BitwiseCalculatorUI
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
             dataGridView.Rows.Clear();
+            dataGridView.Columns[0].ReadOnly = true;    
 
-            //dataGridView.DataSource = flagDataList;
-            dataGridView.Columns[0].ReadOnly = true;
-            dataGridView.Columns[1].ReadOnly = true;
-
-            //DataGridViewRow roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
-
-            for(int i = 0; i< flagDataList.Count; i++)
+            for (int i = 0; i< flagDataList.Count; i++)
             {
                 int row = dataGridView.Rows.Add(flagDataList[i].description, flagDataList[i].currentOption, flagDataList[i].value);
+
+                dataGridView.Rows[i].Cells[1].Value = null; //this is important.
+                DataGridViewComboBoxCell c = new DataGridViewComboBoxCell();
+
+                foreach(KeyValuePair<string, int> kv in flagDataList[i].options)
+                {
+                    c.Items.Add(kv.Key);
+                }
+                
+                dataGridView.Rows[i].Cells[1] = c;
             }
 
             SetBitsButton();

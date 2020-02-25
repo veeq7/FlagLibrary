@@ -34,12 +34,12 @@
             this.lblBity = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFindXML = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSetOne = new System.Windows.Forms.Button();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,24 +124,6 @@
             this.dataGridView.Size = new System.Drawing.Size(935, 356);
             this.dataGridView.TabIndex = 4;
             // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            // 
-            // CurrentOption
-            // 
-            this.CurrentOption.HeaderText = "Current option";
-            this.CurrentOption.Name = "CurrentOption";
-            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Value
-            // 
-            this.Value.FillWeight = 30F;
-            this.Value.HeaderText = "Value";
-            this.Value.Name = "Value";
-            // 
             // btnFindXML
             // 
             this.btnFindXML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
@@ -163,7 +145,7 @@
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(505, 127);
+            this.btnReset.Location = new System.Drawing.Point(514, 127);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 33);
             this.btnReset.TabIndex = 6;
@@ -184,6 +166,25 @@
             this.btnSetOne.Text = "1";
             this.btnSetOne.UseVisualStyleBackColor = false;
             this.btnSetOne.Click += new System.EventHandler(this.btnSetOne_onClick);
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // CurrentOption
+            // 
+            this.CurrentOption.HeaderText = "Current option";
+            this.CurrentOption.Name = "CurrentOption";
+            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Value
+            // 
+            this.Value.FillWeight = 30F;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
             // 
             // Form1
             // 
@@ -222,10 +223,10 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnFindXML;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSetOne;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
-        private System.Windows.Forms.Button btnSetOne;
     }
 }
 
