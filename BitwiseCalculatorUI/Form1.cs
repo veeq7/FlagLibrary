@@ -67,7 +67,7 @@ namespace BitwiseCalculatorUI
                     case 3: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
                 }
                 btn.FlatAppearance.BorderSize = 0;
-                btn.MouseClick += BtnMouseClick;
+                btn.MouseClick += BtnMouseClickBit;
 
                 System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
                 System.Drawing.Graphics formGraphics;
@@ -111,13 +111,29 @@ namespace BitwiseCalculatorUI
             int value = GetValueFromTextBox();
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
-            dataGridView.DataSource = flagDataList;
-            dataGridView.Columns[2].Width = 50;
-            dataGridView.Columns[2].ReadOnly = false;
+            dataGridView.Rows.Clear();
+
+            //dataGridView.DataSource = flagDataList;
+            dataGridView.Columns[0].Width = 200;
+            //dataGridView.Columns[2].ReadOnly = false;
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
                 row.ReadOnly = false;
             }
+
+            DataGridViewRow roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
+
+            for(int i = 0; i< flagDataList.Count; i++)
+            {
+                roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
+                roww.Cells[0].Value = flagDataList[i].description;
+                roww.Cells[1].Value = flagDataList[i].currentOption;
+                roww.Cells[2].Value = flagDataList[i].value;
+
+                //MessageBox.Show(flagDataList[i].value.ToString());
+                dataGridView.Rows.Add(roww);
+            }
+            
 
             SetBitsButton();
         }
@@ -175,8 +191,8 @@ namespace BitwiseCalculatorUI
         /// <summary>
         /// Method check button value and change on click
         /// </summary>
-        void BtnMouseClick(object sender, MouseEventArgs e)
-        {
+        void BtnMouseClickBit(object sender, MouseEventArgs e)
+        { 
             Button btn = (Button)sender;
 
             if (btn.Text == "1")
@@ -196,7 +212,7 @@ namespace BitwiseCalculatorUI
                 bin += bttn.Text;
             }
 
-            txtBoxBits.Text = Convert.ToInt64(bin, 2).ToString();
+            txtBoxBits.Text = Convert.ToInt32(bin, 2).ToString();
             ShowBits();
         }
 

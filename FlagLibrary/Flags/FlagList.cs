@@ -6,7 +6,10 @@ namespace FlagLibrary.Flags
     {
         public string description { get; set; }
         public string currentOption { get; set; }
-        public int value { get; set; }
+        public int value { 
+            get; 
+            set; 
+        }
 
         public int maxSize;
     }
