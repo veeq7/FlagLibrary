@@ -54,7 +54,7 @@ namespace BitwiseCalculatorUI
                 btn.Location = new Point(65 + i * 13, 127);
                 btn.Text = "0";
                 btn.TextAlign = ContentAlignment.MiddleCenter;
-                btn.Size = new Size(17, 25);
+                btn.Size = new Size(17, 33);
                 //btn.Font = new Font("Microsoft Sans Serif", 8);
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.ForeColor = Color.FromArgb(255, 255, 255, 255);

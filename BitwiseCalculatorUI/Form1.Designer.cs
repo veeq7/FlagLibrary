@@ -45,12 +45,14 @@
             // comboBoxFlaga
             // 
             this.comboBoxFlaga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.comboBoxFlaga.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.comboBoxFlaga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.comboBoxFlaga.ForeColor = System.Drawing.Color.DarkGray;
             this.comboBoxFlaga.FormattingEnabled = true;
             this.comboBoxFlaga.Location = new System.Drawing.Point(174, 59);
             this.comboBoxFlaga.Name = "comboBoxFlaga";
             this.comboBoxFlaga.Size = new System.Drawing.Size(160, 33);
+            this.comboBoxFlaga.Sorted = true;
             this.comboBoxFlaga.TabIndex = 0;
             this.comboBoxFlaga.SelectedIndexChanged += new System.EventHandler(this.comboBoxFlaga_SelectedIndexChanged);
             // 
@@ -108,15 +110,16 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(40)))));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Description,
             this.CurrentOption,
             this.Value});
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView.Location = new System.Drawing.Point(512, 127);
+            this.dataGridView.Location = new System.Drawing.Point(68, 204);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(491, 529);
+            this.dataGridView.Size = new System.Drawing.Size(935, 356);
             this.dataGridView.TabIndex = 4;
             // 
             // Description
@@ -143,9 +146,9 @@
             this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindXML.ForeColor = System.Drawing.Color.White;
-            this.btnFindXML.Location = new System.Drawing.Point(66, 278);
+            this.btnFindXML.Location = new System.Drawing.Point(627, 127);
             this.btnFindXML.Name = "btnFindXML";
-            this.btnFindXML.Size = new System.Drawing.Size(420, 33);
+            this.btnFindXML.Size = new System.Drawing.Size(376, 33);
             this.btnFindXML.TabIndex = 5;
             this.btnFindXML.TabStop = false;
             this.btnFindXML.Text = "Wybierz plik XML";
@@ -158,9 +161,9 @@
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(391, 173);
+            this.btnReset.Location = new System.Drawing.Point(505, 127);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(95, 27);
+            this.btnReset.Size = new System.Drawing.Size(95, 33);
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Zerowanie";
             this.btnReset.UseVisualStyleBackColor = false;
