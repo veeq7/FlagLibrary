@@ -36,10 +36,7 @@ namespace BitwiseCalculatorUI
         {
             CreateBitButtons();
 
-<<<<<<< HEAD
-=======
             LoadFilePathFromTxt();
->>>>>>> 39568b395db866e3bf768d83af6d47ffb857aace
             txtBoxBits.KeyPress += TxtBoxBitsKeyPress;
             this.AcceptButton = btnShow;
         }
