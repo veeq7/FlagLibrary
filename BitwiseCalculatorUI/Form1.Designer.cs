@@ -38,12 +38,15 @@
             this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFindXML = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxFlaga
             // 
+            this.comboBoxFlaga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.comboBoxFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.comboBoxFlaga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.comboBoxFlaga.FormattingEnabled = true;
             this.comboBoxFlaga.Location = new System.Drawing.Point(174, 59);
             this.comboBoxFlaga.Name = "comboBoxFlaga";
@@ -53,7 +56,10 @@
             // 
             // txtBoxBits
             // 
+            this.txtBoxBits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.txtBoxBits.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxBits.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.txtBoxBits.ForeColor = System.Drawing.Color.White;
             this.txtBoxBits.Location = new System.Drawing.Point(486, 60);
             this.txtBoxBits.Name = "txtBoxBits";
             this.txtBoxBits.Size = new System.Drawing.Size(360, 32);
@@ -62,6 +68,7 @@
             // lblFlaga
             // 
             this.lblFlaga.AutoSize = true;
+            this.lblFlaga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.lblFlaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblFlaga.ForeColor = System.Drawing.Color.White;
             this.lblFlaga.Location = new System.Drawing.Point(62, 59);
@@ -83,7 +90,9 @@
             // 
             // btnShow
             // 
-            this.btnShow.BackColor = System.Drawing.Color.Black;
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnShow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnShow.FlatAppearance.BorderSize = 2;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Location = new System.Drawing.Point(877, 59);
@@ -130,7 +139,8 @@
             // 
             // btnFindXML
             // 
-            this.btnFindXML.BackColor = System.Drawing.Color.Black;
+            this.btnFindXML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindXML.ForeColor = System.Drawing.Color.White;
             this.btnFindXML.Location = new System.Drawing.Point(66, 278);
@@ -142,12 +152,27 @@
             this.btnFindXML.UseVisualStyleBackColor = false;
             this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(391, 173);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(95, 27);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Zerowanie";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_onClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnFindXML);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnShow);
@@ -176,6 +201,7 @@
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnFindXML;
+        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;

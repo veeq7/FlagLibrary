@@ -67,7 +67,7 @@ namespace BitwiseCalculatorUI
                     case 3: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
                 }
                 btn.FlatAppearance.BorderSize = 0;
-                btn.MouseClick += BtnMouseClickBit;
+                btn.MouseClick += BtnMouseClick;
 
                 System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
                 System.Drawing.Graphics formGraphics;
@@ -95,7 +95,7 @@ namespace BitwiseCalculatorUI
             {
                 return int.Parse(txtBoxBits.Text);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return 0;
             }
@@ -181,8 +181,8 @@ namespace BitwiseCalculatorUI
         /// <summary>
         /// Method check button value and change on click
         /// </summary>
-        void BtnMouseClickBit(object sender, MouseEventArgs e)
-        { 
+        void BtnMouseClick(object sender, MouseEventArgs e)
+        {
             Button btn = (Button)sender;
 
             if (btn.Text == "1")
@@ -220,7 +220,7 @@ namespace BitwiseCalculatorUI
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "XML (*.xml)|*.xml";
-            dlg.Title = "Wybierz plik XML zawierający definicje flag";
+            dlg.Title = "Select meme";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -247,6 +247,28 @@ namespace BitwiseCalculatorUI
                     
                 }
             }
+        }
+
+        private void btnReset_onClick(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < 32; i++)
+            {
+                Button bttn = this.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
+
+                if (bttn.Text == "1")
+                {
+                    bttn.Text = "0";
+                }
+                else
+                {
+                    bttn.Text = "0";
+                }
+                
+
+            }
+            txtBoxBits.Text = "0";
+            ShowBits();
         }
     }
 }
