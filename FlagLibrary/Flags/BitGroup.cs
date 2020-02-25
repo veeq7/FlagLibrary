@@ -19,10 +19,23 @@ namespace FlagLibrary.Flags
             int bitIndex = 0;
             foreach (int bitRef in bitRefs)
             {
-                value += GetBit(i32, bitRef, bitIndex++);
+                value += ReadBitValue(bitRef, i32, bitIndex++);
             }
 
             return value;
+        }
+
+        /// <summary>
+        /// Reads bit of Value of current Flag
+        /// </summary>
+        /// <param name="bitPosition">Bit Position in key</param>
+        /// <param name="key">Key from which we read from</param>
+        /// <param name="bitIndex">Bit Index of Flag</param>
+        /// <returns>Bit of Value of Flag</returns>
+        private int ReadBitValue(int bitPosition, int key, int bitIndex)
+        {
+            int value = MathUtils.GetValueOfBit(bitPosition);
+            return ((value & key) != 0 ? 1 : 0) << bitIndex;
         }
 
         public int GetModifiedValue(int i32, int value)
@@ -33,25 +46,13 @@ namespace FlagLibrary.Flags
             int bitIndex = 0;
             foreach (int bitRef in bitRefs)
             {
-                int bit = GetBit(value, i32, bitIndex++);
-                if (bit == 0)
-                {
-                    newi32 &= ~(bit);
-                }
-                else
-                {
-                    newi32 |= bit;
-                }
+                newi32 = MathUtils.SetBitInNumber(newi32, bitRef, MathUtils.GetBitFromNumber(value, bitIndex++));
             }
 
             return newi32;
         }
+        
 
-        public int GetBit(int value, int i32, int bitIndex)
-        {
-            i32 = MathUtils.GetBitValue(i32);
-            return ((value & i32) != 0 ? 1 : 0) << bitIndex;
-        }
 
         public void SetDefaultBitDescriptions()
         {

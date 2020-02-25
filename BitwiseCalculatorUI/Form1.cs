@@ -1,5 +1,6 @@
 ﻿using FlagLibrary.Connections;
 using FlagLibrary.Flags;
+using FlagLibrary.Utils;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,6 +19,7 @@ namespace BitwiseCalculatorUI
         public Form1()
         {
             InitializeComponent();
+            dataGridView.CellEndEdit += new DataGridViewCellEventHandler(dataGridView_OnTextChanged);
         }
 
         void InitializeFlagLists()
@@ -137,6 +139,57 @@ namespace BitwiseCalculatorUI
             }
         }
 
+        void dataGridView_OnTextChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3 || e.ColumnIndex == 4)
+            {
+                DataGridViewCell cell = dataGridView[e.ColumnIndex, e.RowIndex];
+                int bitID;
+                try
+                {
+                    bitID = int.Parse(dataGridView.Rows[cell.RowIndex].Cells[0].Value.ToString());
+                }
+                catch
+                {
+                    return;
+                }
+                BitGroup flag = selectedFlagList.flags[bitID];
+                if (e.ColumnIndex == 4)
+                {
+                    try
+                    {
+                        cell.Value = MathUtils.Clamp(int.Parse(cell.Value.ToString()), 0, flag.maxSize);
+                    }
+                    catch
+                    {
+                        cell.Value = 0;
+                    }
+                }
+                int i32 = GetValueFromTextBox();
+                txtBoxBits.Text = GetFlagIntWithModifedFlagFromCell(cell, i32, flag).ToString();
+                txtBoxBits.Refresh();
+                //ShowBits();
+            }
+        }
+
+        int GetFlagIntWithModifedFlagFromCell(DataGridViewCell cell, int i32, BitGroup flag)
+        {
+            int value = 0;
+            if (cell is DataGridViewComboBoxCell)
+            {
+                string optionName = cell.Value.ToString();
+                value = selectedFlagList.GetParsedFlagOptions(flag)[optionName];
+            } else if (cell is DataGridViewTextBoxCell)
+            {
+                value = int.Parse(cell.Value.ToString());
+            }
+            else
+            {
+                return 0;
+            }
+            return flag.GetModifiedValue(i32, value);
+        }
+
         /// <summary>
         /// Method refresh bit table and makes checkbox
         /// </summary>
@@ -149,7 +202,7 @@ namespace BitwiseCalculatorUI
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
             dataGridView.Rows.Clear();
-            dataGridView.Columns[0].ReadOnly = true;
+            //dataGridView.Columns[0].ReadOnly = true;
 
 
             for (int i = 0; i < flagDataList.Count; i++)
@@ -193,13 +246,13 @@ namespace BitwiseCalculatorUI
             string text = DecToBin();
             for (int i = 0; i < 32; i++)
             {
-                Button btn = this.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
+                Button btn = Controls.Find("btn" + i, true).FirstOrDefault() as Button;
                 btn.Text = "0";
             }
 
             for (int i = 0; i < text.Length; i++)
             {
-                Button btn = this.Controls.Find("btn" + (i + 32 - text.Length).ToString(), true).FirstOrDefault() as Button;
+                Button btn = Controls.Find("btn" + (i + 32 - text.Length).ToString(), true).FirstOrDefault() as Button;
                 string bits = text;
                 btn.Text = bits.Substring(i, 1);
             }
@@ -265,7 +318,7 @@ namespace BitwiseCalculatorUI
 
             for (int i = 0; i < 32; i++)
             {
-                Button bttn = this.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
+                Button bttn = Controls.Find("btn" + i, true).FirstOrDefault() as Button;
                 bin += bttn.Text;
                 SetColor(bttn, i);
             }

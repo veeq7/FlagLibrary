@@ -17,15 +17,15 @@ namespace FlagLibrary.Flags
     public class FlagList
     {
         public string name;
-        public List<BitGroup> flags = new List<BitGroup>();
+        public Dictionary<int, BitGroup> flags = new Dictionary<int, BitGroup>();
         public int value = 0;
 
         public List<ParsedFlagData> Parse(int value)
         {
             List<ParsedFlagData> list = new List<ParsedFlagData>();
-            foreach (BitGroup flag in flags)
+            foreach (KeyValuePair<int, BitGroup> kv in flags)
             {
-                list.Add(ParseFlag(flag, flag.GetValue(value)));
+                list.Add(ParseFlag(kv.Value, kv.Value.GetValue(value)));
             }
             return list;
         }

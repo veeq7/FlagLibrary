@@ -46,7 +46,7 @@ namespace FlagLibrary.Connections
                     continue;
 
                 BitGroup flag = GetFlagFromNode(Bit);
-                flagList.flags.Add(flag);
+                flagList.flags.Add(flag.bitRefs[0], flag);
             }
 
             list.Add(flagList.name, flagList);
