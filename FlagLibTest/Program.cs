@@ -12,7 +12,7 @@ namespace FlagLibTest
     {
         static void Main(string[] args)
         {
-            XMLConnection xml = new XMLConnection("C:\\Users\\praktykant\\source\\repos\\FlagLibrary2\\flags.xml");
+            XMLLoader xml = new XMLLoader("C:\\Users\\praktykant\\source\\repos\\FlagLibrary2\\flags.xml");
             List<FlagList> list = xml.GetFlagLists();
             foreach (FlagList fl in list) {
                 Console.WriteLine(fl.name);

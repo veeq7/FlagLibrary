@@ -6,12 +6,43 @@ using System.Xml;
 
 namespace FlagLibrary.Flags
 {
+    public struct ParsedFlagData
+    {
+        public string description;
+        public string currentOption;
+        public int value;
+    }
+
     public class FlagList
     {
         public string name;
-        public Dictionary<int, FlagDescriptor> flags = new Dictionary<int, FlagDescriptor>(); public int value = 0;
+        public Dictionary<int, FlagDescriptor> flags = new Dictionary<int, FlagDescriptor>();
+        public int value = 0;
 
         int key = 0;
+        
+        public List<ParsedFlagData> Parse(int value)
+        {
+            List<ParsedFlagData> list = new List<ParsedFlagData>();
+            return list;
+        }
+
+        public ParsedFlagData ParseFlag(FlagDescriptor flag, int flagValue)
+        {
+            ParsedFlagData data = new ParsedFlagData();
+            data.description = flag.description;
+            if (flag.bitDescriptions[flagValue] != null)
+                data.currentOption = flag.bitDescriptions[flagValue];
+            else
+                data.currentOption = "";
+            data.value = flagValue;
+            return data;
+        }
+
+        public int GetValue(FlagDescriptor flag)
+        {
+            return 0;
+        }
 
         public void SetBit(int bit, bool value)
         {

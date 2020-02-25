@@ -4,14 +4,15 @@ using System.Text;
 using System.Xml;
 using FlagLibrary.Flags;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace FlagLibrary.Connections
 {
-    public class XMLConnection
+    public class XMLLoader
     {
         XmlDocument xmlDoc = new XmlDocument();
 
-        public XMLConnection(string filePath)
+        public XMLLoader(string filePath)
         {
             try
             {
@@ -51,6 +52,7 @@ namespace FlagLibrary.Connections
             FlagDescriptor flag = new FlagDescriptor();
             string[] indexes = Bit.Attributes["Index"].Value.Split(',');
             flag.bitID = int.Parse(indexes[0]);
+            flag.bitRefs = GetBitRefs(indexes);
             foreach (XmlNode Attribute in Bit.ChildNodes)
             {
                 if (Attribute.Name == "Comment")
@@ -63,6 +65,16 @@ namespace FlagLibrary.Connections
                 }
             }
             return flag;
+        }
+
+        List<int> GetBitRefs(string[] indexes)
+        {
+            List<int> list = new List<int>();
+            foreach (string index in indexes)//.Skip(1))
+            {
+                list.Add(int.Parse(index));
+            }
+            return list;
         }
     }
 }

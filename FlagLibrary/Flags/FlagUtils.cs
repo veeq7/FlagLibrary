@@ -10,10 +10,5 @@ namespace FlagLibrary
         {
             return 1 << flag;
         }
-
-        static public bool HasFlag(int flag, int value)
-        {
-            return (GetFlagBit(flag) | value) == value;
-        }
     }
 }

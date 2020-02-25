@@ -81,5 +81,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlagLibrary\FlagLibrary.csproj">
+      <Project>{75e89ee6-e8bf-4f08-94ab-c787c46eacf4}</Project>
+      <Name>FlagLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
