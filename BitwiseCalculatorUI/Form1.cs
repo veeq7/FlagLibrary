@@ -117,21 +117,16 @@ namespace BitwiseCalculatorUI
             dataGridView.Columns[0].ReadOnly = true;
             dataGridView.Columns[1].ReadOnly = true;
 
-            DataGridViewRow roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
+            //DataGridViewRow roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
 
             for(int i = 0; i< flagDataList.Count; i++)
             {
-                roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
-                roww.Cells[0].Value = flagDataList[i].description;
-                roww.Cells[1].Value = flagDataList[i].currentOption;
-                roww.Cells[2].Value = flagDataList[i].value;
-
-                //MessageBox.Show(flagDataList[i].value.ToString());
-                dataGridView.Rows.Add(roww);
+                int row = dataGridView.Rows.Add(flagDataList[i].description, flagDataList[i].currentOption, flagDataList[i].value);
             }
 
             SetBitsButton();
         }
+
         /// <summary>
         /// Method makes 32 buttons for bit table
         /// </summary>
