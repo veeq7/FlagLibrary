@@ -106,9 +106,9 @@
             this.btnFindXML.BackColor = System.Drawing.Color.Black;
             this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindXML.ForeColor = System.Drawing.Color.White;
-            this.btnFindXML.Location = new System.Drawing.Point(68, 278);
+            this.btnFindXML.Location = new System.Drawing.Point(66, 278);
             this.btnFindXML.Name = "btnFindXML";
-            this.btnFindXML.Size = new System.Drawing.Size(426, 33);
+            this.btnFindXML.Size = new System.Drawing.Size(420, 33);
             this.btnFindXML.TabIndex = 5;
             this.btnFindXML.TabStop = false;
             this.btnFindXML.Text = "Wybierz plik XML";
