@@ -35,6 +35,9 @@
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.btnFindXML = new System.Windows.Forms.Button();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,10 +99,14 @@
             // 
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Description,
+            this.CurrentOption,
+            this.Value});
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView.Location = new System.Drawing.Point(539, 127);
+            this.dataGridView.Location = new System.Drawing.Point(512, 127);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(464, 529);
+            this.dataGridView.Size = new System.Drawing.Size(491, 529);
             this.dataGridView.TabIndex = 4;
             this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
             // 
@@ -116,6 +123,24 @@
             this.btnFindXML.Text = "Wybierz plik XML";
             this.btnFindXML.UseVisualStyleBackColor = false;
             this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            // 
+            // CurrentOption
+            // 
+            this.CurrentOption.HeaderText = "Current option";
+            this.CurrentOption.Name = "CurrentOption";
+            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Value
+            // 
+            this.Value.FillWeight = 30F;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
             // 
             // Form1
             // 
@@ -151,6 +176,9 @@
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnFindXML;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
     }
 }
 
