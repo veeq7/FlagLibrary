@@ -34,6 +34,7 @@
             this.lblBity = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btnFindXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,12 +101,27 @@
             this.dataGridView.Size = new System.Drawing.Size(464, 529);
             this.dataGridView.TabIndex = 4;
             // 
+            // btnFindXML
+            // 
+            this.btnFindXML.BackColor = System.Drawing.Color.Black;
+            this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindXML.ForeColor = System.Drawing.Color.White;
+            this.btnFindXML.Location = new System.Drawing.Point(68, 278);
+            this.btnFindXML.Name = "btnFindXML";
+            this.btnFindXML.Size = new System.Drawing.Size(426, 33);
+            this.btnFindXML.TabIndex = 5;
+            this.btnFindXML.TabStop = false;
+            this.btnFindXML.Text = "Wybierz plik XML";
+            this.btnFindXML.UseVisualStyleBackColor = false;
+            this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.btnFindXML);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.lblBity);
@@ -113,6 +129,7 @@
             this.Controls.Add(this.txtBoxBits);
             this.Controls.Add(this.comboBoxFlaga);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -131,6 +148,7 @@
         private System.Windows.Forms.Label lblBity;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btnFindXML;
     }
 }
 

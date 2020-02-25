@@ -195,7 +195,7 @@ namespace BitwiseCalculatorUI
             }
 
             txtBoxBits.Text = Convert.ToInt64(bin, 2).ToString();
-            
+            ShowBits();
         }
 
         private void comboBoxFlaga_SelectedIndexChanged(object sender, EventArgs e)
@@ -203,6 +203,20 @@ namespace BitwiseCalculatorUI
             string selectedFlagName = comboBoxFlaga.Items[comboBoxFlaga.SelectedIndex].ToString();
             if (flagLists.ContainsKey(selectedFlagName))
                 selectedFlagList = flagLists[selectedFlagName];
+        }
+
+        private void btnFindXML_Click(object sender, EventArgs e)
+        {
+            string src = "";
+
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "XML (*.xml)|*.xml";
+            dlg.Title = "Select meme";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                src = dlg.FileName.ToString();
+            }
         }
     }
 }
