@@ -11,6 +11,8 @@ namespace FlagLibrary.Flags
         public string description { get; set; }
         public string currentOption { get; set; }
         public int value { get; set; }
+
+        public int maxSize;
     }
 
     public class FlagList
@@ -33,6 +35,7 @@ namespace FlagLibrary.Flags
         {
             ParsedFlagData data = new ParsedFlagData();
             data.description = flag.description;
+            data.maxSize = flag.maxSize;
             if (flag.bitDescriptions.ContainsKey(flagValue))
                 data.currentOption = flag.bitDescriptions[flagValue];
             else

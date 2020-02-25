@@ -14,14 +14,13 @@ namespace BitwiseCalculatorUI
 {
     public partial class Form1 : Form
     {
-        string filePath = "flags.xml";
+        string filePath = "";
         Dictionary<string, FlagList> flagLists;
         FlagList selectedFlagList;
 
         public Form1()
         {
             InitializeComponent();
-            InitializeFlagLists();
         }
 
         void InitializeFlagLists()
@@ -108,6 +107,8 @@ namespace BitwiseCalculatorUI
         /// </summary>
         void ShowBits()
         {
+            if (selectedFlagList == null) return;
+
             int value = GetValueFromTextBox();
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
@@ -207,15 +208,14 @@ namespace BitwiseCalculatorUI
 
         private void btnFindXML_Click(object sender, EventArgs e)
         {
-            string src = "";
-
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "XML (*.xml)|*.xml";
             dlg.Title = "Select meme";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                src = dlg.FileName.ToString();
+                filePath = dlg.FileName.ToString();
+                InitializeFlagLists();
             }
         }
     }
