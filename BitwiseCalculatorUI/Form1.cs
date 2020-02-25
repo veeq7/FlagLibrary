@@ -253,10 +253,5 @@ namespace BitwiseCalculatorUI
                 }
             }
         }
-
-        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e) // DO USUNIĘCIA, NIE POTRZEBNE
-        {
-            dataGridView.Update(); 
-        }
     }
 }

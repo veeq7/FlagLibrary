@@ -34,10 +34,10 @@
             this.lblBity = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.btnFindXML = new System.Windows.Forms.Button();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFindXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,21 +108,6 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(491, 529);
             this.dataGridView.TabIndex = 4;
-            this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
-            // 
-            // btnFindXML
-            // 
-            this.btnFindXML.BackColor = System.Drawing.Color.Black;
-            this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindXML.ForeColor = System.Drawing.Color.White;
-            this.btnFindXML.Location = new System.Drawing.Point(66, 278);
-            this.btnFindXML.Name = "btnFindXML";
-            this.btnFindXML.Size = new System.Drawing.Size(420, 33);
-            this.btnFindXML.TabIndex = 5;
-            this.btnFindXML.TabStop = false;
-            this.btnFindXML.Text = "Wybierz plik XML";
-            this.btnFindXML.UseVisualStyleBackColor = false;
-            this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
             // 
             // Description
             // 
@@ -141,6 +126,20 @@
             this.Value.FillWeight = 30F;
             this.Value.HeaderText = "Value";
             this.Value.Name = "Value";
+            // 
+            // btnFindXML
+            // 
+            this.btnFindXML.BackColor = System.Drawing.Color.Black;
+            this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindXML.ForeColor = System.Drawing.Color.White;
+            this.btnFindXML.Location = new System.Drawing.Point(66, 278);
+            this.btnFindXML.Name = "btnFindXML";
+            this.btnFindXML.Size = new System.Drawing.Size(420, 33);
+            this.btnFindXML.TabIndex = 5;
+            this.btnFindXML.TabStop = false;
+            this.btnFindXML.Text = "Wybierz plik XML";
+            this.btnFindXML.UseVisualStyleBackColor = false;
+            this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
             // 
             // Form1
             // 
