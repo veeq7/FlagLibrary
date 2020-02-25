@@ -3,6 +3,7 @@ using FlagLibrary.Flags;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -35,6 +36,10 @@ namespace BitwiseCalculatorUI
         {
             CreateBitButtons();
 
+<<<<<<< HEAD
+=======
+            LoadFilePathFromTxt();
+>>>>>>> 39568b395db866e3bf768d83af6d47ffb857aace
             txtBoxBits.KeyPress += TxtBoxBitsKeyPress;
             this.AcceptButton = btnShow;
         }
@@ -53,6 +58,7 @@ namespace BitwiseCalculatorUI
                 btn.Text = "0";
                 btn.TextAlign = ContentAlignment.MiddleCenter;
                 btn.Size = new Size(17, 25);
+                //btn.Font = new Font("Microsoft Sans Serif", 8);
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
 
@@ -217,6 +223,26 @@ namespace BitwiseCalculatorUI
             {
                 filePath = dlg.FileName.ToString();
                 InitializeFlagLists();
+                File.WriteAllText("XMLPath.txt", filePath);
+            }
+        }
+
+        private void LoadFilePathFromTxt()
+        {
+            if (File.Exists("XMLPath.txt"))
+            {
+                try
+                {
+                    string[] data = new string[2];
+
+                    data = File.ReadAllLines("XMLPath.txt");
+                    filePath = data[0];
+                    InitializeFlagLists();
+                }
+                catch
+                {
+                    
+                }
             }
         }
     }
