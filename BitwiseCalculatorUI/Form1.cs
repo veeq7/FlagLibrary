@@ -41,11 +41,27 @@ namespace BitwiseCalculatorUI
             this.AcceptButton = btnShow;
         }
 
+        // not used, but may be useful
+        private Button FindButtonByName(string name)
+        {
+            foreach (Control c in Controls)
+            {
+                Button b = c as Button;
+                if (b != null && b.Name == name)
+                {
+                    return b;
+                }
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// Creates 32 buttons in form
         /// </summary>
         private void CreateBitButtons()
         {
+            System.Windows.Forms.ToolTip toolTipSystem = new System.Windows.Forms.ToolTip();
             for (int i = 0; i < 32; i++)
             {
 
@@ -58,6 +74,10 @@ namespace BitwiseCalculatorUI
                 //btn.Font = new Font("Microsoft Sans Serif", 8);
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
+                toolTipSystem.SetToolTip(btn, "Bit " + (32 - i) + " - " + (1 << (31 - i)));
+
+                
+
 
                 switch (i / 8)
                 {
@@ -65,6 +85,17 @@ namespace BitwiseCalculatorUI
                     case 1: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
                     case 2: btn.BackColor = Color.FromArgb(255, 60, 60, 60); break;
                     case 3: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
+                }
+                switch (i / 4)
+                {
+                    case 0: btn.ForeColor = Color.FromArgb(255, 255,153, 51); break;
+                    case 1: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
+                    case 2: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
+                    case 3: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
+                    case 4: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
+                    case 5: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
+                    case 6: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
+                    case 7: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
                 }
                 btn.FlatAppearance.BorderSize = 0;
                 btn.MouseClick += BtnMouseClick;
