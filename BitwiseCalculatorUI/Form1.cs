@@ -262,7 +262,7 @@ namespace BitwiseCalculatorUI
 
             }
             txtBoxBits.Text = "0";
-           ShowBits();
+            ShowBits();
         }
     }
 }
