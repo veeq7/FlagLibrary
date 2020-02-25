@@ -106,7 +106,8 @@ namespace BitwiseCalculatorUI
         /// </summary>
         void ShowBits()
         {
-            if (selectedFlagList == null) return;
+            if (selectedFlagList == null)
+                return;
 
             int value = GetValueFromTextBox();
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
@@ -116,12 +117,14 @@ namespace BitwiseCalculatorUI
             //dataGridView.DataSource = flagDataList;
             dataGridView.Columns[0].ReadOnly = true;
             dataGridView.Columns[1].ReadOnly = true;
+            dataGridView.Columns[2].ReadOnly = true;
+            dataGridView.Columns[3].ReadOnly = true;
 
             //DataGridViewRow roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
 
             for(int i = 0; i< flagDataList.Count; i++)
             {
-                int row = dataGridView.Rows.Add(flagDataList[i].description, flagDataList[i].currentOption, flagDataList[i].value);
+                int row = dataGridView.Rows.Add(flagDataList[i].bitNumber, flagDataList[i].bitSize, flagDataList[i].description, flagDataList[i].currentOption, flagDataList[i].value);
             }
 
             SetBitsButton();
@@ -273,6 +276,11 @@ namespace BitwiseCalculatorUI
             if (isOne) txtBoxBits.Text = "-1";
             else txtBoxBits.Text = "0";
             ShowBits();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
