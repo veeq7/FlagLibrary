@@ -36,7 +36,7 @@ namespace FlagLibrary.Connections
                         if (Bit.Name != "Bit")
                             continue;
 
-                        FlagDescriptor flag = MakeFlag(Bit);
+                        Flag flag = MakeFlag(Bit);
                         flagList.flags.Add(flag);
                     }
                     list.Add(flagList.name, flagList);
@@ -45,9 +45,9 @@ namespace FlagLibrary.Connections
             return list;
         }
 
-        FlagDescriptor MakeFlag(XmlNode Bit)
+        Flag MakeFlag(XmlNode Bit)
         {
-            FlagDescriptor flag = new FlagDescriptor();
+            Flag flag = new Flag();
             string[] indexes = Bit.Attributes["Index"].Value.Split(',');
             flag.bitRefs = GetBitRefs(indexes);
             flag.maxSize = flag.bitRefs.Count() << 0;

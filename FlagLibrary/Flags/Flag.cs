@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using FlagLibrary.Utils;
 
 namespace FlagLibrary.Flags
 {
 
-    public class FlagDescriptor
+    public class Flag
     {
         // includes first bit
         public List<int> bitRefs = new List<int>();
@@ -26,6 +27,7 @@ namespace FlagLibrary.Flags
         public int GetModifiedValue(int i32, int value)
         {
             int newi32 = i32;
+            value = MathUtils.Clamp(value, 0, maxSize);
 
             foreach (int bitRef in bitRefs)
             {

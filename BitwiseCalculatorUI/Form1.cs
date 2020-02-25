@@ -95,7 +95,7 @@ namespace BitwiseCalculatorUI
             {
                 return int.Parse(txtBoxBits.Text);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return 0;
             }

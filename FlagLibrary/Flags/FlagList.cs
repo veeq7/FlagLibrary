@@ -7,31 +7,28 @@ namespace FlagLibrary.Flags
         public string description { get; set; }
         public string currentOption { get; set; }
         public int value { get; set; }
-
-        public int maxSize;
     }
 
     public class FlagList
     {
         public string name;
-        public List<FlagDescriptor> flags = new List<FlagDescriptor>();
+        public List<Flag> flags = new List<Flag>();
         public int value = 0;
 
         public List<ParsedFlagData> Parse(int value)
         {
             List<ParsedFlagData> list = new List<ParsedFlagData>();
-            foreach (FlagDescriptor flag in flags)
+            foreach (Flag flag in flags)
             {
                 list.Add(ParseFlag(flag, flag.GetValue(value)));
             }
             return list;
         }
 
-        private ParsedFlagData ParseFlag(FlagDescriptor flag, int flagValue)
+        private ParsedFlagData ParseFlag(Flag flag, int flagValue)
         {
             ParsedFlagData data = new ParsedFlagData();
             data.description = flag.description;
-            data.maxSize = flag.maxSize;
             if (flag.bitDescriptions.ContainsKey(flagValue))
                 data.currentOption = flag.bitDescriptions[flagValue];
             else
