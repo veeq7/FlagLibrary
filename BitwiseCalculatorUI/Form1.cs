@@ -111,16 +111,22 @@ namespace BitwiseCalculatorUI
             int value = GetValueFromTextBox();
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
-            dataGridView.DataSource = flagDataList;
-            dataGridView.Columns[2].Width = 50;
-            dataGridView.Columns[2].ReadOnly = false;
-            foreach (DataGridViewRow row in dataGridView.Rows)
+            dataGridView.Rows.Clear();
+
+            //dataGridView.DataSource = flagDataList;
+            dataGridView.Columns[0].ReadOnly = true;
+            dataGridView.Columns[1].ReadOnly = true;
+
+            //DataGridViewRow roww = (DataGridViewRow)dataGridView.Rows[0].Clone();
+
+            for(int i = 0; i< flagDataList.Count; i++)
             {
-                row.ReadOnly = false;
+                int row = dataGridView.Rows.Add(flagDataList[i].description, flagDataList[i].currentOption, flagDataList[i].value);
             }
 
             SetBitsButton();
         }
+
         /// <summary>
         /// Method makes 32 buttons for bit table
         /// </summary>
