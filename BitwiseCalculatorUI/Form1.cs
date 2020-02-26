@@ -44,21 +44,6 @@ namespace BitwiseCalculatorUI
             AcceptButton = btnShow;
         }
 
-        // not used, but may be useful
-        private Button FindButtonByName(string name)
-        {
-            foreach (Control c in Controls)
-            {
-                Button b = c as Button;
-                if (b != null && b.Name == name)
-                {
-                    return b;
-                }
-            }
-
-            return null;
-        }
-
         void SetColor(Button btn, int i)
         {
             switch (i / 8)
@@ -86,7 +71,7 @@ namespace BitwiseCalculatorUI
         /// </summary>
         private void CreateBitButtons()
         {
-            Point origin = new Point(27, 164);
+            Point origin = new Point(27, 107);
             ToolTip toolTipSystem = new ToolTip();
             for (int i = 0; i < 32; i++)
             {
@@ -225,9 +210,9 @@ namespace BitwiseCalculatorUI
 
                 //.Value = c.Items[0];
                 c.Value = flagDataList[i].currentOption;
-                dataGridView.Rows[i].Cells[3] = c;
-                dataGridView.Rows[i].Height = 35;
+                dataGridView.Rows[i].Cells[CurrentOptionColumnIndex] = c;
 
+                dataGridView.Rows[i].Height = 25;
             }
             /*dataGridView.Columns[0].ReadOnly = true;
             dataGridView.Columns[1].ReadOnly = true;
