@@ -40,12 +40,10 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFindXML = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSetOne = new System.Windows.Forms.Button();
             this.txtBoxMysqlFormula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCopyToClipboard = new System.Windows.Forms.Button();
             this.btnGenerateSqlText = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
@@ -54,6 +52,8 @@
             this.cmbBoxSql = new System.Windows.Forms.ComboBox();
             this.cmbBoxConvert = new System.Windows.Forms.ComboBox();
             this.btnFindXMLs = new System.Windows.Forms.Button();
+            this.btnCopyToClipboard = new System.Windows.Forms.Button();
+            this.btnFindXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,13 +150,13 @@
             // 
             // BitId
             // 
-            this.BitId.FillWeight = 25F;
+            this.BitId.FillWeight = 20F;
             this.BitId.HeaderText = "Bit";
             this.BitId.Name = "BitId";
             // 
             // BitSize
             // 
-            this.BitSize.FillWeight = 30F;
+            this.BitSize.FillWeight = 20F;
             this.BitSize.HeaderText = "Max Size";
             this.BitSize.Name = "BitSize";
             // 
@@ -179,22 +179,6 @@
             this.Value.FillWeight = 30F;
             this.Value.HeaderText = "Value";
             this.Value.Name = "Value";
-            // 
-            // btnFindXML
-            // 
-            this.btnFindXML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnFindXML.FlatAppearance.BorderSize = 2;
-            this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindXML.ForeColor = System.Drawing.Color.White;
-            this.btnFindXML.Location = new System.Drawing.Point(281, 55);
-            this.btnFindXML.Name = "btnFindXML";
-            this.btnFindXML.Size = new System.Drawing.Size(37, 33);
-            this.btnFindXML.TabIndex = 5;
-            this.btnFindXML.TabStop = false;
-            this.btnFindXML.Text = "...";
-            this.btnFindXML.UseVisualStyleBackColor = false;
-            this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
             // 
             // btnReset
             // 
@@ -251,22 +235,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Generuj:";
             // 
-            // btnCopyToClipboard
-            // 
-            this.btnCopyToClipboard.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCopyToClipboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnCopyToClipboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnCopyToClipboard.FlatAppearance.BorderSize = 2;
-            this.btnCopyToClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopyToClipboard.ForeColor = System.Drawing.Color.White;
-            this.btnCopyToClipboard.Location = new System.Drawing.Point(802, 617);
-            this.btnCopyToClipboard.Name = "btnCopyToClipboard";
-            this.btnCopyToClipboard.Size = new System.Drawing.Size(37, 33);
-            this.btnCopyToClipboard.TabIndex = 10;
-            this.btnCopyToClipboard.TabStop = false;
-            this.btnCopyToClipboard.Text = "...";
-            this.btnCopyToClipboard.UseVisualStyleBackColor = false;
-            // 
             // btnGenerateSqlText
             // 
             this.btnGenerateSqlText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -289,7 +257,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(188, 593);
+            this.label2.Location = new System.Drawing.Point(172, 596);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 20);
             this.label2.TabIndex = 13;
@@ -365,18 +333,54 @@
             // btnFindXMLs
             // 
             this.btnFindXMLs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnFindXMLs.BackgroundImage = global::BitwiseCalculatorUI.Properties.Resources.Folder2;
+            this.btnFindXMLs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFindXMLs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFindXMLs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
             this.btnFindXMLs.FlatAppearance.BorderSize = 2;
             this.btnFindXMLs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindXMLs.ForeColor = System.Drawing.Color.White;
             this.btnFindXMLs.Location = new System.Drawing.Point(324, 56);
             this.btnFindXMLs.Name = "btnFindXMLs";
-            this.btnFindXMLs.Size = new System.Drawing.Size(67, 33);
+            this.btnFindXMLs.Size = new System.Drawing.Size(33, 33);
             this.btnFindXMLs.TabIndex = 17;
             this.btnFindXMLs.TabStop = false;
-            this.btnFindXMLs.Text = "Folder";
             this.btnFindXMLs.UseVisualStyleBackColor = false;
             this.btnFindXMLs.Click += new System.EventHandler(this.btnFindXMLFolder_Click);
+            // 
+            // btnCopyToClipboard
+            // 
+            this.btnCopyToClipboard.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCopyToClipboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnCopyToClipboard.BackgroundImage = global::BitwiseCalculatorUI.Properties.Resources.document4;
+            this.btnCopyToClipboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCopyToClipboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
+            this.btnCopyToClipboard.FlatAppearance.BorderSize = 2;
+            this.btnCopyToClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopyToClipboard.ForeColor = System.Drawing.Color.White;
+            this.btnCopyToClipboard.Location = new System.Drawing.Point(802, 617);
+            this.btnCopyToClipboard.Name = "btnCopyToClipboard";
+            this.btnCopyToClipboard.Size = new System.Drawing.Size(37, 33);
+            this.btnCopyToClipboard.TabIndex = 10;
+            this.btnCopyToClipboard.TabStop = false;
+            this.btnCopyToClipboard.UseVisualStyleBackColor = false;
+            // 
+            // btnFindXML
+            // 
+            this.btnFindXML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnFindXML.BackgroundImage = global::BitwiseCalculatorUI.Properties.Resources.Document5;
+            this.btnFindXML.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
+            this.btnFindXML.FlatAppearance.BorderSize = 2;
+            this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindXML.ForeColor = System.Drawing.Color.White;
+            this.btnFindXML.Location = new System.Drawing.Point(281, 55);
+            this.btnFindXML.Name = "btnFindXML";
+            this.btnFindXML.Size = new System.Drawing.Size(37, 33);
+            this.btnFindXML.TabIndex = 5;
+            this.btnFindXML.TabStop = false;
+            this.btnFindXML.UseVisualStyleBackColor = false;
+            this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
             // 
             // Form1
             // 
@@ -405,10 +409,10 @@
             this.Controls.Add(this.txtBoxBits);
             this.Controls.Add(this.comboBoxFlaga);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -437,16 +441,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BitId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BitSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmbBoxSql;
         private System.Windows.Forms.ComboBox cmbBoxConvert;
 
         private System.Windows.Forms.Button btnFindXMLs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BitSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
     }
 }
 

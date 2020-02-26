@@ -90,7 +90,7 @@ namespace BitwiseCalculatorUI
         /// </summary>
         private void CreateBitButtons()
         {
-            Point origin = new Point(420, 55);
+            Point origin = new Point(400, 55);
             ToolTip toolTipSystem = new ToolTip();
             for (int i = 0; i < 32; i++)
             {
