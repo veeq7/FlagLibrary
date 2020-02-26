@@ -187,7 +187,8 @@ namespace BitwiseCalculatorUI
 
                 if(e.ColumnIndex == CurrentOptionColumnIndex) RefreshValueInDataGridView();
                 if(e.ColumnIndex == ValueColumnIndex) RefreshCurrentOptionInDataGridView();
-                
+
+                SetColorsInDataGridView();
                 RefreshBitButtonsText();
             }
         }
@@ -288,6 +289,25 @@ namespace BitwiseCalculatorUI
             }
 
             RefreshBitButtonsText();
+            SetColorsInDataGridView();
+        }
+
+        void SetColorsInDataGridView()
+        {
+            for (int i=0; i<dataGridView.Rows.Count;i++)
+            {
+                DataGridViewCellStyle style = new DataGridViewCellStyle();
+
+                switch ((string)((DataGridViewComboBoxCell)dataGridView[CurrentOptionColumnIndex, i]).Value)
+                {
+                    case "???": style.BackColor = Color.FromArgb(255, 51, 51, 51); break;
+                    case "On": style.BackColor = Color.FromArgb(255, 100, 255, 100); break;
+                    case "OFF": style.BackColor = Color.FromArgb(255, 100, 255, 100); break;
+                    default: style.BackColor = Color.FromArgb(255, 255, 0, 0); break;
+                }
+
+                dataGridView[ValueColumnIndex, i].Style = style;
+            }
         }
 
         private void RefreshBitButtonsText()
@@ -402,6 +422,7 @@ namespace BitwiseCalculatorUI
                 File.WriteAllText("XMLPath.txt", filePath);
             }
         }
+
         private void btnFindXMLFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dlg = new FolderBrowserDialog();
@@ -437,6 +458,7 @@ namespace BitwiseCalculatorUI
         {
             SetAllBits(false);
         }
+
         private void btnSetOne_onClick(object sender, EventArgs e)
         {
             SetAllBits(true);
@@ -448,12 +470,6 @@ namespace BitwiseCalculatorUI
             else txtBoxBits.Text = "0";
             ShowBits();
         }
-
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
 
         private void btnGenerateSqlText_Click(object sender, EventArgs e)
         {
@@ -472,7 +488,7 @@ namespace BitwiseCalculatorUI
             }
             else if (type == SqlCommandType.Update)
             {
-                bits = "????????????????????????????????";
+                bits = "????????????????????????????????"; // 32 x '?'
                 foreach (DataGridViewRow row in rows)
                 {
                     try
@@ -486,7 +502,7 @@ namespace BitwiseCalculatorUI
                             
                             char ch = '0';
                             if (col == "???") ch = '?';
-                            else if ((val & (1 << bitRef)) == (1 << bitRef))
+                            else if (((val << bitRef) & (1 << bitRef)) == (1 << bitRef))
                             {
                                 ch = '1';
                             }
@@ -530,7 +546,23 @@ namespace BitwiseCalculatorUI
         {
             if (str == "")
                 return;
+
             txtBoxMysqlFormula.Text = str;
+        }
+
+        private void btnQuestionMark_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                ((DataGridViewComboBoxCell)dataGridView[CurrentOptionColumnIndex, i]).Value = "???";
+            }
+
+            SetColorsInDataGridView();
+        }
+
+        private void btnCopyToClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtBoxMysqlFormula.Text);
         }
     }
 }

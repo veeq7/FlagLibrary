@@ -9,7 +9,7 @@ namespace FlagLibrary.Flags
         // includes first bit
         public List<int> bitRefs = new List<int>();
         public string description = "";
-        public Dictionary<int, string> bitDescriptions = new Dictionary<int, string>();
+        public SortedDictionary<int, string> bitDescriptions = new SortedDictionary<int, string>();
 
         public int GetValue(int i32)
         {

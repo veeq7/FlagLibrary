@@ -35,6 +35,11 @@
             this.lblBity = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.BitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BitSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSetOne = new System.Windows.Forms.Button();
             this.txtBoxMysqlFormula = new System.Windows.Forms.TextBox();
@@ -43,17 +48,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnQuestionMark = new System.Windows.Forms.Button();
             this.cmbBoxSql = new System.Windows.Forms.ComboBox();
             this.cmbBoxConvert = new System.Windows.Forms.ComboBox();
             this.btnFindXMLs = new System.Windows.Forms.Button();
             this.btnCopyToClipboard = new System.Windows.Forms.Button();
             this.btnFindXML = new System.Windows.Forms.Button();
-            this.BitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BitSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,7 +148,39 @@
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.Size = new System.Drawing.Size(1332, 471);
             this.dataGridView.TabIndex = 4;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // BitId
+            // 
+            this.BitId.FillWeight = 0.35F;
+            this.BitId.HeaderText = "Bit";
+            this.BitId.Name = "BitId";
+            // 
+            // BitSize
+            // 
+            this.BitSize.FillWeight = 0.45F;
+            this.BitSize.HeaderText = "Max Size";
+            this.BitSize.Name = "BitSize";
+            // 
+            // Description
+            // 
+            this.Description.FillWeight = 4F;
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // CurrentOption
+            // 
+            this.CurrentOption.FillWeight = 0.8F;
+            this.CurrentOption.HeaderText = "Current option";
+            this.CurrentOption.Name = "CurrentOption";
+            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Value
+            // 
+            this.Value.FillWeight = 0.4F;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
             // 
             // btnReset
             // 
@@ -263,19 +295,20 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Plik";
             // 
-            // button2
+            // btnQuestionMark
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(865, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 33);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "?";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnQuestionMark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnQuestionMark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
+            this.btnQuestionMark.FlatAppearance.BorderSize = 2;
+            this.btnQuestionMark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuestionMark.ForeColor = System.Drawing.Color.White;
+            this.btnQuestionMark.Location = new System.Drawing.Point(865, 56);
+            this.btnQuestionMark.Name = "btnQuestionMark";
+            this.btnQuestionMark.Size = new System.Drawing.Size(50, 33);
+            this.btnQuestionMark.TabIndex = 16;
+            this.btnQuestionMark.Text = "?";
+            this.btnQuestionMark.UseVisualStyleBackColor = false;
+            this.btnQuestionMark.Click += new System.EventHandler(this.btnQuestionMark_Click);
             // 
             // cmbBoxSql
             // 
@@ -341,6 +374,7 @@
             this.btnCopyToClipboard.TabIndex = 10;
             this.btnCopyToClipboard.TabStop = false;
             this.btnCopyToClipboard.UseVisualStyleBackColor = false;
+            this.btnCopyToClipboard.Click += new System.EventHandler(this.btnCopyToClipboard_Click);
             // 
             // btnFindXML
             // 
@@ -360,39 +394,6 @@
             this.btnFindXML.UseVisualStyleBackColor = false;
             this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
             // 
-            // BitId
-            // 
-            this.BitId.FillWeight = 0.35F;
-            this.BitId.HeaderText = "Bit";
-            this.BitId.Name = "BitId";
-            // 
-            // BitSize
-            // 
-            this.BitSize.FillWeight = 0.45F;
-            this.BitSize.HeaderText = "Max Size";
-            this.BitSize.Name = "BitSize";
-            // 
-            // Description
-            // 
-            this.Description.FillWeight = 4F;
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // CurrentOption
-            // 
-            this.CurrentOption.FillWeight = 0.8F;
-            this.CurrentOption.HeaderText = "Current option";
-            this.CurrentOption.Name = "CurrentOption";
-            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Value
-            // 
-            this.Value.FillWeight = 0.4F;
-            this.Value.HeaderText = "Value";
-            this.Value.Name = "Value";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -402,7 +403,7 @@
             this.Controls.Add(this.cmbBoxConvert);
             this.Controls.Add(this.cmbBoxSql);
             this.Controls.Add(this.btnFindXMLs);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnQuestionMark);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.label2);
@@ -452,7 +453,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnQuestionMark;
         private System.Windows.Forms.ComboBox cmbBoxSql;
         private System.Windows.Forms.ComboBox cmbBoxConvert;
 
