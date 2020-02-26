@@ -13,6 +13,7 @@ namespace BitwiseCalculatorUI
     public partial class Form1 : Form
     {
         string filePath = "";
+        bool isFolder = false;
         Dictionary<string, FlagList> flagLists;
         FlagList selectedFlagList;
 
@@ -24,8 +25,9 @@ namespace BitwiseCalculatorUI
 
         void InitializeFlagLists()
         {
-            XMLLoader xml = new XMLLoader(filePath);
-            flagLists = xml.GetFlagLists();
+            XMLLoader xml = new XMLLoader();
+            if (isFolder) flagLists = xml.GetFlagListsFromFolder(filePath);
+            else flagLists = xml.GetFlagLists(filePath);
             comboBoxFlaga.Items.Clear();
             foreach (KeyValuePair<string, FlagList> pair in flagLists)
             {
@@ -372,6 +374,19 @@ namespace BitwiseCalculatorUI
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 filePath = dlg.FileName.ToString();
+                isFolder = false;
+                InitializeFlagLists();
+                File.WriteAllText("XMLPath.txt", filePath);
+            }
+        }
+        private void btnFindXMLFolder_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dlg= new FolderBrowserDialog();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                filePath = dlg.SelectedPath.ToString();
+                isFolder = true;
                 InitializeFlagLists();
                 File.WriteAllText("XMLPath.txt", filePath);
             }
@@ -391,7 +406,6 @@ namespace BitwiseCalculatorUI
                 }
                 catch
                 {
-
                 }
             }
         }

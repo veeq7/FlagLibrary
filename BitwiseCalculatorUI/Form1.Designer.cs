@@ -51,6 +51,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnFindXMLs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -339,12 +340,29 @@
             this.button2.Text = "?";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // btnFindXMLs
+            // 
+            this.btnFindXMLs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnFindXMLs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
+            this.btnFindXMLs.FlatAppearance.BorderSize = 2;
+            this.btnFindXMLs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindXMLs.ForeColor = System.Drawing.Color.White;
+            this.btnFindXMLs.Location = new System.Drawing.Point(324, 56);
+            this.btnFindXMLs.Name = "btnFindXMLs";
+            this.btnFindXMLs.Size = new System.Drawing.Size(67, 33);
+            this.btnFindXMLs.TabIndex = 17;
+            this.btnFindXMLs.TabStop = false;
+            this.btnFindXMLs.Text = "Folder";
+            this.btnFindXMLs.UseVisualStyleBackColor = false;
+            this.btnFindXMLs.Click += new System.EventHandler(this.btnFindXMLFolder_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.btnFindXMLs);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -402,6 +420,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFindXMLs;
     }
 }
 
