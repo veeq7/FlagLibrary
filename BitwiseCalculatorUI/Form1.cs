@@ -25,9 +25,26 @@ namespace BitwiseCalculatorUI
 
         void InitializeFlagLists()
         {
-            XMLLoader xml = new XMLLoader();
-            if (isFolder) flagLists = xml.GetFlagListsFromFolder(filePath);
-            else flagLists = xml.GetFlagLists(filePath);
+            ILoader loader;
+            if (filePath.EndsWith(".xml") || isFolder)
+            {
+                loader = new XMLLoader();
+            } else if (filePath.EndsWith(".lst"))
+            {
+                loader = new LSTLoader();
+            }
+            else
+            {
+                MessageBox.Show("Unsupported file type!");
+                return;
+            }
+            LoadFlagLists(loader);            
+        }
+
+        void LoadFlagLists(ILoader loader)
+        {
+            if (isFolder) flagLists = loader.GetFlagListsFromFolder(filePath);
+            else flagLists = loader.GetFlagLists(filePath);
             comboBoxFlaga.Items.Clear();
             foreach (KeyValuePair<string, FlagList> pair in flagLists)
             {
@@ -149,7 +166,7 @@ namespace BitwiseCalculatorUI
                 {
                     try
                     {
-                        cell.Value = MathUtils.Clamp(int.Parse(cell.Value.ToString()), 0, flag.GetMaxSize());
+                        cell.Value = CommonUtils.Clamp(int.Parse(cell.Value.ToString()), 0, flag.GetMaxSize());
                         
                     }
                     catch
@@ -367,8 +384,8 @@ namespace BitwiseCalculatorUI
         private void btnFindXML_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "XML (*.xml)|*.xml";
-            dlg.Title = "Select XML file with Flag Definitions";
+            dlg.Filter = "XML or LST (*.xml; *.lst)|*.xml; *.lst";
+            dlg.Title = "Select XML or LST file with Flag Definitions";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -380,7 +397,7 @@ namespace BitwiseCalculatorUI
         }
         private void btnFindXMLFolder_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dlg= new FolderBrowserDialog();
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
