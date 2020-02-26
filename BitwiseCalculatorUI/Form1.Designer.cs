@@ -309,6 +309,7 @@
             // cmbBoxSql
             // 
             this.cmbBoxSql.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmbBoxSql.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxSql.FormattingEnabled = true;
             this.cmbBoxSql.Items.AddRange(new object[] {
             "Insert",
@@ -321,6 +322,7 @@
             // cmbBoxConvert
             // 
             this.cmbBoxConvert.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmbBoxConvert.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxConvert.FormattingEnabled = true;
             this.cmbBoxConvert.Items.AddRange(new object[] {
             "lst to xml",
@@ -370,6 +372,7 @@
             this.btnFindXML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnFindXML.BackgroundImage = global::BitwiseCalculatorUI.Properties.Resources.Document5;
             this.btnFindXML.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFindXML.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
             this.btnFindXML.FlatAppearance.BorderSize = 2;
             this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
