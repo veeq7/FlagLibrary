@@ -35,6 +35,11 @@
             this.lblBity = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.BitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BitSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSetOne = new System.Windows.Forms.Button();
             this.txtBoxMysqlFormula = new System.Windows.Forms.TextBox();
@@ -46,11 +51,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.cmbBoxSql = new System.Windows.Forms.ComboBox();
             this.cmbBoxConvert = new System.Windows.Forms.ComboBox();
-            this.BitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BitSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFindXMLs = new System.Windows.Forms.Button();
             this.btnCopyToClipboard = new System.Windows.Forms.Button();
             this.btnFindXML = new System.Windows.Forms.Button();
@@ -147,6 +147,38 @@
             this.dataGridView.Size = new System.Drawing.Size(1332, 471);
             this.dataGridView.TabIndex = 4;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // BitId
+            // 
+            this.BitId.FillWeight = 20F;
+            this.BitId.HeaderText = "Bit";
+            this.BitId.Name = "BitId";
+            // 
+            // BitSize
+            // 
+            this.BitSize.FillWeight = 20F;
+            this.BitSize.HeaderText = "Max Size";
+            this.BitSize.Name = "BitSize";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // CurrentOption
+            // 
+            this.CurrentOption.FillWeight = 75F;
+            this.CurrentOption.HeaderText = "Current option";
+            this.CurrentOption.Name = "CurrentOption";
+            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Value
+            // 
+            this.Value.FillWeight = 30F;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
             // 
             // btnReset
             // 
@@ -298,42 +330,10 @@
             this.cmbBoxConvert.Size = new System.Drawing.Size(121, 28);
             this.cmbBoxConvert.TabIndex = 18;
             // 
-            // BitId
-            // 
-            this.BitId.FillWeight = 20F;
-            this.BitId.HeaderText = "Bit";
-            this.BitId.Name = "BitId";
-            // 
-            // BitSize
-            // 
-            this.BitSize.FillWeight = 20F;
-            this.BitSize.HeaderText = "Max Size";
-            this.BitSize.Name = "BitSize";
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // CurrentOption
-            // 
-            this.CurrentOption.FillWeight = 75F;
-            this.CurrentOption.HeaderText = "Current option";
-            this.CurrentOption.Name = "CurrentOption";
-            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Value
-            // 
-            this.Value.FillWeight = 30F;
-            this.Value.HeaderText = "Value";
-            this.Value.Name = "Value";
-            // 
             // btnFindXMLs
             // 
             this.btnFindXMLs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnFindXMLs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFindXMLs.BackgroundImage")));
+            this.btnFindXMLs.BackgroundImage = global::BitwiseCalculatorUI.Properties.Resources.Folder2;
             this.btnFindXMLs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFindXMLs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFindXMLs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
