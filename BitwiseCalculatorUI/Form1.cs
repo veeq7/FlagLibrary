@@ -17,10 +17,23 @@ namespace BitwiseCalculatorUI
         Dictionary<string, FlagList> flagLists;
         FlagList selectedFlagList;
 
+        const int IDColumnIndex = 0;
+        const int CurrentOptionColumnIndex = 3;
+        const int ValueColumnIndex = 4;
+
         public Form1()
         {
             InitializeComponent();
             dataGridView.CellEndEdit += new DataGridViewCellEventHandler(dataGridView_OnTextChanged);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CreateBitButtons();
+
+            LoadFilePathFromTxt();
+            txtBoxBits.KeyPress += TxtBoxBitsKeyPress;
+            AcceptButton = btnShow;
         }
 
         void InitializeFlagLists()
@@ -54,37 +67,6 @@ namespace BitwiseCalculatorUI
             selectedFlagList = flagLists[comboBoxFlaga.Items[0].ToString()];
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            CreateBitButtons();
-
-            LoadFilePathFromTxt();
-            txtBoxBits.KeyPress += TxtBoxBitsKeyPress;
-            AcceptButton = btnShow;
-        }
-
-        void SetColor(Button btn, int i)
-        {
-            switch (i / 8)
-            {
-                case 0: btn.BackColor = Color.FromArgb(255, 60, 60, 60); break;
-                case 1: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
-                case 2: btn.BackColor = Color.FromArgb(255, 60, 60, 60); break;
-                case 3: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
-            }
-            switch (i / 4)
-            {
-                case 0: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 1: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-                case 3: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-                case 5: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-                case 2: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 4: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 6: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 7: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-            }
-        }
-
         /// <summary>
         /// Creates 32 buttons in form
         /// </summary>
@@ -106,7 +88,7 @@ namespace BitwiseCalculatorUI
                 btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
                 toolTipSystem.SetToolTip(btn, "Bit " + (31 - i) + " - " + (1 << (31 - i)));
 
-                SetColor(btn, i);
+                SetBitButtonsColors(btn, i);
 
                 btn.FlatAppearance.BorderSize = 0;
                 btn.MouseClick += BtnMouseClick;
@@ -119,6 +101,28 @@ namespace BitwiseCalculatorUI
                 formGraphics.Dispose();
 
                 Controls.Add(btn);
+            }
+        }
+
+        void SetBitButtonsColors(Button btn, int i)
+        {
+            switch (i / 8)
+            {
+                case 0: btn.BackColor = Color.FromArgb(255, 60, 60, 60); break;
+                case 1: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
+                case 2: btn.BackColor = Color.FromArgb(255, 60, 60, 60); break;
+                case 3: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
+            }
+            switch (i / 4)
+            {
+                case 0: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
+                case 1: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
+                case 3: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
+                case 5: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
+                case 2: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
+                case 4: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
+                case 6: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
+                case 7: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
             }
         }
 
@@ -143,9 +147,7 @@ namespace BitwiseCalculatorUI
             }
         }
 
-        const int IDColumnIndex = 0;
-        const int CurrentOptionColumnIndex = 3;
-        const int ValueColumnIndex = 4;
+        #region Data grid view
 
         void dataGridView_OnTextChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -181,7 +183,7 @@ namespace BitwiseCalculatorUI
                 if(e.ColumnIndex == CurrentOptionColumnIndex) RefreshValueInDataGridView();
                 if(e.ColumnIndex == ValueColumnIndex) RefreshCurrentOptionInDataGridView();
                 
-                SetBitsButton();
+                RefreshBitButtonsText();
             }
         }
 
@@ -243,6 +245,8 @@ namespace BitwiseCalculatorUI
             return flag.GetModifiedValue(i32, value);
         }
 
+        #endregion
+
         /// <summary>
         /// Method refresh bit table and makes checkbox
         /// </summary>
@@ -278,13 +282,10 @@ namespace BitwiseCalculatorUI
                 dataGridView.Rows[i].Height = 25;
             }
 
-            SetBitsButton();
+            RefreshBitButtonsText();
         }
 
-        /// <summary>
-        /// Method makes 32 buttons for bit table
-        /// </summary>
-        private void SetBitsButton()
+        private void RefreshBitButtonsText()
         {
             string text = DecToBin();
             for (int i = 0; i < 32; i++)
@@ -299,7 +300,6 @@ namespace BitwiseCalculatorUI
                 string bits = text;
                 btn.Text = bits.Substring(i, 1);
             }
-
         }
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace BitwiseCalculatorUI
             {
                 Button bttn = Controls.Find("btn" + i, true).FirstOrDefault() as Button;
                 bin += bttn.Text;
-                SetColor(bttn, i);
+                SetBitButtonsColors(bttn, i);
             }
 
             txtBoxBits.Text = Convert.ToInt32(bin, 2).ToString();
