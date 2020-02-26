@@ -9,6 +9,7 @@ namespace FlagLibrary.Connections
 {
     public class XMLLoader : ILoader
     {
+        public const string BitNode = "Bit";
 
         public Dictionary<string, FlagList> GetFlagListsFromFolder(string folderPath)
         {
@@ -91,10 +92,7 @@ namespace FlagLibrary.Connections
                     flag.bitDescriptions.Add(int.Parse(Attribute.Attributes["value"].Value), Attribute.InnerText);
                 }
             }
-            if (flag.bitDescriptions.Count == 0)
-            {
-                flag.FillDescriptions();
-            }
+            flag.FillDescriptions();
             return flag;
         }
     }

@@ -448,5 +448,14 @@ namespace BitwiseCalculatorUI
         {
 
         }
+
+        private void btnGenerateSqlText_Click(object sender, EventArgs e)
+        {
+            var rows = dataGridView.Rows;
+            foreach (var row in rows)
+            {
+            }
+
+        }
     }
 }

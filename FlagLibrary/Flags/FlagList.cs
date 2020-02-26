@@ -5,6 +5,7 @@ namespace FlagLibrary.Flags
 {
     public struct ParsedFlagData
     {
+        public BitGroup flag { get; set; }
         public string description { get; set; }
         public string currentOption { get; set; }
         public int value { get; set; }
@@ -37,6 +38,7 @@ namespace FlagLibrary.Flags
             data.description = flag.description;
             data.bitNumber = flag.bitRefs[0];
             data.bitSize = flag.GetMaxSize();
+            data.flag = flag;
             data.options = GetParsedFlagOptions(flag);
             if (flag.bitDescriptions.ContainsKey(flagValue))
                 data.currentOption = flag.bitDescriptions[flagValue];

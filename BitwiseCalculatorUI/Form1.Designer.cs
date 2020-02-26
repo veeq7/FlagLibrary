@@ -219,6 +219,7 @@
             this.btnGenerateSqlText.TabIndex = 12;
             this.btnGenerateSqlText.Text = "Stwórz";
             this.btnGenerateSqlText.UseVisualStyleBackColor = false;
+            this.btnGenerateSqlText.Click += new System.EventHandler(this.btnGenerateSqlText_Click);
             // 
             // label2
             // 

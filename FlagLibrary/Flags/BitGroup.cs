@@ -18,7 +18,7 @@ namespace FlagLibrary.Flags
             int bitIndex = 0;
             foreach (int bitRef in bitRefs)
             {
-                value += Utils.CommonUtils.GetBitFromNumber(i32, bitRef) << bitIndex++;
+                value += CommonUtils.GetBitFromNumber(i32, bitRef) << bitIndex++;
             }
 
             return value;
@@ -46,12 +46,9 @@ namespace FlagLibrary.Flags
 
         public void FillDescriptions()
         {
-            bitDescriptions.Add(-1, "Unknown");
-            bitDescriptions.Add(0, "Off");
-            if (bitRefs.Count == 1 && bitDescriptions.Count == 1)
-            {
-                bitDescriptions.Add(1, "On");
-            }
+            if (!bitDescriptions.ContainsKey(-1)) bitDescriptions.Add(-1, "???");
+            if (!bitDescriptions.ContainsKey(0)) bitDescriptions.Add(0, "Off");
+            if (!bitDescriptions.ContainsKey(1)) bitDescriptions.Add(1, "On");
             else
             {
                 for (int i = 0; i <= GetMaxSize(); i++)
