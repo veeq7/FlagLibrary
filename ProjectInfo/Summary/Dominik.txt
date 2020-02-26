@@ -1,0 +1,15 @@
+Zrobiłem większość UI:
+-Pole wyboru flagi
+-Przycisk do wybory pliku xml
+-32 przyciski do ustawiania bitów
+-Przyciski ?, 1, 0 które ustawiają wszystkie wartości w tabelce na ?, 1, 0
+-Pole tekstowe do wpisywania bitów
+-Przycisk wyświetl, który po naciśnięciu wyświetla całą tabelkę z danymi
+-Zmiana koloru w kolumnie value
+-Combobox na dole, oraz kopiowanie stworzonej komendy sql do schowka
+-Resizowanie całego formularza
+-Ikonka formularza
+
+Problemy:
+-Dodanie comboboxów do tabelki(naprawiony)
+-Gdy zmieniam wartość za pomocą comboboxa, to wyświetlenie poprawnych wyników w reszcie formularza następuje dopiero po odznaczeniu comboboxa
