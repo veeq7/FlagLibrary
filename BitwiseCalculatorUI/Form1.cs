@@ -133,7 +133,7 @@ namespace BitwiseCalculatorUI
         /// </summary>
         private void btnShow_Click(object sender, EventArgs e)
         {
-            ShowBits();
+            RefreshDataGridView();
         }
 
         int GetValueFromTextBox()
@@ -247,12 +247,7 @@ namespace BitwiseCalculatorUI
             return flag.GetModifiedValue(i32, value);
         }
 
-        #endregion
-
-        /// <summary>
-        /// Method refresh bit table and makes checkbox
-        /// </summary>
-        void ShowBits()
+        void RefreshDataGridView()
         {
             if (selectedFlagList == null)
                 return;
@@ -278,8 +273,8 @@ namespace BitwiseCalculatorUI
                     c.Items.Add(kv.Key);
                 }
 
-                //.Value = c.Items[0];
                 c.Value = flagDataList[i].currentOption;
+                c.FlatStyle = FlatStyle.Popup;
                 dataGridView.Rows[i].Cells[CurrentOptionColumnIndex] = c;
                 dataGridView.Rows[i].Height = 25;
             }
@@ -287,6 +282,8 @@ namespace BitwiseCalculatorUI
             RefreshBitButtonsText();
             SetColorsInDataGridView();
         }
+
+        #endregion
 
         void SetColorsInDataGridView()
         {
@@ -391,7 +388,7 @@ namespace BitwiseCalculatorUI
             }
 
             txtBoxBits.Text = Convert.ToInt32(bin, 2).ToString();
-            ShowBits();
+            RefreshDataGridView();
         }
 
         private void comboBoxFlaga_SelectedIndexChanged(object sender, EventArgs e)
@@ -400,7 +397,7 @@ namespace BitwiseCalculatorUI
             if (flagLists.ContainsKey(selectedFlagName))
             {
                 selectedFlagList = flagLists[selectedFlagName];
-                ShowBits();
+                RefreshDataGridView();
             }
         }
 
@@ -464,7 +461,7 @@ namespace BitwiseCalculatorUI
         {
             if (isOne) txtBoxBits.Text = "-1";
             else txtBoxBits.Text = "0";
-            ShowBits();
+            RefreshDataGridView();
         }
 
         private void btnGenerateSqlText_Click(object sender, EventArgs e)
@@ -551,7 +548,7 @@ namespace BitwiseCalculatorUI
 
         private void btnCopyToClipboard_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtBoxMysqlFormula.Text);
+            if(txtBoxMysqlFormula.Text != "") Clipboard.SetText(txtBoxMysqlFormula.Text);
         }
     }
 }
