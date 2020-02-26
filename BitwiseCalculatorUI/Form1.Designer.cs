@@ -45,12 +45,8 @@
             this.txtBoxMysqlFormula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGenerateSqlText = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnConvert = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnQuestionMark = new System.Windows.Forms.Button();
             this.cmbBoxSql = new System.Windows.Forms.ComboBox();
-            this.cmbBoxConvert = new System.Windows.Forms.ComboBox();
             this.btnFindXMLs = new System.Windows.Forms.Button();
             this.btnCopyToClipboard = new System.Windows.Forms.Button();
             this.btnFindXML = new System.Windows.Forms.Button();
@@ -218,9 +214,9 @@
             this.txtBoxMysqlFormula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxMysqlFormula.Font = new System.Drawing.Font("Courier New", 12F);
             this.txtBoxMysqlFormula.ForeColor = System.Drawing.Color.White;
-            this.txtBoxMysqlFormula.Location = new System.Drawing.Point(402, 620);
+            this.txtBoxMysqlFormula.Location = new System.Drawing.Point(390, 620);
             this.txtBoxMysqlFormula.Name = "txtBoxMysqlFormula";
-            this.txtBoxMysqlFormula.Size = new System.Drawing.Size(672, 26);
+            this.txtBoxMysqlFormula.Size = new System.Drawing.Size(879, 26);
             this.txtBoxMysqlFormula.TabIndex = 8;
             // 
             // label1
@@ -230,11 +226,12 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 612);
+            this.label1.Location = new System.Drawing.Point(29, 615);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 31);
+            this.label1.Size = new System.Drawing.Size(68, 31);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Generuj:";
+            this.label1.Text = "SQL";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnGenerateSqlText
             // 
@@ -244,55 +241,13 @@
             this.btnGenerateSqlText.FlatAppearance.BorderSize = 2;
             this.btnGenerateSqlText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerateSqlText.ForeColor = System.Drawing.Color.White;
-            this.btnGenerateSqlText.Location = new System.Drawing.Point(287, 613);
+            this.btnGenerateSqlText.Location = new System.Drawing.Point(240, 614);
             this.btnGenerateSqlText.Name = "btnGenerateSqlText";
             this.btnGenerateSqlText.Size = new System.Drawing.Size(104, 33);
             this.btnGenerateSqlText.TabIndex = 12;
-            this.btnGenerateSqlText.Text = "Stwórz";
+            this.btnGenerateSqlText.Text = "Generuj";
             this.btnGenerateSqlText.UseVisualStyleBackColor = false;
             this.btnGenerateSqlText.Click += new System.EventHandler(this.btnGenerateSqlText_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(150, 596);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 20);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "SQL";
-            // 
-            // btnConvert
-            // 
-            this.btnConvert.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnConvert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnConvert.FlatAppearance.BorderSize = 2;
-            this.btnConvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConvert.ForeColor = System.Drawing.Color.White;
-            this.btnConvert.Location = new System.Drawing.Point(1266, 612);
-            this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(100, 33);
-            this.btnConvert.TabIndex = 14;
-            this.btnConvert.TabStop = false;
-            this.btnConvert.Text = "Konwertuj";
-            this.btnConvert.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1132, 593);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 20);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Plik";
             // 
             // btnQuestionMark
             // 
@@ -319,25 +274,10 @@
             this.cmbBoxSql.Items.AddRange(new object[] {
             "Insert",
             "Update"});
-            this.cmbBoxSql.Location = new System.Drawing.Point(146, 617);
+            this.cmbBoxSql.Location = new System.Drawing.Point(103, 617);
             this.cmbBoxSql.Name = "cmbBoxSql";
             this.cmbBoxSql.Size = new System.Drawing.Size(121, 28);
             this.cmbBoxSql.TabIndex = 17;
-            // 
-            // cmbBoxConvert
-            // 
-            this.cmbBoxConvert.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.cmbBoxConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.cmbBoxConvert.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoxConvert.ForeColor = System.Drawing.Color.DarkGray;
-            this.cmbBoxConvert.FormattingEnabled = true;
-            this.cmbBoxConvert.Items.AddRange(new object[] {
-            "lst to xml",
-            "xml to lst"});
-            this.cmbBoxConvert.Location = new System.Drawing.Point(1132, 617);
-            this.cmbBoxConvert.Name = "cmbBoxConvert";
-            this.cmbBoxConvert.Size = new System.Drawing.Size(121, 28);
-            this.cmbBoxConvert.TabIndex = 18;
             // 
             // btnFindXMLs
             // 
@@ -367,7 +307,7 @@
             this.btnCopyToClipboard.FlatAppearance.BorderSize = 5;
             this.btnCopyToClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopyToClipboard.ForeColor = System.Drawing.Color.White;
-            this.btnCopyToClipboard.Location = new System.Drawing.Point(1085, 612);
+            this.btnCopyToClipboard.Location = new System.Drawing.Point(1289, 615);
             this.btnCopyToClipboard.Name = "btnCopyToClipboard";
             this.btnCopyToClipboard.Size = new System.Drawing.Size(37, 33);
             this.btnCopyToClipboard.TabIndex = 10;
@@ -399,13 +339,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1400, 681);
-            this.Controls.Add(this.cmbBoxConvert);
             this.Controls.Add(this.cmbBoxSql);
             this.Controls.Add(this.btnFindXMLs);
             this.Controls.Add(this.btnQuestionMark);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnConvert);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnGenerateSqlText);
             this.Controls.Add(this.btnCopyToClipboard);
             this.Controls.Add(this.label1);
@@ -448,12 +384,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCopyToClipboard;
         private System.Windows.Forms.Button btnGenerateSqlText;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnConvert;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnQuestionMark;
         private System.Windows.Forms.ComboBox cmbBoxSql;
-        private System.Windows.Forms.ComboBox cmbBoxConvert;
 
         private System.Windows.Forms.Button btnFindXMLs;
         private System.Windows.Forms.DataGridViewTextBoxColumn BitId;
