@@ -164,6 +164,7 @@ namespace BitwiseCalculatorUI
                     try
                     {
                         cell.Value = MathUtils.Clamp(int.Parse(cell.Value.ToString()), 0, flag.GetMaxSize());
+                        
                     }
                     catch
                     {
@@ -174,7 +175,9 @@ namespace BitwiseCalculatorUI
                 txtBoxBits.Text = GetFlagIntWithModifedFlagFromCell(cell, i32, flag).ToString();
                 txtBoxBits.Refresh();
 
-                RefreshValueInDataGridView();
+                if(e.ColumnIndex == CurrentOptionColumnIndex) RefreshValueInDataGridView();
+                if(e.ColumnIndex == ValueColumnIndex) RefreshCurrentOptionInDataGridView();
+                
                 SetBitsButton();
             }
         }
@@ -186,21 +189,36 @@ namespace BitwiseCalculatorUI
 
             for (int i = 0; i < flagDataList.Count; i++)
             {
-                dataGridView.Rows[i].Cells[4].Value = flagDataList[i].value;
+                dataGridView.Rows[i].Cells[ValueColumnIndex].Value = flagDataList[i].value;
             }
         }
 
-        void CurrentOptionInDataGridView()
+        void RefreshCurrentOptionInDataGridView()
         {
-            /*int value = GetValueFromTextBox();
+            int value = GetValueFromTextBox();
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
             for (int i = 0; i < flagDataList.Count; i++)
             {
-                dataGridView.Rows[i].Cells[4].Value = flagDataList[i].value;
-            }*/
+                dataGridView.Rows[i].Cells[CurrentOptionColumnIndex].Value = null; //this is important.
+                DataGridViewComboBoxCell c = new DataGridViewComboBoxCell();
 
-            MessageBox.Show("a");
+                foreach (KeyValuePair<string, int> kv in flagDataList[i].options)
+                {
+                    c.Items.Add(kv.Key);
+                }
+
+                try
+                {
+                    c.Value = flagDataList[i].currentOption;
+                    dataGridView.Rows[i].Cells[CurrentOptionColumnIndex] = c;
+                }
+                catch
+                {
+
+                }
+                
+            }
         }
 
         int GetFlagIntWithModifedFlagFromCell(DataGridViewCell cell, int i32, BitGroup flag)
@@ -227,8 +245,6 @@ namespace BitwiseCalculatorUI
         /// </summary>
         void ShowBits()
         {
-            
-
             if (selectedFlagList == null)
                 return;
 
