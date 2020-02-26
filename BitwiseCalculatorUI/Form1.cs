@@ -287,25 +287,24 @@ namespace BitwiseCalculatorUI
             SetColorsInDataGridView();
         }
 
-        #endregion
-
         void SetColorsInDataGridView()
         {
-            for (int i=0; i<dataGridView.Rows.Count;i++)
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
                 DataGridViewCellStyle style = new DataGridViewCellStyle();
 
                 switch ((string)((DataGridViewComboBoxCell)dataGridView[CurrentOptionColumnIndex, i]).Value)
                 {
                     case "???": style.BackColor = Color.FromArgb(255, 51, 51, 51); break;
-                    case "On": style.BackColor = Color.FromArgb(255, 100, 255, 100); break;
-                    case "OFF": style.BackColor = Color.FromArgb(255, 100, 255, 100); break;
-                    default: style.BackColor = Color.FromArgb(255, 255, 0, 0); break;
+                    case "0": style.BackColor = Color.FromArgb(255, 255, 100, 100); break;
+                    default: style.BackColor = Color.FromArgb(255, 100, 255, 100); break;
                 }
 
                 dataGridView[ValueColumnIndex, i].Style = style;
             }
         }
+
+        #endregion
 
         private void RefreshBitButtonsText()
         {
@@ -513,7 +512,6 @@ namespace BitwiseCalculatorUI
 
                 }
                 SetStringInSqlOutput(generator.GenerateUpdate(bits, selectedFlagList.name));
-                MessageBox.Show(bits);
             }
 
         }
