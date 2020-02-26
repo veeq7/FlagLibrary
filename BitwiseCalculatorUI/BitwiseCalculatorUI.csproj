@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +85,24 @@
       <Project>{75e89ee6-e8bf-4f08-94ab-c787c46eacf4}</Project>
       <Name>FlagLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
