@@ -1,17 +1,43 @@
 ﻿using FlagLibrary.Flags;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Xml;
+using System.IO;
+using System.Windows.Forms;
 
 namespace FlagLibrary.Connections
 {
     public class XMLLoader
     {
-        XmlDocument xmlDoc = new XmlDocument();
 
-        public XMLLoader(string filePath)
+        public Dictionary<string, FlagList> GetFlagListsFromFolder(string folderPath)
         {
+            Dictionary<string, FlagList> flagList = new Dictionary<string, FlagList>();
+
+            string[] fileEntries = Directory.GetFiles(folderPath);
+            foreach (string fileName in fileEntries)
+            {
+                if (fileName.EndsWith(".xml"))
+                {
+                    foreach (KeyValuePair<string, FlagList> kv in GetFlagLists(fileName))
+                    {
+                        flagList.Add(kv.Key, kv.Value);
+                    }
+                }
+            }
+
+            string[] subdirectoryEntries = Directory.GetDirectories(folderPath);
+            foreach (string subdirectory in subdirectoryEntries)
+            {
+                GetFlagListsFromFolder(subdirectory);
+            }
+
+            return flagList;
+        }
+
+        public Dictionary<string, FlagList> GetFlagLists(string filePath)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
             try
             {
                 xmlDoc.Load(filePath);
@@ -20,10 +46,6 @@ namespace FlagLibrary.Connections
             {
                 Console.WriteLine(e.Message);
             }
-        }
-
-        public Dictionary<string, FlagList> GetFlagLists()
-        {
             Dictionary<string, FlagList> list = new Dictionary<string, FlagList>();
             foreach (XmlNode Flag in xmlDoc.DocumentElement.ChildNodes)
             {

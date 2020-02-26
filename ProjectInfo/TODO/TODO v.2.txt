@@ -1,0 +1,55 @@
+1. Konsolowy generator "changes.lst -> <table>.xml"
+
+	(a). Generowanie ze starego pliku "changes.lst" aplikacja wgeneruje 					//Sporo back-end(u)
+	     plik z fragmentem "xml" do wklejenia w pliki wewnatrz programiu					//Nie wiemy czy damy rade wyrobic sie dzisiaj ze wszystkimi aktualizacjami kodu
+	(b). dane wejsciowe: generator_lst_to_xml/changes.lst
+	(c). dane wyjsciowe: generator_lst_to_xml/output_xml.txt
+	(d). dane wyjsciowe: generator_lst_to_xml/output.errors - wylapanie ew. bledow	
+
+
+2. Konsolowy generator <table>.xml -> flags.xml
+
+	(a). We wskazanym folderze z plikami <table>.xml wyszukuje nodow <Flag> i tworzy
+	     z nich strukture potrzebna do prawidlowego działania kalkulatora
+	(b). dane wejsciowe: generator_xml_to_xml/ (korekta formatu xml)
+	(c). dane wyjsciowe: (wedlug naszego uznania)
+
+
+3. Mozliwosc wygenerowania fragmentu sql odpowiedzialnego za update/insert 
+   flagi dla odpowiednich wartosci
+	
+	(a). Wartosci wg opcji zaznaczonych na liscie. Dobrze byloby miec mozliwosc
+	     zaznaczenia czy bit czyscimy ustawiamy czy pomijamy.
+
+	
+
+<!-------------------------------------WZOR--------------------------------------->
+	Update k_flaga:
+		Ustawienie bitow 1,4,6
+			k_flaga=k_flaga|((1<<1)|(1<<4)|(1<<6))
+		Zerowaie bitow 1,4,6
+			k_flaga=k_flaga&(~((1<<1)|(1<<4)|(1<<6)))
+	Insert k_flaga:
+		Ustawienie bitow 1,4,6
+			k_flaga=((1<<1)|(1<<4)|(1<<6))
+
+<--------------------------------------------------------------------------------->
+
+4. Konsolowa wersja generatora <table>.xml -> flags.lst
+
+
+	(a). We wskazanym folderze w plikami <table>.xml wyszukuje 
+	     nodow <Flag> i tworzy czytelny dzla czlowieka plik flags.lst
+	(b). dane wejsciowe: generator_xml_to_xml
+	(c). dane wyjsciowe: generator_xml_to_newlst/flags.lst
+	(d). dane wyjsciowe: generator_xml_to_newlst/output.errors - wylapanie ew. bledow
+
+5. GUI aktualizacja
+
+
+	(a). Zmiana GUI na dynamiczne
+	(b). Zmiana układu w celu eliminacji pustego miejsca  
+
+				
+6. (cdn.)
+  

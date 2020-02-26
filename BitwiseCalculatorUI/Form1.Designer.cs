@@ -53,6 +53,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.cmbBoxSql = new System.Windows.Forms.ComboBox();
             this.cmbBoxConvert = new System.Windows.Forms.ComboBox();
+            this.btnFindXMLs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,9 +81,9 @@
             this.txtBoxBits.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxBits.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.txtBoxBits.ForeColor = System.Drawing.Color.White;
-            this.txtBoxBits.Location = new System.Drawing.Point(1041, 56);
+            this.txtBoxBits.Location = new System.Drawing.Point(1107, 56);
             this.txtBoxBits.Name = "txtBoxBits";
-            this.txtBoxBits.Size = new System.Drawing.Size(228, 32);
+            this.txtBoxBits.Size = new System.Drawing.Size(162, 32);
             this.txtBoxBits.TabIndex = 1;
             // 
             // lblFlaga
@@ -102,7 +103,7 @@
             this.lblBity.AutoSize = true;
             this.lblBity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblBity.ForeColor = System.Drawing.Color.White;
-            this.lblBity.Location = new System.Drawing.Point(967, 55);
+            this.lblBity.Location = new System.Drawing.Point(1033, 57);
             this.lblBity.Name = "lblBity";
             this.lblBity.Size = new System.Drawing.Size(68, 31);
             this.lblBity.TabIndex = 3;
@@ -202,7 +203,7 @@
             this.btnReset.FlatAppearance.BorderSize = 2;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(855, 53);
+            this.btnReset.Location = new System.Drawing.Point(921, 56);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 33);
             this.btnReset.TabIndex = 6;
@@ -217,7 +218,7 @@
             this.btnSetOne.FlatAppearance.BorderSize = 2;
             this.btnSetOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetOne.ForeColor = System.Drawing.Color.White;
-            this.btnSetOne.Location = new System.Drawing.Point(911, 53);
+            this.btnSetOne.Location = new System.Drawing.Point(977, 56);
             this.btnSetOne.Name = "btnSetOne";
             this.btnSetOne.Size = new System.Drawing.Size(50, 33);
             this.btnSetOne.TabIndex = 7;
@@ -330,7 +331,7 @@
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(799, 53);
+            this.button2.Location = new System.Drawing.Point(865, 56);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 33);
             this.button2.TabIndex = 16;
@@ -339,6 +340,7 @@
             // 
             // cmbBoxSql
             // 
+            this.cmbBoxSql.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cmbBoxSql.FormattingEnabled = true;
             this.cmbBoxSql.Items.AddRange(new object[] {
             "Insert",
@@ -350,6 +352,7 @@
             // 
             // cmbBoxConvert
             // 
+            this.cmbBoxConvert.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cmbBoxConvert.FormattingEnabled = true;
             this.cmbBoxConvert.Items.AddRange(new object[] {
             "lst to xml",
@@ -359,6 +362,22 @@
             this.cmbBoxConvert.Size = new System.Drawing.Size(121, 28);
             this.cmbBoxConvert.TabIndex = 18;
             // 
+            // btnFindXMLs
+            // 
+            this.btnFindXMLs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnFindXMLs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
+            this.btnFindXMLs.FlatAppearance.BorderSize = 2;
+            this.btnFindXMLs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindXMLs.ForeColor = System.Drawing.Color.White;
+            this.btnFindXMLs.Location = new System.Drawing.Point(324, 56);
+            this.btnFindXMLs.Name = "btnFindXMLs";
+            this.btnFindXMLs.Size = new System.Drawing.Size(67, 33);
+            this.btnFindXMLs.TabIndex = 17;
+            this.btnFindXMLs.TabStop = false;
+            this.btnFindXMLs.Text = "Folder";
+            this.btnFindXMLs.UseVisualStyleBackColor = false;
+            this.btnFindXMLs.Click += new System.EventHandler(this.btnFindXMLFolder_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -367,6 +386,7 @@
             this.ClientSize = new System.Drawing.Size(1400, 681);
             this.Controls.Add(this.cmbBoxConvert);
             this.Controls.Add(this.cmbBoxSql);
+            this.Controls.Add(this.btnFindXMLs);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnConvert);
@@ -425,6 +445,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmbBoxSql;
         private System.Windows.Forms.ComboBox cmbBoxConvert;
+
+        private System.Windows.Forms.Button btnFindXMLs;
     }
 }
 
