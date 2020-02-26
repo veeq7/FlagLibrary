@@ -168,8 +168,34 @@ namespace BitwiseCalculatorUI
                 int i32 = GetValueFromTextBox();
                 txtBoxBits.Text = GetFlagIntWithModifedFlagFromCell(cell, i32, flag).ToString();
                 txtBoxBits.Refresh();
-                //ShowBits();
+
+                RefreshValueInDataGridView();
+                SetBitsButton();
             }
+        }
+
+        void RefreshValueInDataGridView()
+        {
+            int value = GetValueFromTextBox();
+            List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
+
+            for (int i = 0; i < flagDataList.Count; i++)
+            {
+                dataGridView.Rows[i].Cells[4].Value = flagDataList[i].value;
+            }
+        }
+
+        void CurrentOptionInDataGridView()
+        {
+            /*int value = GetValueFromTextBox();
+            List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
+
+            for (int i = 0; i < flagDataList.Count; i++)
+            {
+                dataGridView.Rows[i].Cells[4].Value = flagDataList[i].value;
+            }*/
+
+            MessageBox.Show("a");
         }
 
         int GetFlagIntWithModifedFlagFromCell(DataGridViewCell cell, int i32, BitGroup flag)
@@ -195,6 +221,8 @@ namespace BitwiseCalculatorUI
         /// </summary>
         void ShowBits()
         {
+            
+
             if (selectedFlagList == null)
                 return;
 
@@ -221,18 +249,7 @@ namespace BitwiseCalculatorUI
                 c.Value = flagDataList[i].currentOption;
                 dataGridView.Rows[i].Cells[3] = c;
                 dataGridView.Rows[i].Height = 35;
-
             }
-            /*dataGridView.Columns[0].ReadOnly = true;
-            dataGridView.Columns[1].ReadOnly = true;
-            dataGridView.Columns[2].ReadOnly = true;
-            dataGridView.Columns[3].ReadOnly = true;
-
-
-            for(int i = 0; i< flagDataList.Count; i++)
-            {
-                int row = dataGridView.Rows.Add(flagDataList[i].bitNumber, flagDataList[i].bitSize, flagDataList[i].description, flagDataList[i].currentOption, flagDataList[i].value);
-            }*/
 
             SetBitsButton();
         }
@@ -242,7 +259,6 @@ namespace BitwiseCalculatorUI
         /// </summary>
         private void SetBitsButton()
         {
-
             string text = DecToBin();
             for (int i = 0; i < 32; i++)
             {
@@ -258,6 +274,7 @@ namespace BitwiseCalculatorUI
             }
 
         }
+
         /// <summary>
         /// Method whenever user click bad char when it is not displane
         /// </summary>
@@ -282,6 +299,7 @@ namespace BitwiseCalculatorUI
                 e.KeyChar = (char) 0;
             }
         }
+
         /// <summary>
         /// Method convert string to int and return binary
         /// </summary>
@@ -298,6 +316,7 @@ namespace BitwiseCalculatorUI
                 return "0";
             }
         }
+
         /// <summary>
         /// Method check button value and change on click
         /// </summary>

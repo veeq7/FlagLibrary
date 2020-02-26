@@ -180,8 +180,5 @@ ts_spedycje
 					1: Przy tworzeniu
 					2: Przy wyslaniu
 	8 bit:		sposob liczenia kwoty ubezpiecenia (powiazane z bitem 7 sp_flaga):
-					0: kwota stala
-					1: wg wartosci
-					2: wg pobrania
 					
 ---------------------------------------------------------------------------------------------------------------------
