@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.comboBoxFlaga = new System.Windows.Forms.ComboBox();
             this.txtBoxBits = new System.Windows.Forms.TextBox();
             this.lblFlaga = new System.Windows.Forms.Label();
@@ -45,12 +46,13 @@
             this.txtBoxMysqlFormula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCopyToClipboard = new System.Windows.Forms.Button();
-            this.btnGenerateInsert = new System.Windows.Forms.Button();
-            this.btnGenerateUpdate = new System.Windows.Forms.Button();
+            this.btnGenerateSqlText = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConvert = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.cmbBoxSql = new System.Windows.Forms.ComboBox();
+            this.cmbBoxConvert = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +80,7 @@
             this.txtBoxBits.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxBits.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.txtBoxBits.ForeColor = System.Drawing.Color.White;
-            this.txtBoxBits.Location = new System.Drawing.Point(711, 56);
+            this.txtBoxBits.Location = new System.Drawing.Point(1041, 56);
             this.txtBoxBits.Name = "txtBoxBits";
             this.txtBoxBits.Size = new System.Drawing.Size(228, 32);
             this.txtBoxBits.TabIndex = 1;
@@ -100,7 +102,7 @@
             this.lblBity.AutoSize = true;
             this.lblBity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblBity.ForeColor = System.Drawing.Color.White;
-            this.lblBity.Location = new System.Drawing.Point(637, 55);
+            this.lblBity.Location = new System.Drawing.Point(967, 55);
             this.lblBity.Name = "lblBity";
             this.lblBity.Size = new System.Drawing.Size(68, 31);
             this.lblBity.TabIndex = 3;
@@ -113,7 +115,7 @@
             this.btnShow.FlatAppearance.BorderSize = 2;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(945, 56);
+            this.btnShow.Location = new System.Drawing.Point(1275, 56);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(84, 33);
             this.btnShow.TabIndex = 0;
@@ -125,6 +127,9 @@
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -136,9 +141,9 @@
             this.CurrentOption,
             this.Value});
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView.Location = new System.Drawing.Point(27, 159);
+            this.dataGridView.Location = new System.Drawing.Point(27, 119);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(1002, 415);
+            this.dataGridView.Size = new System.Drawing.Size(1332, 471);
             this.dataGridView.TabIndex = 4;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -197,7 +202,7 @@
             this.btnReset.FlatAppearance.BorderSize = 2;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(514, 107);
+            this.btnReset.Location = new System.Drawing.Point(855, 53);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 33);
             this.btnReset.TabIndex = 6;
@@ -212,7 +217,7 @@
             this.btnSetOne.FlatAppearance.BorderSize = 2;
             this.btnSetOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetOne.ForeColor = System.Drawing.Color.White;
-            this.btnSetOne.Location = new System.Drawing.Point(570, 107);
+            this.btnSetOne.Location = new System.Drawing.Point(911, 53);
             this.btnSetOne.Name = "btnSetOne";
             this.btnSetOne.Size = new System.Drawing.Size(50, 33);
             this.btnSetOne.TabIndex = 7;
@@ -222,6 +227,7 @@
             // 
             // txtBoxMysqlFormula
             // 
+            this.txtBoxMysqlFormula.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtBoxMysqlFormula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtBoxMysqlFormula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxMysqlFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
@@ -233,6 +239,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
@@ -245,6 +252,7 @@
             // 
             // btnCopyToClipboard
             // 
+            this.btnCopyToClipboard.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCopyToClipboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnCopyToClipboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
             this.btnCopyToClipboard.FlatAppearance.BorderSize = 2;
@@ -258,36 +266,24 @@
             this.btnCopyToClipboard.Text = "...";
             this.btnCopyToClipboard.UseVisualStyleBackColor = false;
             // 
-            // btnGenerateInsert
+            // btnGenerateSqlText
             // 
-            this.btnGenerateInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnGenerateInsert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnGenerateInsert.FlatAppearance.BorderSize = 2;
-            this.btnGenerateInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerateInsert.ForeColor = System.Drawing.Color.White;
-            this.btnGenerateInsert.Location = new System.Drawing.Point(193, 616);
-            this.btnGenerateInsert.Name = "btnGenerateInsert";
-            this.btnGenerateInsert.Size = new System.Drawing.Size(104, 33);
-            this.btnGenerateInsert.TabIndex = 11;
-            this.btnGenerateInsert.Text = "Insert";
-            this.btnGenerateInsert.UseVisualStyleBackColor = false;
-            // 
-            // btnGenerateUpdate
-            // 
-            this.btnGenerateUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnGenerateUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnGenerateUpdate.FlatAppearance.BorderSize = 2;
-            this.btnGenerateUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerateUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnGenerateUpdate.Location = new System.Drawing.Point(303, 616);
-            this.btnGenerateUpdate.Name = "btnGenerateUpdate";
-            this.btnGenerateUpdate.Size = new System.Drawing.Size(104, 33);
-            this.btnGenerateUpdate.TabIndex = 12;
-            this.btnGenerateUpdate.Text = "Update";
-            this.btnGenerateUpdate.UseVisualStyleBackColor = false;
+            this.btnGenerateSqlText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnGenerateSqlText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnGenerateSqlText.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
+            this.btnGenerateSqlText.FlatAppearance.BorderSize = 2;
+            this.btnGenerateSqlText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateSqlText.ForeColor = System.Drawing.Color.White;
+            this.btnGenerateSqlText.Location = new System.Drawing.Point(314, 616);
+            this.btnGenerateSqlText.Name = "btnGenerateSqlText";
+            this.btnGenerateSqlText.Size = new System.Drawing.Size(104, 33);
+            this.btnGenerateSqlText.TabIndex = 12;
+            this.btnGenerateSqlText.Text = "Stwórz";
+            this.btnGenerateSqlText.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -298,23 +294,25 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "SQL";
             // 
-            // button1
+            // btnConvert
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(893, 616);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 33);
-            this.button1.TabIndex = 14;
-            this.button1.TabStop = false;
-            this.button1.Text = "LST";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnConvert.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnConvert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
+            this.btnConvert.FlatAppearance.BorderSize = 2;
+            this.btnConvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConvert.ForeColor = System.Drawing.Color.White;
+            this.btnConvert.Location = new System.Drawing.Point(1024, 619);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(100, 33);
+            this.btnConvert.TabIndex = 14;
+            this.btnConvert.TabStop = false;
+            this.btnConvert.Text = "Konwertuj";
+            this.btnConvert.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -332,25 +330,48 @@
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(458, 107);
+            this.button2.Location = new System.Drawing.Point(799, 53);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 33);
             this.button2.TabIndex = 16;
             this.button2.Text = "?";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // cmbBoxSql
+            // 
+            this.cmbBoxSql.FormattingEnabled = true;
+            this.cmbBoxSql.Items.AddRange(new object[] {
+            "Insert",
+            "Update"});
+            this.cmbBoxSql.Location = new System.Drawing.Point(176, 619);
+            this.cmbBoxSql.Name = "cmbBoxSql";
+            this.cmbBoxSql.Size = new System.Drawing.Size(121, 28);
+            this.cmbBoxSql.TabIndex = 17;
+            // 
+            // cmbBoxConvert
+            // 
+            this.cmbBoxConvert.FormattingEnabled = true;
+            this.cmbBoxConvert.Items.AddRange(new object[] {
+            "lst to xml",
+            "xml to lst"});
+            this.cmbBoxConvert.Location = new System.Drawing.Point(892, 624);
+            this.cmbBoxConvert.Name = "cmbBoxConvert";
+            this.cmbBoxConvert.Size = new System.Drawing.Size(121, 28);
+            this.cmbBoxConvert.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.ClientSize = new System.Drawing.Size(1400, 681);
+            this.Controls.Add(this.cmbBoxConvert);
+            this.Controls.Add(this.cmbBoxSql);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnGenerateUpdate);
-            this.Controls.Add(this.btnGenerateInsert);
+            this.Controls.Add(this.btnGenerateSqlText);
             this.Controls.Add(this.btnCopyToClipboard);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxMysqlFormula);
@@ -364,10 +385,11 @@
             this.Controls.Add(this.txtBoxBits);
             this.Controls.Add(this.comboBoxFlaga);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -391,10 +413,9 @@
         private System.Windows.Forms.TextBox txtBoxMysqlFormula;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCopyToClipboard;
-        private System.Windows.Forms.Button btnGenerateInsert;
-        private System.Windows.Forms.Button btnGenerateUpdate;
+        private System.Windows.Forms.Button btnGenerateSqlText;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn BitId;
         private System.Windows.Forms.DataGridViewTextBoxColumn BitSize;
@@ -402,6 +423,8 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn CurrentOption;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbBoxSql;
+        private System.Windows.Forms.ComboBox cmbBoxConvert;
     }
 }
 

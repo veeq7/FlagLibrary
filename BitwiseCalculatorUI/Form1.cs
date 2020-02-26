@@ -71,7 +71,7 @@ namespace BitwiseCalculatorUI
         /// </summary>
         private void CreateBitButtons()
         {
-            Point origin = new Point(27, 107);
+            Point origin = new Point(350, 55);
             ToolTip toolTipSystem = new ToolTip();
             for (int i = 0; i < 32; i++)
             {
@@ -83,7 +83,6 @@ namespace BitwiseCalculatorUI
                 btn.Text = "0";
                 btn.TextAlign = ContentAlignment.MiddleCenter;
                 btn.Size = new Size(17, 33);
-                //btn.Font = new Font("Microsoft Sans Serif", 8);
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
                 toolTipSystem.SetToolTip(btn, "Bit " + (31 - i) + " - " + (1 << (31 - i)));
