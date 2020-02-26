@@ -9,7 +9,6 @@ namespace FlagLibrary.Connections
 {
     public interface ILoader
     {
-        Dictionary<string, FlagList> GetFlagListsFromFolder(string folderPath);
         Dictionary<string, FlagList> GetFlagLists(string filePath);
     }
 }

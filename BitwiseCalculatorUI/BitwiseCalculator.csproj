@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BitwiseCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="BitwiseCalculator.Designer.cs">
+      <DependentUpon>BitwiseCalculator.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="BitwiseCalculator.resx">
+      <DependentUpon>BitwiseCalculator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,9 +81,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FlagLibrary\FlagLibrary.csproj">
+    <ProjectReference Include="..\FlagLibrary\FlagLib.csproj">
       <Project>{75e89ee6-e8bf-4f08-94ab-c787c46eacf4}</Project>
-      <Name>FlagLibrary</Name>
+      <Name>FlagLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

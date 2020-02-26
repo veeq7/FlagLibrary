@@ -19,6 +19,7 @@ namespace FlagLibrary.Connections
         public string IndexAttr = "";
     }
 
+    // Used by Vendo Programmers
     public class XMLVendoStandard : XMLStandard
     {
         public XMLVendoStandard()
@@ -34,6 +35,7 @@ namespace FlagLibrary.Connections
     }
     }
     
+    // Used by BitwiseCalculator app
     public class XMLCalcStandard : XMLStandard
     {
         public XMLCalcStandard()
@@ -55,32 +57,6 @@ namespace FlagLibrary.Connections
         {
             this.standard = standard;
         }
-
-        public Dictionary<string, FlagList> GetFlagListsFromFolder(string folderPath)
-        {
-            Dictionary<string, FlagList> flagList = new Dictionary<string, FlagList>();
-
-            string[] fileEntries = Directory.GetFiles(folderPath);
-            foreach (string fileName in fileEntries)
-            {
-                if (fileName.EndsWith(".xml"))
-                {
-                    foreach (KeyValuePair<string, FlagList> kv in GetFlagLists(fileName))
-                    {
-                        flagList.Add(kv.Key, kv.Value);
-                    }
-                }
-            }
-
-            string[] subdirectoryEntries = Directory.GetDirectories(folderPath);
-            foreach (string subdirectory in subdirectoryEntries)
-            {
-                GetFlagListsFromFolder(subdirectory);
-            }
-
-            return flagList;
-        }
-
         public Dictionary<string, FlagList> GetFlagLists(string filePath)
         {
             XmlDocument xmlDoc = new XmlDocument();
@@ -93,6 +69,7 @@ namespace FlagLibrary.Connections
                 Console.WriteLine(e.Message);
             }
             Dictionary<string, FlagList> list = new Dictionary<string, FlagList>();
+            if (xmlDoc.ChildNodes.Count == 0) return list;
             foreach (XmlNode Flag in xmlDoc.DocumentElement.ChildNodes)
             {
                 if (standard.hasTableNode)

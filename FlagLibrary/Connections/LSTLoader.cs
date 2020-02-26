@@ -10,11 +10,6 @@ namespace FlagLibrary.Connections
 {
     public class LSTLoader : ILoader
     {
-        public Dictionary<string, FlagList> GetFlagListsFromFolder(string folderPath)
-        {
-            throw new NotSupportedException("GetFlagListsFromFolder supports only Vendo Xmls");
-        }
-
         public Dictionary<string, FlagList> GetFlagLists(string filePath)
         {
             Dictionary<string, FlagList> list = new Dictionary<string, FlagList>();

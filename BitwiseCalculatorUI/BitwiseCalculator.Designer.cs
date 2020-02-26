@@ -1,6 +1,6 @@
 ﻿namespace BitwiseCalculatorUI
 {
-    partial class Form1
+    partial class BitwiseCalculator
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BitwiseCalculator));
             this.comboBoxFlaga = new System.Windows.Forms.ComboBox();
             this.txtBoxBits = new System.Windows.Forms.TextBox();
             this.lblFlaga = new System.Windows.Forms.Label();
@@ -81,6 +81,7 @@
             this.txtBoxBits.Name = "txtBoxBits";
             this.txtBoxBits.Size = new System.Drawing.Size(162, 32);
             this.txtBoxBits.TabIndex = 1;
+            this.txtBoxBits.Text = "0";
             // 
             // lblFlaga
             // 
@@ -108,8 +109,7 @@
             // btnShow
             // 
             this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnShow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnShow.FlatAppearance.BorderSize = 2;
+            this.btnShow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Location = new System.Drawing.Point(1275, 56);
@@ -180,8 +180,7 @@
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnReset.FlatAppearance.BorderSize = 2;
+            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.Location = new System.Drawing.Point(921, 56);
@@ -195,8 +194,7 @@
             // btnSetOne
             // 
             this.btnSetOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnSetOne.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnSetOne.FlatAppearance.BorderSize = 2;
+            this.btnSetOne.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnSetOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetOne.ForeColor = System.Drawing.Color.White;
             this.btnSetOne.Location = new System.Drawing.Point(977, 56);
@@ -237,8 +235,7 @@
             // 
             this.btnGenerateSqlText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnGenerateSqlText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnGenerateSqlText.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnGenerateSqlText.FlatAppearance.BorderSize = 2;
+            this.btnGenerateSqlText.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnGenerateSqlText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerateSqlText.ForeColor = System.Drawing.Color.White;
             this.btnGenerateSqlText.Location = new System.Drawing.Point(240, 614);
@@ -252,8 +249,7 @@
             // btnQuestionMark
             // 
             this.btnQuestionMark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
-            this.btnQuestionMark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnQuestionMark.FlatAppearance.BorderSize = 2;
+            this.btnQuestionMark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnQuestionMark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuestionMark.ForeColor = System.Drawing.Color.White;
             this.btnQuestionMark.Location = new System.Drawing.Point(865, 56);
@@ -285,8 +281,8 @@
             this.btnFindXMLs.BackgroundImage = global::BitwiseCalculatorUI.Properties.Resources.Folder2;
             this.btnFindXMLs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFindXMLs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFindXMLs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnFindXMLs.FlatAppearance.BorderSize = 5;
+            this.btnFindXMLs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnFindXMLs.FlatAppearance.BorderSize = 4;
             this.btnFindXMLs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindXMLs.ForeColor = System.Drawing.Color.White;
             this.btnFindXMLs.Location = new System.Drawing.Point(324, 56);
@@ -303,8 +299,8 @@
             this.btnCopyToClipboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnCopyToClipboard.BackgroundImage = global::BitwiseCalculatorUI.Properties.Resources.document4;
             this.btnCopyToClipboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCopyToClipboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnCopyToClipboard.FlatAppearance.BorderSize = 5;
+            this.btnCopyToClipboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnCopyToClipboard.FlatAppearance.BorderSize = 4;
             this.btnCopyToClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopyToClipboard.ForeColor = System.Drawing.Color.White;
             this.btnCopyToClipboard.Location = new System.Drawing.Point(1289, 615);
@@ -321,8 +317,8 @@
             this.btnFindXML.BackgroundImage = global::BitwiseCalculatorUI.Properties.Resources.Document5;
             this.btnFindXML.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFindXML.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(51)))), ((int)(((byte)(220)))));
-            this.btnFindXML.FlatAppearance.BorderSize = 5;
+            this.btnFindXML.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
+            this.btnFindXML.FlatAppearance.BorderSize = 4;
             this.btnFindXML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindXML.ForeColor = System.Drawing.Color.White;
             this.btnFindXML.Location = new System.Drawing.Point(281, 55);
@@ -378,8 +374,6 @@
         private System.Windows.Forms.Button btnFindXML;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnSetOne;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaxSize;
         private System.Windows.Forms.TextBox txtBoxMysqlFormula;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCopyToClipboard;
