@@ -9,7 +9,6 @@ namespace FlagLibrary.Flags
         // includes first bit
         public List<int> bitRefs = new List<int>();
         public string description = "";
-        public int maxSize = 1;
         public Dictionary<int, string> bitDescriptions = new Dictionary<int, string>();
 
         public int GetValue(int i32)
@@ -19,29 +18,16 @@ namespace FlagLibrary.Flags
             int bitIndex = 0;
             foreach (int bitRef in bitRefs)
             {
-                value += ReadBitValue(bitRef, i32, bitIndex++);
+                value += MathUtils.GetBitFromNumber(i32, bitRef) << bitIndex++;
             }
 
             return value;
         }
 
-        /// <summary>
-        /// Reads bit of Value of current Flag
-        /// </summary>
-        /// <param name="bitPosition">Bit Position in key</param>
-        /// <param name="key">Key from which we read from</param>
-        /// <param name="bitIndex">Bit Index of Flag</param>
-        /// <returns>Bit of Value of Flag</returns>
-        private int ReadBitValue(int bitPosition, int key, int bitIndex)
-        {
-            int value = MathUtils.GetValueOfBit(bitPosition);
-            return ((value & key) != 0 ? 1 : 0) << bitIndex;
-        }
-
         public int GetModifiedValue(int i32, int value)
         {
             int newi32 = i32;
-            value = MathUtils.Clamp(value, 0, maxSize);
+            value = MathUtils.Clamp(value, 0, GetMaxSize());
 
             int bitIndex = 0;
             foreach (int bitRef in bitRefs)
@@ -52,13 +38,26 @@ namespace FlagLibrary.Flags
             return newi32;
         }
         
-
-
-        public void SetDefaultBitDescriptions()
+        public int GetMaxSize()
         {
-            bitDescriptions.Clear();
-            bitDescriptions.Add(0, "Off");
-            bitDescriptions.Add(1, "On");
+            return (1 << bitRefs.Count) - 1;
+        }
+
+
+        public void FillDescriptions()
+        {
+            if (bitRefs.Count == 1 && bitDescriptions.Count == 0)
+            {
+                bitDescriptions.Add(0, "Off");
+                bitDescriptions.Add(1, "On");
+            }
+            else
+            {
+                for (int i = 0; i <= GetMaxSize(); i++)
+                {
+                    if (!bitDescriptions.ContainsKey(i)) bitDescriptions.Add(i, i.ToString());
+                }
+            }
         }
     }
 }

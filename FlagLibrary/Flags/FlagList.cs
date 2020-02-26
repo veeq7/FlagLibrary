@@ -35,7 +35,7 @@ namespace FlagLibrary.Flags
             ParsedFlagData data = new ParsedFlagData();
             data.description = flag.description;
             data.bitNumber = flag.bitRefs[0];
-            data.bitSize = 0 << flag.bitRefs.Count;
+            data.bitSize = flag.GetMaxSize();
             data.options = GetParsedFlagOptions(flag);
             if (flag.bitDescriptions.ContainsKey(flagValue))
                 data.currentOption = flag.bitDescriptions[flagValue];

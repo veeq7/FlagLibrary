@@ -26,6 +26,7 @@ namespace BitwiseCalculatorUI
         {
             XMLLoader xml = new XMLLoader(filePath);
             flagLists = xml.GetFlagLists();
+            comboBoxFlaga.Items.Clear();
             foreach (KeyValuePair<string, FlagList> pair in flagLists)
             {
                 comboBoxFlaga.Items.Add(pair.Key);
@@ -100,16 +101,16 @@ namespace BitwiseCalculatorUI
                 //btn.Font = new Font("Microsoft Sans Serif", 8);
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
-                toolTipSystem.SetToolTip(btn, "Bit " + (32 - i) + " - " + (1 << (31 - i)));
+                toolTipSystem.SetToolTip(btn, "Bit " + (31 - i) + " - " + (1 << (31 - i)));
 
                 SetColor(btn, i);
 
                 btn.FlatAppearance.BorderSize = 0;
                 btn.MouseClick += BtnMouseClick;
 
-                SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+                SolidBrush myBrush = new SolidBrush(Color.Red);
                 Graphics formGraphics;
-                formGraphics = this.CreateGraphics();
+                formGraphics = CreateGraphics();
                 formGraphics.FillRectangle(myBrush, new Rectangle(0, 0, 200, 300));
                 myBrush.Dispose();
                 formGraphics.Dispose();
@@ -139,26 +140,30 @@ namespace BitwiseCalculatorUI
             }
         }
 
+        const int IDColumnIndex = 0;
+        const int CurrentOptionColumnIndex = 3;
+        const int ValueColumnIndex = 4;
+
         void dataGridView_OnTextChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3 || e.ColumnIndex == 4)
+            if (e.ColumnIndex == CurrentOptionColumnIndex || e.ColumnIndex == ValueColumnIndex)
             {
                 DataGridViewCell cell = dataGridView[e.ColumnIndex, e.RowIndex];
                 int bitID;
                 try
                 {
-                    bitID = int.Parse(dataGridView.Rows[cell.RowIndex].Cells[0].Value.ToString());
+                    bitID = int.Parse(dataGridView.Rows[cell.RowIndex].Cells[IDColumnIndex].Value.ToString());
                 }
                 catch
                 {
                     return;
                 }
                 BitGroup flag = selectedFlagList.flags[bitID];
-                if (e.ColumnIndex == 4)
+                if (e.ColumnIndex == ValueColumnIndex)
                 {
                     try
                     {
-                        cell.Value = MathUtils.Clamp(int.Parse(cell.Value.ToString()), 0, flag.maxSize);
+                        cell.Value = MathUtils.Clamp(int.Parse(cell.Value.ToString()), 0, flag.GetMaxSize());
                     }
                     catch
                     {
@@ -179,7 +184,8 @@ namespace BitwiseCalculatorUI
             {
                 string optionName = cell.Value.ToString();
                 value = selectedFlagList.GetParsedFlagOptions(flag)[optionName];
-            } else if (cell is DataGridViewTextBoxCell)
+            }
+            else if (cell is DataGridViewTextBoxCell)
             {
                 value = int.Parse(cell.Value.ToString());
             }
@@ -279,7 +285,7 @@ namespace BitwiseCalculatorUI
                         txtBoxBits.Text = '-' + text;
                     }
                 }
-                e.KeyChar = (char) 0;
+                e.KeyChar = (char)0;
             }
         }
         /// <summary>
@@ -365,7 +371,7 @@ namespace BitwiseCalculatorUI
                 }
                 catch
                 {
-                    
+
                 }
             }
         }
