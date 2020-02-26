@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 using System.IO;
-using System.Windows.Forms;
+using FlagLibrary.Utils;
 
 namespace FlagLibrary.Connections
 {
-    public class XMLLoader
+    public class XMLLoader : ILoader
     {
 
         public Dictionary<string, FlagList> GetFlagListsFromFolder(string folderPath)
@@ -79,7 +79,7 @@ namespace FlagLibrary.Connections
         {
             BitGroup flag = new BitGroup();
             string[] indexes = Bit.Attributes["Index"].Value.Split(',');
-            flag.bitRefs = GetBitRefs(indexes);
+            flag.bitRefs = CommonUtils.ParseStringArrayToIntArray(indexes);
             foreach (XmlNode Attribute in Bit.ChildNodes)
             {
                 if (Attribute.Name == "Comment")
@@ -96,16 +96,6 @@ namespace FlagLibrary.Connections
                 flag.FillDescriptions();
             }
             return flag;
-        }
-
-        List<int> GetBitRefs(string[] indexes)
-        {
-            List<int> list = new List<int>();
-            foreach (string index in indexes)
-            {
-                list.Add(int.Parse(index));
-            }
-            return list;
         }
     }
 }

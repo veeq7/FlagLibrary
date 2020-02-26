@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlagLibrary.Utils
 {
-    public static class MathUtils
+    public static class CommonUtils
     {
         public static int Clamp(int value, int min, int max)
         {
@@ -33,6 +33,16 @@ namespace FlagLibrary.Utils
         public static int GetBitFromNumber(int number, int bitPosition)
         {
             return (number & 1 << bitPosition) != 0 ? 1 : 0;
+        }
+
+        public static List<int> ParseStringArrayToIntArray(string[] indexes)
+        {
+            List<int> list = new List<int>();
+            foreach (string index in indexes)
+            {
+                list.Add(int.Parse(index));
+            }
+            return list;
         }
     }
 }

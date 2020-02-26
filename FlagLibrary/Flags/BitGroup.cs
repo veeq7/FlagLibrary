@@ -18,7 +18,7 @@ namespace FlagLibrary.Flags
             int bitIndex = 0;
             foreach (int bitRef in bitRefs)
             {
-                value += MathUtils.GetBitFromNumber(i32, bitRef) << bitIndex++;
+                value += Utils.CommonUtils.GetBitFromNumber(i32, bitRef) << bitIndex++;
             }
 
             return value;
@@ -27,12 +27,12 @@ namespace FlagLibrary.Flags
         public int GetModifiedValue(int i32, int value)
         {
             int newi32 = i32;
-            value = MathUtils.Clamp(value, 0, GetMaxSize());
+            value = Utils.CommonUtils.Clamp(value, 0, GetMaxSize());
 
             int bitIndex = 0;
             foreach (int bitRef in bitRefs)
             {
-                newi32 = MathUtils.SetBitInNumber(newi32, bitRef, MathUtils.GetBitFromNumber(value, bitIndex++));
+                newi32 = Utils.CommonUtils.SetBitInNumber(newi32, bitRef, Utils.CommonUtils.GetBitFromNumber(value, bitIndex++));
             }
 
             return newi32;

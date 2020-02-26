@@ -47,11 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connections\ILoader.cs" />
+    <Compile Include="Connections\LSTLoader.cs" />
     <Compile Include="Connections\XMLLoader.cs" />
+    <Compile Include="Conversions\IConversion.cs" />
+    <Compile Include="Conversions\LstToXmlsConversion.cs" />
+    <Compile Include="Conversions\XmlsToLstConversion.cs" />
     <Compile Include="Flags\BitGroup.cs" />
     <Compile Include="Flags\FlagList.cs" />
+    <Compile Include="Generators\SqlGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\MathUtils.cs" />
+    <Compile Include="Common\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
