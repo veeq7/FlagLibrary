@@ -535,8 +535,8 @@ namespace BitwiseCalculatorUI
         {
             if (str == "")
                 return;
-            // TODO: Set str in Sql output text field
-            MessageBox.Show(str);
+
+            txtBoxMysqlFormula.Text = str;
         }
 
         private void btnQuestionMark_Click(object sender, EventArgs e)
@@ -547,6 +547,11 @@ namespace BitwiseCalculatorUI
             }
 
             SetColorsInDataGridView();
+        }
+
+        private void btnCopyToClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtBoxMysqlFormula.Text);
         }
     }
 }

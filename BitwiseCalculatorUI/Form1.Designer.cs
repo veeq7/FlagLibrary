@@ -374,6 +374,7 @@
             this.btnCopyToClipboard.TabIndex = 10;
             this.btnCopyToClipboard.TabStop = false;
             this.btnCopyToClipboard.UseVisualStyleBackColor = false;
+            this.btnCopyToClipboard.Click += new System.EventHandler(this.btnCopyToClipboard_Click);
             // 
             // btnFindXML
             // 
