@@ -255,7 +255,9 @@ namespace BitwiseCalculatorUI
             List<ParsedFlagData> flagDataList = selectedFlagList.Parse(value);
 
             dataGridView.Rows.Clear();
-            //dataGridView.Columns[0].ReadOnly = true;
+            dataGridView.Columns[0].ReadOnly = true;
+            dataGridView.Columns[1].ReadOnly = true;
+            dataGridView.Columns[2].ReadOnly = true;
 
 
             for (int i = 0; i < flagDataList.Count; i++)
