@@ -46,6 +46,7 @@ namespace FlagLibrary.Flags
 
         public void FillDescriptions()
         {
+            bitDescriptions.Add(-1, "Unknown");
             bitDescriptions.Add(0, "Off");
             if (bitRefs.Count == 1 && bitDescriptions.Count == 1)
             {

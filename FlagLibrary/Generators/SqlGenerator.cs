@@ -9,18 +9,27 @@ namespace FlagLibrary.Generators
 {
     class SqlGenerator
     {
-        public string GenerateInsert(Dictionary<int, ParsedFlagData> data)
+        public string GenerateInsert(Dictionary<int, ParsedFlagData> data, string flagName)
         {
             string insertString = "";
 
             return insertString;
         }
 
-        public string GenerateUpdate(Dictionary<string, FlagList> flags, int value)
+        public string GenerateUpdate(Dictionary<int, ParsedFlagData> data, string flagName)
         {
-            string updateString = "";
+            string updateStringSet = flagName + "=" + flagName +"|";
+            string updateStringUnset = flagName + "=" + flagName + "&(~(";
 
-            return updateString;
+
+            //foreach ()
+            //{
+            //
+            //}
+
+            updateStringSet += ")";
+            updateStringUnset += "))"; ;
+            return updateStringSet + "; " + updateStringUnset + ";";
         }
     }
 }
