@@ -1,6 +1,7 @@
 ﻿using FlagLibrary.Connections;
 using FlagLibrary.Flags;
 using FlagLibrary.Utils;
+using FlagLibrary.Generators;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -471,13 +472,78 @@ namespace BitwiseCalculatorUI
 
         }
 
+
         private void btnGenerateSqlText_Click(object sender, EventArgs e)
         {
+            SqlCommandType type = GetCommandType();
+            if (type == SqlCommandType.Unknown) return;
+
+            string bits = "";
+
             var rows = dataGridView.Rows;
-            foreach (var row in rows)
+            SqlGenerator generator = new SqlGenerator();
+
+            if (type == SqlCommandType.Insert)
             {
+                bits = Convert.ToString(GetValueFromTextBox(), 2);
+                SetStringInSqlOutput(generator.GenerateInsert(bits, selectedFlagList.name));
+            }
+            else if (type == SqlCommandType.Update)
+            {
+                // TODO: Handle ???
+                bits = Convert.ToString(GetValueFromTextBox(), 2);
+                foreach (DataGridViewRow row in rows)
+                {
+                    try
+                    {
+                        var id = int.Parse(row.Cells[IDColumnIndex].Value.ToString());
+                        var val = row.Cells[ValueColumnIndex].Value.ToString();
+                        var flag = selectedFlagList.flags[id];
+                        if (val == "?")
+                        {
+                            foreach(var bitRef in flag.bitRefs)
+                            {
+                                bits = SetStringCharFromEnd(bits, bitRef, '?');
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
+                SetStringInSqlOutput(generator.GenerateUpdate(bits, selectedFlagList.name));
             }
 
+        }
+
+        string SetStringCharFromEnd(string str, int index, char ch)
+        {
+            char[] chars = str.ToCharArray();
+            chars[str.Length - index - 1] = ch;
+            return chars.ToString();
+        }
+
+        enum SqlCommandType
+        {
+            Insert,
+            Update,
+            Unknown
+        }
+
+        private SqlCommandType GetCommandType()
+        {
+            // TODO: Return correct type using current selection from combo box, return unknown on exception
+            return SqlCommandType.Update;
+            //return SqlCommandType.Update;
+        }
+
+        void SetStringInSqlOutput(string str)
+        {
+            if (str == "")
+                return;
+            // TODO: Set str in Sql output text field
+            MessageBox.Show(str);
         }
     }
 }
