@@ -58,7 +58,6 @@ namespace FlagLibrary.Connections
             BitGroup flag = new BitGroup();
             string[] indexes = Bit.Attributes["Index"].Value.Split(',');
             flag.bitRefs = GetBitRefs(indexes);
-            flag.maxSize = flag.bitRefs.Count() << 0;
             foreach (XmlNode Attribute in Bit.ChildNodes)
             {
                 if (Attribute.Name == "Comment")
@@ -72,7 +71,7 @@ namespace FlagLibrary.Connections
             }
             if (flag.bitDescriptions.Count == 0)
             {
-                flag.SetDefaultBitDescriptions();
+                flag.FillDescriptions();
             }
             return flag;
         }

@@ -1240,11 +1240,11 @@
 	</Bit>
 	<Bit Index="2,3,4,5,6,7">
 		<Comment>praca normatywna/przestoj planowany</Comment>
-	</Bit>
         <Option value="1">praca nienormatywna/przestoj nieplanowany </Option>
 		<Option value="2">przestoj przezbrojenie (tylko dla przestoju)</Option>
 		<Option value="3">czujnik nieaktywny</Option>
 		<Option value="63">stan nieznany</Option>
+	</Bit>
 	<Bit Index="8">
 		<Comment>dane sa poprawnie pobierane</Comment>
 	</Bit>
