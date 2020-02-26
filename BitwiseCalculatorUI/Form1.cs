@@ -467,12 +467,6 @@ namespace BitwiseCalculatorUI
             ShowBits();
         }
 
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
         private void btnGenerateSqlText_Click(object sender, EventArgs e)
         {
             SqlCommandType type = GetCommandType();
@@ -490,7 +484,6 @@ namespace BitwiseCalculatorUI
             }
             else if (type == SqlCommandType.Update)
             {
-                // TODO: Handle ???
                 bits = Convert.ToString(GetValueFromTextBox(), 2);
                 foreach (DataGridViewRow row in rows)
                 {
@@ -544,6 +537,16 @@ namespace BitwiseCalculatorUI
                 return;
             // TODO: Set str in Sql output text field
             MessageBox.Show(str);
+        }
+
+        private void btnQuestionMark_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                ((DataGridViewComboBoxCell)dataGridView[CurrentOptionColumnIndex, i]).Value = "???";
+            }
+
+            SetColorsInDataGridView();
         }
     }
 }
