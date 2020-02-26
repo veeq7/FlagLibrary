@@ -279,7 +279,9 @@
             // cmbBoxSql
             // 
             this.cmbBoxSql.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmbBoxSql.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.cmbBoxSql.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxSql.ForeColor = System.Drawing.Color.DarkGray;
             this.cmbBoxSql.FormattingEnabled = true;
             this.cmbBoxSql.Items.AddRange(new object[] {
             "Insert",
@@ -292,7 +294,9 @@
             // cmbBoxConvert
             // 
             this.cmbBoxConvert.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmbBoxConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.cmbBoxConvert.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxConvert.ForeColor = System.Drawing.Color.DarkGray;
             this.cmbBoxConvert.FormattingEnabled = true;
             this.cmbBoxConvert.Items.AddRange(new object[] {
             "lst to xml",
