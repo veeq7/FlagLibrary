@@ -53,6 +53,7 @@
     <Compile Include="Conversions\IConversion.cs" />
     <Compile Include="Conversions\LstToXmlsConversion.cs" />
     <Compile Include="Conversions\XmlsToLstConversion.cs" />
+    <Compile Include="Conversions\XmlsToXmlConversion.cs" />
     <Compile Include="Flags\BitGroup.cs" />
     <Compile Include="Flags\FlagList.cs" />
     <Compile Include="Generators\SqlGenerator.cs" />

@@ -22,10 +22,14 @@ namespace FlagLibrary.Generators
             string updateStringUnset = flagName + "=" + flagName + "&(~(";
 
 
-            //foreach ()
-            //{
-            //
-            //}
+            foreach (KeyValuePair<int, ParsedFlagData> kv in data)
+            {
+                ParsedFlagData pFlag = kv.Value;
+                foreach (int bitRef in pFlag.flag.bitRefs)
+                {
+
+                }
+            }
 
             updateStringSet += ")";
             updateStringUnset += "))"; ;
