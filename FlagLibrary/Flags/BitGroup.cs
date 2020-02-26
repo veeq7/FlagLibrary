@@ -47,14 +47,9 @@ namespace FlagLibrary.Flags
         public void FillDescriptions()
         {
             if (!bitDescriptions.ContainsKey(-1)) bitDescriptions.Add(-1, "???");
-            if (!bitDescriptions.ContainsKey(0)) bitDescriptions.Add(0, "Off");
-            if (!bitDescriptions.ContainsKey(1)) bitDescriptions.Add(1, "On");
-            else
+            for (int i = 0; i <= GetMaxSize(); i++)
             {
-                for (int i = 0; i <= GetMaxSize(); i++)
-                {
-                    if (!bitDescriptions.ContainsKey(i)) bitDescriptions.Add(i, i.ToString());
-                }
+                if (!bitDescriptions.ContainsKey(i)) bitDescriptions.Add(i, i.ToString());
             }
         }
     }

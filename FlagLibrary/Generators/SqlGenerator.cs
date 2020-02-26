@@ -19,14 +19,15 @@ namespace FlagLibrary.Generators
         public string GenerateInsert(string bits, string flagName)
         {
             if (CheckIfBitStringIsEmpty(bits)) return "";
-            string insertString = "Insert:\n" + flagName + "=(";
+            string insertString = flagName + "=(";
 
             int i = 0;
             foreach (var ch in bits)
             {
                 if (ch == '1')
                 {
-                    insertString += "(1<<"+i+")|";
+                    if (i != 0) insertString += '|';
+                    insertString += "(1<<"+i+")";
                 }
                 i++;
             }
@@ -39,19 +40,21 @@ namespace FlagLibrary.Generators
         public string GenerateUpdate(string bits, string flagName)
         {
             if (CheckIfBitStringIsEmpty(bits)) return "";
-            string updateStringSet = "Update (set):\n" + flagName + "=" + flagName +"|(";
-            string updateStringUnset = "Update (remove):\n" + flagName + "=" + flagName + "&(~(";
+            string updateStringSet = flagName + "=" + flagName +"|(";
+            string updateStringUnset = flagName + "=" + flagName + "&(~(";
 
             int i = 0;
             foreach (var ch in bits)
             {
                 if (ch == '1')
                 {
-                    updateStringSet += "(1<<" + i + ")|";
+                    if (i != 0) updateStringSet += '|';
+                    updateStringSet += "(1<<" + i + ")";
                 }
                 else if (ch == '0')
                 {
-                    updateStringUnset += "(1<<" + i + ")|";
+                    if (i != 0) updateStringUnset += '|';
+                    updateStringUnset += "(1<<" + i + ")";
                 }
                 i++;
             }
@@ -60,7 +63,7 @@ namespace FlagLibrary.Generators
 
             updateStringSet += ")"; ;
             updateStringUnset += "))"; ;
-            return updateStringSet + ";\n" + updateStringUnset + ";";
+            return updateStringSet + "; " + updateStringUnset + ";";
         }
     }
 }

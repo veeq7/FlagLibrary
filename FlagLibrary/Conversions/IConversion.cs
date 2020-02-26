@@ -8,6 +8,6 @@ namespace FlagLibrary.Conversions
 {
     interface IConversion
     {
-        void Convert(string sourceFilePath, string targetFilePath, string errorFilePath = "");
+        void Convert(string targetFilePath, string errorFilePath = "");
     }
 }

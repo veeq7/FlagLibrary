@@ -42,7 +42,8 @@ namespace BitwiseCalculatorUI
             ILoader loader;
             if (filePath.EndsWith(".xml") || isFolder)
             {
-                loader = new XMLLoader();
+                //loader = new XMLLoader(new XMLVendoStandard());
+                loader = new XMLLoader(new XMLCalcStandard());
             } else if (filePath.EndsWith(".lst"))
             {
                 loader = new LSTLoader();
@@ -64,8 +65,11 @@ namespace BitwiseCalculatorUI
             {
                 comboBoxFlaga.Items.Add(pair.Key);
             }
-            comboBoxFlaga.SelectedIndex = 0;
-            selectedFlagList = flagLists[comboBoxFlaga.Items[0].ToString()];
+            if (comboBoxFlaga.Items.Count > 0)
+            {
+                comboBoxFlaga.SelectedIndex = 0;
+                selectedFlagList = flagLists[comboBoxFlaga.Items[0].ToString()];
+            }
         }
 
         /// <summary>
@@ -468,38 +472,44 @@ namespace BitwiseCalculatorUI
             }
             else if (type == SqlCommandType.Update)
             {
-                // TODO: Handle ???
-                bits = Convert.ToString(GetValueFromTextBox(), 2);
+                bits = "????????????????????????????????";
                 foreach (DataGridViewRow row in rows)
                 {
                     try
                     {
                         var id = int.Parse(row.Cells[IDColumnIndex].Value.ToString());
-                        var val = row.Cells[ValueColumnIndex].Value.ToString();
+                        var col = row.Cells[CurrentOptionColumnIndex].Value.ToString();
+                        var val = int.Parse(row.Cells[ValueColumnIndex].Value.ToString());
                         var flag = selectedFlagList.flags[id];
-                        if (val == "?")
+                        foreach (var bitRef in flag.bitRefs)
                         {
-                            foreach(var bitRef in flag.bitRefs)
+                            
+                            char ch = '0';
+                            if (col == "???") ch = '?';
+                            else if ((val & (1 << bitRef)) == (1 << bitRef))
                             {
-                                bits = SetStringCharFromEnd(bits, bitRef, '?');
+                                ch = '1';
                             }
+                            bits = SetStringChar(bits, bitRef, ch);
                         }
                     }
                     catch
                     {
                         continue;
                     }
+
                 }
                 SetStringInSqlOutput(generator.GenerateUpdate(bits, selectedFlagList.name));
+                MessageBox.Show(bits);
             }
 
         }
 
-        string SetStringCharFromEnd(string str, int index, char ch)
+        string SetStringChar(string str, int index, char ch)
         {
             char[] chars = str.ToCharArray();
-            chars[str.Length - index - 1] = ch;
-            return chars.ToString();
+            chars[index] = ch;
+            return new string(chars);
         }
 
         enum SqlCommandType
@@ -511,17 +521,16 @@ namespace BitwiseCalculatorUI
 
         private SqlCommandType GetCommandType()
         {
-            // TODO: Return correct type using current selection from combo box, return unknown on exception
-            return SqlCommandType.Update;
-            //return SqlCommandType.Update;
+            if (cmbBoxSql.SelectedIndex == 0) return SqlCommandType.Insert;
+            if (cmbBoxSql.SelectedIndex == 1) return SqlCommandType.Update;
+            return SqlCommandType.Unknown;
         }
 
         void SetStringInSqlOutput(string str)
         {
             if (str == "")
                 return;
-            // TODO: Set str in Sql output text field
-            MessageBox.Show(str);
+            txtBoxMysqlFormula.Text = str;
         }
     }
 }
