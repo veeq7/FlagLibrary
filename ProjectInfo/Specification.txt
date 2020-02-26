@@ -1,0 +1,35 @@
+
+binarycalculator.exe
+
+Application allows for calculating Flag values with descriptors included from XML definition files
+and allows to generate SQL command to operate in database using which use those flags.
+
+Bity - contains decimal value of Flag
+Flaga - indicates which Flag Set is selected
+Buttons to the right of `Flaga` - allows for loading singular / multiple (from directory) XML files with definitions
+Table - contains all information parsed flag information
+
+Generuj - allows for generating SQL commands
+
+
+
+binaryflagconventer.exe
+
+This application is not ready yet!
+
+	Planned commands:
+
+Converting from multiple Vendo's XMLs to one XML ready for distribution.
+
+binaryflagconventer.exe %1 %2
+
+Allows for generating 
+
+%1 - Source folder with Vendo's XML
+%2 - Target Filepath for generated XML ready for distribution
+
+
+
+FlagLibrary.dll
+
+Consists of every method that's used to interact with XML definition files and flag parsing.

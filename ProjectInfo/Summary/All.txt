@@ -1,0 +1,5 @@
+Rafał zajmował się logiką, back-endem. Obliczanie bitów, flag, zczytywanie z plików, konwersje, generator SQL, DLL lib.
+
+Dominik zajmował się UI i kodem front-endowym aplikacji kalkulatora binarnego.
+
+Hubert pomagał przy UI i kodzie Dominika. Starał się też pomagać konceptualnie.

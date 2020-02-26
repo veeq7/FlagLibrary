@@ -142,7 +142,6 @@
             this.Description,
             this.CurrentOption,
             this.Value});
-            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView.Location = new System.Drawing.Point(27, 119);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersVisible = false;

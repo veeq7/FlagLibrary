@@ -1,0 +1,10 @@
+Praca przy tej aplikacji była ciekawym doświadczeniem.
+Zajmowałem się całym back-endem. Co mnie trochę przygniotło,
+koledzy nie bardzo wiedzieli jak aplikacja miała działa od "bebechów"
+więc musiałem wszystko w back-endzie zrobić sam, jednocześnie pomagając przy front-endzie.
+
+Wystąpiły pewne komplikacje związane z wczesną decyzją konstrukcyjną (przechowywanie całej flagi w jednym intcie),
+co utrudniło możliwość przekazywania `undefined` wartości bitu (używanej do generowania komendy UPDATE).
+
+W przyszłości chciałbym się nauczyć lepiej planować strukturę aplikacji, żeby nie powtarzać błędów powstałych
+w tym przypadku. Oraz również pisać bardziej modularny i elastyczny kod.
