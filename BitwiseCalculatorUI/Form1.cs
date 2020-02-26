@@ -282,7 +282,6 @@ namespace BitwiseCalculatorUI
                 dataGridView.Rows[i].Cells[CurrentOptionColumnIndex] = c;
                 dataGridView.Rows[i].Height = 25;
             }
-
             RefreshBitButtonsText();
             SetColorsInDataGridView();
         }

@@ -1,0 +1,7 @@
+Pomoc przy UI rozwiazywanie problemow nie spojnosci interfejsu 
+Zaprojektowanie pierwotnego układu i aktualnej kolorystyki aplikacji
+pomoc w konceptualnym zrozumieniu i rozplanowaniu kolejnosci działan w zakresie kodowania 
+sporadyczna po moc w pisaniu back-end 
+zaprogramowanie metody odpowiedzialnej za przeliczanie wartosci DEC na BIN 
+wymyslenie sposobu generowania planszy do wyswietlania wartosci binarnych oraz byłem 
+odpowiedziaalny za ich odpowiedznie formatowanie(ko,lory tekstu i tla)
