@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml;
-using System.IO;
+using System.Windows.Forms;
 using FlagLibrary.Utils;
 
 namespace FlagLibrary.Connections
@@ -119,7 +119,13 @@ namespace FlagLibrary.Connections
                 }
                 else if (Attribute.Name == standard.OptionNode)
                 {
-                    flag.bitDescriptions.Add(int.Parse(Attribute.Attributes[standard.ValueNode].Value), Attribute.InnerText);
+                    try
+                    {
+                        flag.bitDescriptions.Add(int.Parse(Attribute.Attributes[standard.ValueNode].Value.ToString()), Attribute.InnerText);
+
+                    } catch
+                    {
+                    }
                 }
             }
             flag.FillDescriptions();

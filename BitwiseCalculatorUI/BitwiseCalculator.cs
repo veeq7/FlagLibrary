@@ -300,13 +300,13 @@ namespace BitwiseCalculatorUI
         private void btnFindXML_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "XML or LST (*.xml; *.lst)|*.xml; *.lst";
-            dlg.Title = "Select XML or LST file with Flag Definitions";
+            dlg.Filter = "XML Flag Definition File (*.xml)|*.xml";
+            dlg.Title = "Select XML  file with Flag Definitions";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 filePath = dlg.FileName.ToString();
-                isFolder = false;
+                isFolder = Path.GetExtension(filePath) == "";
                 InitializeFlagLists();
                 SaveConfig();
             }
@@ -319,7 +319,7 @@ namespace BitwiseCalculatorUI
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 filePath = dlg.SelectedPath.ToString();
-                isFolder = true;
+                isFolder = Path.GetExtension(filePath) == "";
                 InitializeFlagLists();
                 SaveConfig();
             }
@@ -331,7 +331,6 @@ namespace BitwiseCalculatorUI
             try
             {
                 File.WriteAllText(configFileName, filePath + "\n");
-                File.AppendAllText(configFileName, isFolder ? "folder" : "file");
             }
             catch
             {
@@ -346,7 +345,6 @@ namespace BitwiseCalculatorUI
                 {
                     string[] data = File.ReadAllLines(configFileName);
                     if (data.Length >= 1) filePath = data[0];
-                    if (data.Length >= 2) isFolder = data[1] == "folder" ? true : false;
                     InitializeFlagLists();
                 }
                 catch
