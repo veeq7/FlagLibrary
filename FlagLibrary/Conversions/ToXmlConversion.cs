@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using FlagLibrary.Flags;
+using FlagLibrary.Connections;
 
 namespace FlagLibrary.Conversions
 {
     public class ToXmlConversion : IConversion
     {
+        XMLStandard standard = new XMLCalcStandard();
+
         /// <summary>
         /// Loads data from Multiple Xml files and save it to single Xml File ready for distribution
         /// </summary>
@@ -18,16 +21,22 @@ namespace FlagLibrary.Conversions
         public void Convert(Dictionary<string, FlagList> source, string targetFilePath, string errorFilePath = "")
         {
             XmlDocument xmlDoc = new XmlDocument();
-            
+
+            XmlNode root = xmlDoc.CreateElement("Flags");
 
             foreach(var kv in source)
             {
+                var flagList = kv.Value;
 
-                foreach(var flag in kv.Value.flags)
+                //XmlNode flagNode = root.AppendChild("Flag");
+
+                foreach (var flag in flagList.flags)
                 {
                     
                 }
             }
+
+            xmlDoc.Save(targetFilePath);
         }
     }
 }

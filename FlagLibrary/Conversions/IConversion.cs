@@ -7,7 +7,7 @@ using FlagLibrary.Flags;
 
 namespace FlagLibrary.Conversions
 {
-    interface IConversion
+    public interface IConversion
     {
         void Convert(Dictionary<string, FlagList> source, string targetFilePath, string errorFilePath = "");
     }

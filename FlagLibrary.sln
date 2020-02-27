@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagLib", "FlagLibrary\Flag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitwiseCalculator", "BitwiseCalculatorUI\BitwiseCalculator.csproj", "{5CA64716-5F1A-49BA-9049-BB1FF75D3872}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitwiseFlagConventer", "BitwiseFlagConventer\BitwiseFlagConventer.csproj", "{F25A4050-A063-4500-B21E-FD60B99D7082}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5CA64716-5F1A-49BA-9049-BB1FF75D3872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CA64716-5F1A-49BA-9049-BB1FF75D3872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CA64716-5F1A-49BA-9049-BB1FF75D3872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F25A4050-A063-4500-B21E-FD60B99D7082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F25A4050-A063-4500-B21E-FD60B99D7082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F25A4050-A063-4500-B21E-FD60B99D7082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F25A4050-A063-4500-B21E-FD60B99D7082}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
