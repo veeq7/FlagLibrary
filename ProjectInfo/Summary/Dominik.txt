@@ -9,6 +9,7 @@ Zrobiłem większość UI:
 -Combobox na dole, oraz kopiowanie stworzonej komendy sql do schowka
 -Resizowanie całego formularza
 -Ikonka formularza
+-Konwertowanie do .lst
 
 Problemy:
 -Dodanie comboboxów do tabelki(naprawiony)
