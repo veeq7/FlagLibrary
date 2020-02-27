@@ -392,18 +392,18 @@ namespace BitwiseCalculatorUI
 
             if (type == SqlCommandType.Insert)
             {
-                bits = generateBitString('0');
+                bits = GenerateBitString('0');
                 SetStringInSqlOutput(generator.GenerateInsert(bits, selectedFlagList.name));
             }
             else if (type == SqlCommandType.Update)
             {
-                bits = generateBitString('?');
+                bits = GenerateBitString('?');
                 SetStringInSqlOutput(generator.GenerateUpdate(bits, selectedFlagList.name));
             }
 
         }
 
-        public string generateBitString(char startingChar)
+        public string GenerateBitString(char startingChar)
         {
             string bits = "";
 
@@ -421,12 +421,13 @@ namespace BitwiseCalculatorUI
                     var col = row.Cells[CurrentOptionColumnIndex].Value.ToString();
                     var val = int.Parse(row.Cells[ValueColumnIndex].Value.ToString());
                     var flag = selectedFlagList.flags[id];
+                    var i32 = GetValueFromTextBox();
                     foreach (var bitRef in flag.bitRefs)
                     {
 
                         char ch = '0';
                         if (col == "???") ch = '?';
-                        else if (((val << bitRef) & (1 << bitRef)) == (1 << bitRef))
+                        else if (CommonUtils.GetBitFromNumber(i32, bitRef) == 1)
                         {
                             ch = '1';
                         }

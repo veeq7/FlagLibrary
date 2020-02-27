@@ -81,7 +81,7 @@ namespace FlagLibrary.Generators
             return returnString;
         }
 
-        string GenerateCommandBitFragment(int i, bool isFirst)
+        private string GenerateCommandBitFragment(int i, bool isFirst)
         {
             string str = "";
             if (!isFirst) str += '|';
