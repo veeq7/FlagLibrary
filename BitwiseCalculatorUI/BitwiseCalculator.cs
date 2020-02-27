@@ -62,9 +62,6 @@ namespace BitwiseCalculatorUI
             LoadFlagLists(loader);
 
             cmbBoxSql.SelectedIndex = 0;
-
-            ToXmlConversion x = new ToXmlConversion();
-            x.Convert(flagLists, "plik.xml");
         }
 
         void LoadFlagLists(ILoader loader)

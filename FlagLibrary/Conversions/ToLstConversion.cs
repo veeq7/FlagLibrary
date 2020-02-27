@@ -22,7 +22,7 @@ namespace FlagLibrary.Conversions
 
             foreach (var kv in source)
             {
-                text += kv.Value.name;
+                text += "\t"+kv.Value.name;
                 text += Environment.NewLine;
 
                 try
@@ -45,12 +45,13 @@ namespace FlagLibrary.Conversions
 
                         foreach (var description in k.Value.bitDescriptions)
                         {
-                            //text += "++++" + description.Value;
                             if (description.Value != "???" && ReturnIfStringContainsLetters(description.Value))   //pominąć liczby
                             {
                                 text += "\n\t\t\t\t";
+                                text += description.Key;
+                                text += ": ";
                                 text += description.Value;
-                                //MessageBox.Show("a");
+
                             }
                         }
                         text += Environment.NewLine;
@@ -61,9 +62,8 @@ namespace FlagLibrary.Conversions
                     MessageBox.Show(e.Message);
                 }
 
-                text += "\n <===============================================================================>\n" + Environment.NewLine;
+                text += "-----------------------------------------------------------------------------------------------------------------------------------\n";
             }
-            
             File.WriteAllText(targetFilePath, text);
         }
 
