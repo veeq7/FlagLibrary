@@ -25,7 +25,7 @@ namespace BitwiseFlagConventer
                 XMLDynamicLoader loader = new XMLDynamicLoader();
                 var flagList = loader.GetFlagLists(source);
                 IConversion conversion = GetConversion(Path.GetExtension(target));
-                conversion.Convert(flagList, target, Path.GetFileName(source), "error.txt");
+                conversion.Convert(flagList, Path.GetFileName(source), target, "error.txt");
                 Console.WriteLine("Success!!");
             }
             catch (Exception e)

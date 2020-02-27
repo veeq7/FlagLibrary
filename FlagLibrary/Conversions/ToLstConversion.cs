@@ -17,9 +17,12 @@ namespace FlagLibrary.Conversions
         /// </summary>
         /// <param name="sourceFilePath">Filepath to folder with xmls</param>
         /// <param name="targetFilePath">Filepath to folder to save xml within</param>
-        public void Convert(Dictionary<string, FlagList> source, string targetFilePath, string errorFilePath = "")
+        public void Convert(Dictionary<string, FlagList> source, string sourceFileName, string targetFilePath, string errorFilePath = "")
         {
             string text = "";
+            text += "-----------------------------------------------------------------------------------------------------------------------------------\n";
+            text += sourceFileName + Environment.NewLine;
+            text += "-----------------------------------------------------------------------------------------------------------------------------------\n";
 
             foreach (var kv in source)
             {
@@ -64,7 +67,7 @@ namespace FlagLibrary.Conversions
                     MessageBox.Show(e.Message);
                 }
 
-                text += "-----------------------------------------------------------------------------------------------------------------------------------\n";
+                text += "\n-----------------------------------------------------------------------------------------------------------------------------------\n";
             }
             File.WriteAllText(targetFilePath, text);
         }
