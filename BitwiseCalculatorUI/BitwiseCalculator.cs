@@ -60,6 +60,8 @@ namespace BitwiseCalculatorUI
                 return;
             }
             LoadFlagLists(loader);
+
+            cmbBoxSql.SelectedIndex = 0;
         }
 
         void LoadFlagLists(ILoader loader)
