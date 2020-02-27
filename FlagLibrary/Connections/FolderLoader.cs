@@ -9,9 +9,8 @@ namespace FlagLibrary.Connections
 {
     public class FolderLoader : ILoader
     {
-        XMLLoader xmlLoader = new XMLLoader(new XMLCalcStandard());
-        //XMLLoader xmlLoader = new XMLLoader(new XMLVendoStandard());
-        LSTLoader lstLoader = new LSTLoader();
+        ILoader xmlLoader = new XMLDynamicLoader();
+        ILoader lstLoader = new LSTLoader();
 
         public Dictionary<string, FlagList> GetFlagLists(string folderPath)
         {
@@ -20,14 +19,10 @@ namespace FlagLibrary.Connections
             string[] fileEntries = Directory.GetFiles(folderPath);
             foreach (string fileName in fileEntries)
             {
-                Dictionary<string, FlagList> flagLists;
+                Dictionary<string, FlagList> flagLists = new Dictionary<string, FlagList>();
                 if (fileName.EndsWith(".xml"))
                 {
-                    flagLists = xmlLoader.GetFlagLists(fileName);
-                }
-                else if(fileName.EndsWith(".lst"))
-                {
-                    flagLists = lstLoader.GetFlagLists(fileName);
+                    AddToFlagList(flagList, xmlLoader.GetFlagLists(fileName));
                 }
                 else
                 {
@@ -47,6 +42,12 @@ namespace FlagLibrary.Connections
             }
 
             return flagList;
+        }
+
+        void AddToFlagList(Dictionary<string, FlagList> source, Dictionary<string, FlagList> target)
+        {
+            foreach (KeyValuePair<string, FlagList> kv in source)
+                target.Add(kv.Key, kv.Value);
         }
     }
 }

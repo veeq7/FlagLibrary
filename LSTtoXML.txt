@@ -1,0 +1,27 @@
+
+
+
+Calc Format:
+
+Find: // REGEX LIKES TO EAT DESCRIPTION WITH '-' char BE CAREFUL!
+([0123456789,]*)( bit).*- (.*)
+
+Replace:
+<Bit Index="${1}">\n <Comment>${3}</Comment>\n</Bit>
+
+<Bit Index="${1}">\n
+ <Comment>${3}</Comment>\n
+</Bit>
+
+
+
+
+Vendo Format:
+
+Find: // REGEX LIKES TO EAT DESCRIPTION WITH '-' char BE CAREFUL!
+([0123456789,]*)( bit).*- (.*)
+
+Replace:
+
+
+<Flag Index="${1}" EntityName="EntityName" DTFieldName="_DTFieldName" Browsable="3">\n\t<Comment>"${3}</Comment>\n</Flag>

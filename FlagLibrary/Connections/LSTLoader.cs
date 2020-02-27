@@ -12,27 +12,7 @@ namespace FlagLibrary.Connections
     {
         public Dictionary<string, FlagList> GetFlagLists(string filePath)
         {
-            Dictionary<string, FlagList> list = new Dictionary<string, FlagList>();
-            //foreach (XmlNode Flag in xmlDoc.DocumentElement.ChildNodes)
-            //{
-            //    if (ReadFlagHeader(Flag, list))
-            //        continue;
-            //}
-            return list;
-        }
-
-        private bool ReadFlagHeader(Dictionary<string, FlagList> list)
-        {
-            FlagList flagList = new FlagList();
-            
-
-            list.Add(flagList.name, flagList);
-            return true;
-        }
-
-        void GetFlagFromNode()
-        {
-            
+            throw new NotImplementedException();
         }
     }
 }
