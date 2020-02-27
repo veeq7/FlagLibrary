@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FlagLibrary.Flags;
+using FlagLibrary.Utils;
 
 namespace FlagLibrary.Conversions
 {
@@ -45,7 +46,8 @@ namespace FlagLibrary.Conversions
 
                         foreach (var description in k.Value.bitDescriptions)
                         {
-                            if (description.Value != "???" && ReturnIfStringContainsLetters(description.Value))   //pominąć liczby
+                            //text += "++++" + description.Value;
+                            if (description.Value != "???" && CommonUtils.ReturnIfStringContainsLetters(description.Value))   //pominąć liczby
                             {
                                 text += "\n\t\t\t\t";
                                 text += description.Key;
@@ -65,19 +67,6 @@ namespace FlagLibrary.Conversions
                 text += "-----------------------------------------------------------------------------------------------------------------------------------\n";
             }
             File.WriteAllText(targetFilePath, text);
-        }
-
-        bool ReturnIfStringContainsLetters(string str)
-        {
-            try
-            {
-                int x = Int32.Parse(str);
-                return false;
-            }
-            catch
-            {
-                return true;
-            }
         }
     }
 }

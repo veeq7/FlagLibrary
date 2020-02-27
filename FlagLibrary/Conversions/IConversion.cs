@@ -9,6 +9,6 @@ namespace FlagLibrary.Conversions
 {
     public interface IConversion
     {
-        void Convert(Dictionary<string, FlagList> source, string targetFilePath, string errorFilePath = "");
+        void Convert(Dictionary<string, FlagList> source, string sourceFileName, string targetFilePath, string errorFilePath = "");
     }
 }

@@ -44,5 +44,17 @@ namespace FlagLibrary.Utils
             }
             return list;
         }
+        public static bool ReturnIfStringContainsLetters(string str)
+        {
+            try
+            {
+                int x = Int32.Parse(str);
+                return false;
+            }
+            catch
+            {
+                return true;
+            }
+        }
     }
 }
