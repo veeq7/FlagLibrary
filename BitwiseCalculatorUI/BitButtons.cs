@@ -76,22 +76,20 @@ namespace BitwiseCalculatorUI
             }
             else btn.Text = "1";
 
-            btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
+            //btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
 
 
-            string bin = "";
-
-            for (int i = 0; i < 32; i++)
-            {
-                Button bttn = BitwiseCalculator.form.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
-                bin += bttn.Text;
-                SetColor(buttons[i], i);
-            }
-
-            TextBox txtBoxBits = BitwiseCalculator.form.ReturnTxtBoxBits();
-
-            txtBoxBits.Text = Convert.ToInt32(bin, 2).ToString();
+            BitwiseCalculator.form.RefreshTxtBoxBits();
             BitwiseCalculator.form.RefreshDataGridView();
+        }
+
+        public static void SetAllBitsTo(bool state)
+        {
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                if(state) buttons[i].Text = "1";
+                else buttons[i].Text = "0";
+            }
         }
     }
 }

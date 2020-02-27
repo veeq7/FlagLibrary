@@ -1,35 +1,32 @@
 
-binarycalculator.exe
+BitwiseCalculator.exe
 
-Application allows for calculating Flag values with descriptors included from XML definition files
-and allows to generate SQL command to operate in database using which use those flags.
+Aplikacja pozwala na liczenie wartości flag z ich opisami z XML'a
+oraz umożliwia generowanie komend SQL ze zmianą/ustawieniem odpowiednich flag 
 
-Bity - contains decimal value of Flag
-Flaga - indicates which Flag Set is selected
-Buttons to the right of `Flaga` - allows for loading singular / multiple (from directory) XML files with definitions
-Table - contains all information parsed flag information
+Bity - zawiera wartość flagi w systemie dziesiętnym
+Flaga - Pokazuje która flaga jest aktywna
+Przyciski na prawo od 'flaga' - Pozwala na wczytanie jednego, lub wielu plików xml z definicjami flag
+Tabela - Zawierają wszystkie informacje z przeliczonymi bitami
 
-Generuj - allows for generating SQL commands
+Generuj - Generuje komendę SQL
 
 
 
-binaryflagconventer.exe
+BitwiseFlagConventer
 
-This application is not ready yet!
+Aplikacja wywoływana przez konsolę za pomocą argumentów. Służy do konwertowania plików definicji flag w xml w dowolnym formacie (Calc XML, Vendo XML)
+do wygodnych plików .lst lub plików .xml gotowych do dystrybucji.
 
-	Planned commands:
+BitwiseFlagConventer.exe %1 %2
 
-Converting from multiple Vendo's XMLs to one XML ready for distribution.
+Pozwala na generowanie
 
-binaryflagconventer.exe %1 %2
-
-Allows for generating 
-
-%1 - Source folder with Vendo's XML
-%2 - Target Filepath for generated XML ready for distribution
+%1 - Ścieżka do pliku lub folderu zawierającego pliki definicji flag w xml w dowolnym formacie (Calc XML, Vendo XML).
+%2 - Ścieżka zapisu dla gotowego pliku, należy dopisać końcówkę .xml lub .lst w zależności od porządanego typu.
 
 
 
 FlagLibrary.dll
 
-Consists of every method that's used to interact with XML definition files and flag parsing.
+Zawiera główną funkcjonalność służacą do przeliczania flag, wczytywania plików , konwersji plików i generacji SQL.
