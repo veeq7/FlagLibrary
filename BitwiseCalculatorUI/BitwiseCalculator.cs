@@ -20,6 +20,8 @@ namespace BitwiseCalculatorUI
         FlagList selectedFlagList;
 
         const int IDColumnIndex = 0;
+        const int MaxSizeColumnIndex = 1;
+        const int DescriptionColumnIndex = 2;
         const int CurrentOptionColumnIndex = 3;
         const int ValueColumnIndex = 4;
 
@@ -232,12 +234,19 @@ namespace BitwiseCalculatorUI
 
                 switch ((string)((DataGridViewComboBoxCell)dataGridView[CurrentOptionColumnIndex, i]).Value)
                 {
-                    case "???": style.BackColor = Color.FromArgb(255, 51, 51, 51); break;
-                    case "0": style.BackColor = Color.FromArgb(255, 255, 100, 100); break;
-                    default: style.BackColor = Color.FromArgb(255, 100, 255, 100); break;
+                    case "???": style.BackColor = Color.FromArgb(255, 190, 190, 190); break;   //Gray
+                    case "0": style.BackColor = Color.FromArgb(255, 255, 180, 180); break;  //Red
+                    default: style.BackColor = Color.FromArgb(255, 200, 255, 200); break;   //Green
                 }
 
                 dataGridView[ValueColumnIndex, i].Style = style;
+                dataGridView[IDColumnIndex, i].Style = style;
+                dataGridView[CurrentOptionColumnIndex, i].Style = style;
+                dataGridView[MaxSizeColumnIndex, i].Style = style;
+                dataGridView[DescriptionColumnIndex, i].Style = style;
+
+
+
             }
         }
 
