@@ -73,6 +73,7 @@
             // 
             // txtBoxBits
             // 
+            this.txtBoxBits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxBits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtBoxBits.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxBits.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
@@ -97,6 +98,7 @@
             // 
             // lblBity
             // 
+            this.lblBity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBity.AutoSize = true;
             this.lblBity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblBity.ForeColor = System.Drawing.Color.White;
@@ -108,6 +110,7 @@
             // 
             // btnShow
             // 
+            this.btnShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnShow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -139,13 +142,16 @@
             this.CurrentOption,
             this.Value});
             this.dataGridView.Location = new System.Drawing.Point(27, 119);
+            this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView.Size = new System.Drawing.Size(1332, 451);
             this.dataGridView.TabIndex = 4;
             // 
             // btnReset
             // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -160,6 +166,7 @@
             // 
             // btnSetOne
             // 
+            this.btnSetOne.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnSetOne.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnSetOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -215,6 +222,7 @@
             // 
             // btnQuestionMark
             // 
+            this.btnQuestionMark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnQuestionMark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnQuestionMark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnQuestionMark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -231,6 +239,7 @@
             // 
             this.cmbBoxSql.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cmbBoxSql.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.cmbBoxSql.DisplayMember = "Insert";
             this.cmbBoxSql.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxSql.ForeColor = System.Drawing.Color.DarkGray;
             this.cmbBoxSql.FormattingEnabled = true;
@@ -318,20 +327,17 @@
             // 
             // Description
             // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Description.FillWeight = 4F;
-            this.Description.Frozen = true;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
             this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Description.Width = 888;
             // 
             // CurrentOption
             // 
             this.CurrentOption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.CurrentOption.FillWeight = 0.8F;
-            this.CurrentOption.Frozen = true;
             this.CurrentOption.HeaderText = "Current option";
             this.CurrentOption.Name = "CurrentOption";
             this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
