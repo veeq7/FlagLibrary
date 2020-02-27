@@ -14,15 +14,28 @@ namespace BitwiseFlagConventer
     {
         static void Main(string[] args)
         {
+            var source = "";
+            var target = "";
+
+            if (args.Length == 2)
+            {
+                source = args[0];
+                target = args[1];
+            }
+            while (!isValid(source))
+            {
+                Console.Write("Source File: ");
+                source = Console.ReadLine();
+            }
+            while (!isValid(target))
+            {
+                Console.Write("Target File: ");
+                target = Console.ReadLine();
+            }
+
             try
             {
-                if (args.Length != 2) return;
-                var source = args[0];
-                var target = args[1];
-                if (!isValid(source)) return;
-                if (!isValid(target)) return;
-
-                XMLDynamicLoader loader = new XMLDynamicLoader();
+                ILoader loader = GetLoader(target);
                 var flagList = loader.GetFlagLists(source);
                 IConversion conversion = GetConversion(Path.GetExtension(target));
                 conversion.Convert(flagList, Path.GetFileName(source), target, "error.txt");
@@ -66,7 +79,9 @@ namespace BitwiseFlagConventer
 
 
         static bool isValid(string filePath)
-        {
+        {    
+            if (Path.GetFileName(filePath) == "") return false;
+            if (!File.Exists(filePath) && !Directory.Exists(filePath)) return false;
             var ext = Path.GetExtension(filePath);
             return ext == ".xml" || ext == ".lst" || ext == "";
         }
