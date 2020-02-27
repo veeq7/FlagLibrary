@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitButtons.cs" />
     <Compile Include="BitwiseCalculator.cs">
       <SubType>Form</SubType>
     </Compile>

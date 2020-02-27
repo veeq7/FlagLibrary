@@ -13,6 +13,7 @@ namespace BitwiseCalculatorUI
 {
     public partial class BitwiseCalculator : Form
     {
+        public static BitwiseCalculator form = new BitwiseCalculator();
         string filePath = "";
         bool isFolder = false;
         Dictionary<string, FlagList> flagLists;
@@ -26,11 +27,13 @@ namespace BitwiseCalculatorUI
         {
             InitializeComponent();
             dataGridView.CellEndEdit += new DataGridViewCellEventHandler(dataGridView_OnTextChanged);
+            form = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CreateBitButtons();
+            //CreateBitButtons();
+            BitButtons.Create();
 
             LoadConfig();
             txtBoxBits.KeyPress += TxtBoxBitsKeyPress;
@@ -72,65 +75,6 @@ namespace BitwiseCalculatorUI
             {
                 comboBoxFlaga.SelectedIndex = 0;
                 selectedFlagList = flagLists[comboBoxFlaga.Items[0].ToString()];
-            }
-        }
-
-        /// <summary>
-        /// Creates 32 buttons in form
-        /// </summary>
-        private void CreateBitButtons()
-        {
-            Point origin = new Point(400, 55);
-            ToolTip toolTipSystem = new ToolTip();
-            for (int i = 0; i < 32; i++)
-            {
-
-                Button btn = new Button();
-                btn.Name = "btn" + i;
-                Point loc = new Point(origin.X + i * 13, origin.Y);
-                btn.Location = loc;
-                btn.Text = "0";
-                btn.TextAlign = ContentAlignment.MiddleCenter;
-                btn.Size = new Size(17, 33);
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
-                toolTipSystem.SetToolTip(btn, "Bit " + (31 - i) + " - " + (1 << (31 - i)));
-
-                SetBitButtonsColors(btn, i);
-
-                btn.FlatAppearance.BorderSize = 0;
-                btn.MouseClick += BtnMouseClick;
-
-                SolidBrush myBrush = new SolidBrush(Color.Red);
-                Graphics formGraphics;
-                formGraphics = CreateGraphics();
-                formGraphics.FillRectangle(myBrush, new Rectangle(0, 0, 200, 300));
-                myBrush.Dispose();
-                formGraphics.Dispose();
-
-                Controls.Add(btn);
-            }
-        }
-
-        void SetBitButtonsColors(Button btn, int i)
-        {
-            switch (i / 8)
-            {
-                case 0: btn.BackColor = Color.FromArgb(255, 60, 60, 60); break;
-                case 1: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
-                case 2: btn.BackColor = Color.FromArgb(255, 60, 60, 60); break;
-                case 3: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
-            }
-            switch (i / 4)
-            {
-                case 0: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 1: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-                case 3: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-                case 5: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-                case 2: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 4: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 6: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 7: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
             }
         }
 
@@ -248,7 +192,7 @@ namespace BitwiseCalculatorUI
             return flag.GetModifiedValue(i32, value);
         }
 
-        void RefreshDataGridView()
+        public void RefreshDataGridView()
         {
             if (selectedFlagList == null)
                 return;
@@ -359,35 +303,6 @@ namespace BitwiseCalculatorUI
             {
                 return "0";
             }
-        }
-
-        /// <summary>
-        /// Method check button value and change on click
-        /// </summary>
-        void BtnMouseClick(object sender, MouseEventArgs e)
-        {
-            Button btn = (Button)sender;
-
-            if (btn.Text == "1")
-            {
-                btn.Text = "0";
-            }
-            else btn.Text = "1";
-
-            btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
-
-
-            string bin = "";
-
-            for (int i = 0; i < 32; i++)
-            {
-                Button bttn = Controls.Find("btn" + i, true).FirstOrDefault() as Button;
-                bin += bttn.Text;
-                SetBitButtonsColors(bttn, i);
-            }
-
-            txtBoxBits.Text = Convert.ToInt32(bin, 2).ToString();
-            RefreshDataGridView();
         }
 
         private void comboBoxFlaga_SelectedIndexChanged(object sender, EventArgs e)
@@ -574,6 +489,11 @@ namespace BitwiseCalculatorUI
         private void btnCopyToClipboard_Click(object sender, EventArgs e)
         {
             if(txtBoxMysqlFormula.Text != "") Clipboard.SetText(txtBoxMysqlFormula.Text);
+        }
+
+        public TextBox ReturnTxtBoxBits()
+        {
+            return txtBoxBits;
         }
     }
 }
