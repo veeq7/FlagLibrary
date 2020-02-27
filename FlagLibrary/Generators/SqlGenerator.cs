@@ -19,7 +19,7 @@ namespace FlagLibrary.Generators
 
         public string GenerateInsert(string bits, string flagName)
         {
-            if (CheckIfBitStringIsEmpty(bits)) return "";
+            if (CheckIfBitStringIsEmpty(bits)) return flagName + "=();";
             string insertString = flagName + "=(";
 
             int i = 0;
@@ -28,7 +28,7 @@ namespace FlagLibrary.Generators
                 if (ch == '1')
                 {
                     if (i != 0) insertString += '|';
-                    insertString += "(1<<"+i+")";
+                    insertString += "(1<<" + i + ")";
                 }
                 i++;
             }
@@ -41,9 +41,11 @@ namespace FlagLibrary.Generators
         public string GenerateUpdate(string bits, string flagName)
         {
             if (CheckIfBitStringIsEmpty(bits)) return "";
-            string updateStringSet = flagName + "=" + flagName +"|(";
+            string updateStringSet = flagName + "=" + flagName + "|(";
             string updateStringUnset = flagName + "=" + flagName + "&(~(";
 
+            int a = 0;
+            int b = 0;
             int i = 0;
             foreach (var ch in bits)
             {
@@ -66,5 +68,7 @@ namespace FlagLibrary.Generators
             updateStringUnset += "))"; ;
             return updateStringSet + "; " + updateStringUnset + ";";
         }
+
+    
     }
 }

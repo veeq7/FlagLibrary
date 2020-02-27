@@ -9,14 +9,14 @@ namespace FlagLibrary.Connections
 {
     public class XMLStandard
     {
-        public bool hasTableNode = false;
-        public string TableNode = "";
+        public string FlagGroupNode = "";
+        
+        public string DescriptionNode = "Comment";
+        public string OptionNode = "Option";
+        public string ValueNode = "";
         public string BitNode = "";
-        public string FlagNode = "";
-        public string DescriptionNode = "";
-        public string OptionNode = "";
-        public string ColumnAttr = "";
-        public string IndexAttr = "";
+        public string NameAttr = "";
+        public string IndexAttr = "Index";
     }
 
     // Used by Vendo Programmers
@@ -24,28 +24,44 @@ namespace FlagLibrary.Connections
     {
         public XMLVendoStandard()
         {
+            NameAttr = "Name";
+            FlagGroupNode = "//Column";
+            ValueNode = "Value";
             BitNode = "Flag";
-            FlagNode = "Column";
-            DescriptionNode = "Comment";
-            OptionNode = "Option";
-            ColumnAttr = "Name";
-            IndexAttr = "Index";
-            hasTableNode = true;
-            TableNode = "Table";
+        }
     }
-    }
-    
+
     // Used by BitwiseCalculator app
     public class XMLCalcStandard : XMLStandard
     {
         public XMLCalcStandard()
         {
+            NameAttr = "Column";
+            FlagGroupNode = "//Flag";
+            ValueNode = "value";
             BitNode = "Bit";
-            FlagNode = "Flag";
-            DescriptionNode = "Comment";
-            OptionNode = "Option";
-            ColumnAttr = "Column";
-            IndexAttr = "Index";
+        }
+    }
+
+    public class XMLDynamicLoader : ILoader
+    {
+        public XMLDynamicLoader()
+        {
+        
+        }
+
+        public Dictionary<string, FlagList> GetFlagLists(string filePath)
+        {
+            Dictionary<string, FlagList> list;
+            XMLLoader loader = new XMLLoader(new XMLCalcStandard());
+            list = loader.GetFlagLists(filePath);
+            if (list.Count == 0)
+            {
+                loader = new XMLLoader(new XMLVendoStandard());
+                list = loader.GetFlagLists(filePath);
+            }
+
+            return list;
         }
     }
 
@@ -70,43 +86,34 @@ namespace FlagLibrary.Connections
             }
             Dictionary<string, FlagList> list = new Dictionary<string, FlagList>();
             if (xmlDoc.ChildNodes.Count == 0) return list;
-            foreach (XmlNode Flag in xmlDoc.DocumentElement.ChildNodes)
+            foreach (XmlNode Flag in xmlDoc.SelectNodes(standard.FlagGroupNode))
             {
-                if (standard.hasTableNode)
+                FlagList flagList = new FlagList();
+                try // this is needed for dynamic loader to work
                 {
-                    if (Flag.Name == standard.TableNode)
-                        if (TryReadFlag(Flag, list))
-                            continue;
+                    flagList.name = Flag.Attributes[standard.NameAttr].Value;
                 }
-                if (TryReadFlag(Flag, list))
-                    continue;
+                catch
+                {
+                    return list;
+                }
+                foreach (XmlNode Bit in Flag.ChildNodes)
+                {
+                    BitGroup flag = GetFlagFromNode(Bit);
+                    if (flag == null) continue;
+                    flagList.flags.Add(flag.bitRefs[0], flag);
+                }
+
+                if (flagList.flags.Count > 0) list.Add(flagList.name, flagList);
             }
             return list;
         }
 
-        private bool TryReadFlag(XmlNode Flag, Dictionary<string, FlagList> list)
-        {
-            if (Flag.Name != standard.FlagNode)
-                return false;
-
-            FlagList flagList = new FlagList();
-            flagList.name = Flag.Attributes[standard.ColumnAttr].Value;
-            foreach (XmlNode Bit in Flag.ChildNodes)
-            {
-                if (Bit.Name != standard.BitNode)
-                    continue;
-
-                BitGroup flag = GetFlagFromNode(Bit);
-                flagList.flags.Add(flag.bitRefs[0], flag);
-            }
-
-            if (flagList.flags.Count > 0) list.Add(flagList.name, flagList);
-            return true;
-        }
-
         BitGroup GetFlagFromNode(XmlNode Bit)
         {
+            if (Bit.Name != standard.BitNode) return null;
             BitGroup flag = new BitGroup();
+            if (Bit.Attributes[standard.IndexAttr] == null) return null;
             string[] indexes = Bit.Attributes[standard.IndexAttr].Value.Split(',');
             flag.bitRefs = CommonUtils.ParseStringArrayToIntArray(indexes);
             foreach (XmlNode Attribute in Bit.ChildNodes)
@@ -117,7 +124,7 @@ namespace FlagLibrary.Connections
                 }
                 else if (Attribute.Name == standard.OptionNode)
                 {
-                    flag.bitDescriptions.Add(int.Parse(Attribute.Attributes["value"].Value), Attribute.InnerText);
+                    flag.bitDescriptions.Add(int.Parse(Attribute.Attributes[standard.ValueNode].Value), Attribute.InnerText);
                 }
             }
             flag.FillDescriptions();

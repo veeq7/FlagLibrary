@@ -29,10 +29,5 @@ namespace FlagLibrary.Connections
             list.Add(flagList.name, flagList);
             return true;
         }
-
-        void GetFlagFromNode()
-        {
-            
-        }
     }
 }
