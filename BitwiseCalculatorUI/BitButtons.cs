@@ -49,24 +49,20 @@ namespace BitwiseCalculatorUI
 
         static void SetColor(Button btn, int i)
         {
-            switch (i / 8)
-            {
-                case 0:
-                case 2: btn.BackColor = Color.FromArgb(255, 60, 60, 60); break;
-                case 1:
-                case 3: btn.BackColor = Color.FromArgb(255, 40, 40, 40); break;
-            }
-            switch (i / 4)
-            {
-                case 0: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 1:
-                case 3:
-                case 5: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-                case 2:
-                case 4:
-                case 6: btn.ForeColor = Color.FromArgb(255, 255, 153, 51); break;
-                case 7: btn.ForeColor = Color.FromArgb(255, 255, 255, 255); break;
-            }
+
+            //Back color buttons
+            if ((i / 8) % 2 == 0)
+                btn.BackColor = Color.FromArgb(255, 60, 60, 60);
+            else
+                btn.BackColor = Color.FromArgb(255, 40, 40, 40);
+
+
+            //Font buttons color
+            if ((i / 4) % 2 == 0)
+                btn.ForeColor = Color.FromArgb(255, 255, 153, 51);
+            else
+                btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
+
         }
 
         static void BtnMouseClick(object sender, MouseEventArgs e)
@@ -88,6 +84,7 @@ namespace BitwiseCalculatorUI
             {
                 Button bttn = BitwiseCalculator.form.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
                 bin += bttn.Text;
+                SetColor(buttons[i], i);
             }
 
             TextBox txtBoxBits = BitwiseCalculator.form.ReturnTxtBoxBits();
