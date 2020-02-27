@@ -52,6 +52,7 @@
     <Compile Include="Connections\LSTLoader.cs" />
     <Compile Include="Connections\XMLLoader.cs" />
     <Compile Include="Conversions\IConversion.cs" />
+    <Compile Include="Conversions\ToLstConversion.cs" />
     <Compile Include="Conversions\ToXmlConversion.cs" />
     <Compile Include="Flags\BitGroup.cs" />
     <Compile Include="Flags\FlagList.cs" />
