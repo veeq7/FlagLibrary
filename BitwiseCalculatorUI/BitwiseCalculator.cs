@@ -2,6 +2,7 @@
 using FlagLibrary.Flags;
 using FlagLibrary.Utils;
 using FlagLibrary.Generators;
+using FlagLibrary.Conversions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -60,7 +61,7 @@ namespace BitwiseCalculatorUI
                 MessageBox.Show("Unsupported file type!");
                 return;
             }
-            LoadFlagLists(loader);            
+            LoadFlagLists(loader);
         }
 
         void LoadFlagLists(ILoader loader)
@@ -247,6 +248,7 @@ namespace BitwiseCalculatorUI
 
         #endregion
 
+        //Todo: usunąć to
         private void RefreshBitButtonsText()
         {
             string text = DecToBin();
