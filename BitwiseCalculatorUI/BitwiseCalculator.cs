@@ -230,11 +230,20 @@ namespace BitwiseCalculatorUI
             {
                 DataGridViewCellStyle style = new DataGridViewCellStyle();
 
-                switch ((string)((DataGridViewComboBoxCell)dataGridView[CurrentOptionColumnIndex, i]).Value)
+                if ((string)((DataGridViewComboBoxCell)dataGridView[CurrentOptionColumnIndex, i]).Value == "???")
                 {
-                    case "???": style.BackColor = Color.FromArgb(255, 51, 51, 51); break;
-                    case "0": style.BackColor = Color.FromArgb(255, 255, 100, 100); break;
-                    default: style.BackColor = Color.FromArgb(255, 100, 255, 100); break;
+                    style.BackColor = Color.FromArgb(255, 51, 51, 51);
+                }
+                else
+                {
+                    var val = int.Parse(dataGridView[ValueColumnIndex, i].Value.ToString());
+                    if (val == 0)
+                    {
+                        style.BackColor = Color.FromArgb(255, 255, 100, 100);
+                    } else
+                    {
+                        style.BackColor = Color.FromArgb(255, 100, 255, 100);
+                    }
                 }
 
                 dataGridView[ValueColumnIndex, i].Style = style;
@@ -364,7 +373,7 @@ namespace BitwiseCalculatorUI
                     if (data.Length >= 2) isFolder = data[1] == "folder" ? true : false;
                     InitializeFlagLists();
                 }
-                catch (Exception e)
+                catch
                 {
                 }
             }
@@ -398,20 +407,26 @@ namespace BitwiseCalculatorUI
 
             if (type == SqlCommandType.Insert)
             {
-                bits = Convert.ToString(GetValueFromTextBox(), 2);
+                bits = generateBitString('0');
                 SetStringInSqlOutput(generator.GenerateInsert(bits, selectedFlagList.name));
             }
             else if (type == SqlCommandType.Update)
             {
-                bits = GenerateBitStringWithUnknowns();
+                bits = generateBitString('?');
                 SetStringInSqlOutput(generator.GenerateUpdate(bits, selectedFlagList.name));
             }
 
         }
 
-        public string GenerateBitStringWithUnknowns()
+        public string generateBitString(char startingChar)
         {
-            string bits = "????????????????????????????????"; // 32 x '?'
+            string bits = "";
+
+            for (int i = 0; i < 32; i++)
+            {
+                bits += startingChar; 
+            }
+            
             var rows = dataGridView.Rows;
             foreach (DataGridViewRow row in rows)
             {
@@ -464,9 +479,6 @@ namespace BitwiseCalculatorUI
 
         void SetStringInSqlOutput(string str)
         {
-            if (str == "")
-                return;
-
             txtBoxMysqlFormula.Text = str;
         }
 
