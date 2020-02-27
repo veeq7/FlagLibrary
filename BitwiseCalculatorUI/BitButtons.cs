@@ -51,14 +51,15 @@ namespace BitwiseCalculatorUI
         {
 
             //Back color buttons
-            if ((i / 8) % 2 == 0)
+
+            if (i % 16 < 8)
                 btn.BackColor = Color.FromArgb(255, 60, 60, 60);
             else
                 btn.BackColor = Color.FromArgb(255, 40, 40, 40);
 
 
             //Font buttons color
-            if ((i / 4) % 2 == 0)
+            if (i % 8 < 4)
                 btn.ForeColor = Color.FromArgb(255, 255, 153, 51);
             else
                 btn.ForeColor = Color.FromArgb(255, 255, 255, 255);
