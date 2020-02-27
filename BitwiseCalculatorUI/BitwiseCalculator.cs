@@ -62,6 +62,9 @@ namespace BitwiseCalculatorUI
             LoadFlagLists(loader);
 
             cmbBoxSql.SelectedIndex = 0;
+
+            ToXmlConversion x = new ToXmlConversion();
+            x.Convert(flagLists, "plik.xml");
         }
 
         void LoadFlagLists(ILoader loader)
@@ -138,7 +141,6 @@ namespace BitwiseCalculatorUI
                 if (e.ColumnIndex == ValueColumnIndex) RefreshCurrentOptionInDataGridView(e.RowIndex);
 
                 SetColorsInDataGridView();
-                RefreshBitButtonsText();
             }
         }
 
@@ -225,7 +227,6 @@ namespace BitwiseCalculatorUI
                 dataGridView.Rows[i].Cells[CurrentOptionColumnIndex] = c;
                 dataGridView.Rows[i].Height = 25;
             }
-            RefreshBitButtonsText();
             SetColorsInDataGridView();
         }
 
@@ -261,26 +262,8 @@ namespace BitwiseCalculatorUI
 
         #endregion
 
-        //Todo: usunąć to
-        private void RefreshBitButtonsText()
-        {
-            string text = DecToBin();
-            for (int i = 0; i < 32; i++)
-            {
-                Button btn = Controls.Find("btn" + i, true).FirstOrDefault() as Button;
-                btn.Text = "0";
-            }
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                Button btn = Controls.Find("btn" + (i + 32 - text.Length).ToString(), true).FirstOrDefault() as Button;
-                string bits = text;
-                btn.Text = bits.Substring(i, 1);
-            }
-        }
-
         /// <summary>
-        /// Method whenever user click bad char when it is not displane
+        /// Whenever user clicks bad char then it is not displayed
         /// </summary>
         void TxtBoxBitsKeyPress(object sender, KeyPressEventArgs e)
         {
@@ -301,23 +284,6 @@ namespace BitwiseCalculatorUI
                     }
                 }
                 e.KeyChar = (char)0;
-            }
-        }
-
-        /// <summary>
-        /// Method convert string to int and return binary
-        /// </summary>
-        string DecToBin()
-        {
-            try
-            {
-                int x = Int32.Parse(txtBoxBits.Text);
-                string binary = Convert.ToString(x, 2);
-                return binary;
-            }
-            catch
-            {
-                return "0";
             }
         }
 
@@ -391,19 +357,31 @@ namespace BitwiseCalculatorUI
 
         private void btnReset_onClick(object sender, EventArgs e)
         {
-            SetAllBits(false);
+            BitButtons.SetAllBitsTo(false);
+            RefreshTxtBoxBits();
+            RefreshDataGridView();
         }
 
         private void btnSetOne_onClick(object sender, EventArgs e)
         {
-            SetAllBits(true);
+            BitButtons.SetAllBitsTo(true);
+            RefreshTxtBoxBits();
+            RefreshDataGridView();
         }
 
-        private void SetAllBits(bool isOne)
+        public void RefreshTxtBoxBits()
         {
-            if (isOne) txtBoxBits.Text = "-1";
-            else txtBoxBits.Text = "0";
-            RefreshDataGridView();
+            string bin = "";
+
+            for (int i = 0; i < 32; i++)
+            {
+                Button bttn = BitwiseCalculator.form.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
+                bin += bttn.Text;
+            }
+
+            TextBox txtBoxBits = BitwiseCalculator.form.ReturnTxtBoxBits();
+
+            txtBoxBits.Text = Convert.ToInt32(bin, 2).ToString();
         }
 
         private void btnGenerateSqlText_Click(object sender, EventArgs e)
@@ -500,7 +478,6 @@ namespace BitwiseCalculatorUI
                 ((DataGridViewTextBoxCell)dataGridView[ValueColumnIndex, i]).Value = "0";
             }
             txtBoxBits.Text = "0";
-            RefreshBitButtonsText();
 
             SetColorsInDataGridView();
         }

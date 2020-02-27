@@ -18,7 +18,6 @@ namespace FlagLibrary.Conversions
         /// <param name="targetFilePath">Filepath to folder to save xml within</param>
         public void Convert(Dictionary<string, FlagList> source, string targetFilePath, string errorFilePath = "")
         {
-            
             string text = "";
 
             foreach (var kv in source)
