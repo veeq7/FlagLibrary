@@ -35,11 +35,6 @@
             this.lblBity = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.BitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BitSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSetOne = new System.Windows.Forms.Button();
             this.txtBoxMysqlFormula = new System.Windows.Forms.TextBox();
@@ -50,6 +45,11 @@
             this.btnFindXMLs = new System.Windows.Forms.Button();
             this.btnCopyToClipboard = new System.Windows.Forms.Button();
             this.btnFindXML = new System.Windows.Forms.Button();
+            this.BitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BitSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentOption = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,39 +143,6 @@
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.Size = new System.Drawing.Size(1332, 451);
             this.dataGridView.TabIndex = 4;
-            // 
-            // BitId
-            // 
-            this.BitId.FillWeight = 0.35F;
-            this.BitId.HeaderText = "Bit";
-            this.BitId.Name = "BitId";
-            // 
-            // BitSize
-            // 
-            this.BitSize.FillWeight = 0.45F;
-            this.BitSize.HeaderText = "Max Size";
-            this.BitSize.Name = "BitSize";
-            // 
-            // Description
-            // 
-            this.Description.FillWeight = 4F;
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // CurrentOption
-            // 
-            this.CurrentOption.FillWeight = 0.8F;
-            this.CurrentOption.HeaderText = "Current option";
-            this.CurrentOption.Name = "CurrentOption";
-            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CurrentOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Value
-            // 
-            this.Value.FillWeight = 0.4F;
-            this.Value.HeaderText = "Value";
-            this.Value.Name = "Value";
             // 
             // btnReset
             // 
@@ -328,6 +295,56 @@
             this.btnFindXML.TabStop = false;
             this.btnFindXML.UseVisualStyleBackColor = false;
             this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
+            // 
+            // BitId
+            // 
+            this.BitId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.BitId.FillWeight = 0.35F;
+            this.BitId.Frozen = true;
+            this.BitId.HeaderText = "Bit";
+            this.BitId.Name = "BitId";
+            this.BitId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.BitId.Width = 78;
+            // 
+            // BitSize
+            // 
+            this.BitSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.BitSize.FillWeight = 0.45F;
+            this.BitSize.Frozen = true;
+            this.BitSize.HeaderText = "Max Size";
+            this.BitSize.Name = "BitSize";
+            this.BitSize.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.BitSize.Width = 99;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Description.FillWeight = 4F;
+            this.Description.Frozen = true;
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Description.Width = 888;
+            // 
+            // CurrentOption
+            // 
+            this.CurrentOption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CurrentOption.FillWeight = 0.8F;
+            this.CurrentOption.Frozen = true;
+            this.CurrentOption.HeaderText = "Current option";
+            this.CurrentOption.Name = "CurrentOption";
+            this.CurrentOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentOption.Width = 177;
+            // 
+            // Value
+            // 
+            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Value.FillWeight = 0.4F;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
+            this.Value.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Value.Width = 89;
             // 
             // BitwiseCalculator
             // 
