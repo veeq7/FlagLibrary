@@ -24,10 +24,6 @@ namespace FlagLibrary.Connections
                 {
                     AddToFlagList(flagList, xmlLoader.GetFlagLists(fileName));
                 }
-                else if(fileName.EndsWith(".lst"))
-                {
-                    AddToFlagList(flagList, lstLoader.GetFlagLists(fileName));
-                }
                 else
                 {
                     continue;

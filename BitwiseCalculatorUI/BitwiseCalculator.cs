@@ -50,9 +50,6 @@ namespace BitwiseCalculatorUI
             else if (filePath.EndsWith(".xml"))
             {
                 loader = new XMLDynamicLoader();
-            } else if (filePath.EndsWith(".lst"))
-            {
-                loader = new LSTLoader();
             }
             else
             {

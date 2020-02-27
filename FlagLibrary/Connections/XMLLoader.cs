@@ -45,11 +45,6 @@ namespace FlagLibrary.Connections
 
     public class XMLDynamicLoader : ILoader
     {
-        public XMLDynamicLoader()
-        {
-        
-        }
-
         public Dictionary<string, FlagList> GetFlagLists(string filePath)
         {
             Dictionary<string, FlagList> list;

@@ -18,11 +18,7 @@ namespace FlagLibrary.Conversions
         public void Convert(Dictionary<string, FlagList> source, string targetFilePath, string errorFilePath = "")
         {
             XmlDocument xmlDoc = new XmlDocument();
-            try
-            {
-                xmlDoc.Load(targetFilePath);
-            }
-            catch { }
+            
 
             foreach(var kv in source)
             {
