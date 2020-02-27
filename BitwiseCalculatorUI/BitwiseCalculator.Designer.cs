@@ -141,7 +141,7 @@
             this.dataGridView.Location = new System.Drawing.Point(27, 119);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.Size = new System.Drawing.Size(1332, 471);
+            this.dataGridView.Size = new System.Drawing.Size(1332, 451);
             this.dataGridView.TabIndex = 4;
             // 
             // BitId
@@ -212,7 +212,7 @@
             this.txtBoxMysqlFormula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxMysqlFormula.Font = new System.Drawing.Font("Courier New", 12F);
             this.txtBoxMysqlFormula.ForeColor = System.Drawing.Color.White;
-            this.txtBoxMysqlFormula.Location = new System.Drawing.Point(390, 620);
+            this.txtBoxMysqlFormula.Location = new System.Drawing.Point(390, 600);
             this.txtBoxMysqlFormula.Name = "txtBoxMysqlFormula";
             this.txtBoxMysqlFormula.Size = new System.Drawing.Size(879, 26);
             this.txtBoxMysqlFormula.TabIndex = 8;
@@ -224,7 +224,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 615);
+            this.label1.Location = new System.Drawing.Point(29, 595);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 31);
             this.label1.TabIndex = 9;
@@ -238,7 +238,7 @@
             this.btnGenerateSqlText.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(250)))));
             this.btnGenerateSqlText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerateSqlText.ForeColor = System.Drawing.Color.White;
-            this.btnGenerateSqlText.Location = new System.Drawing.Point(240, 614);
+            this.btnGenerateSqlText.Location = new System.Drawing.Point(240, 594);
             this.btnGenerateSqlText.Name = "btnGenerateSqlText";
             this.btnGenerateSqlText.Size = new System.Drawing.Size(104, 33);
             this.btnGenerateSqlText.TabIndex = 12;
@@ -270,7 +270,7 @@
             this.cmbBoxSql.Items.AddRange(new object[] {
             "Insert",
             "Update"});
-            this.cmbBoxSql.Location = new System.Drawing.Point(103, 617);
+            this.cmbBoxSql.Location = new System.Drawing.Point(103, 597);
             this.cmbBoxSql.Name = "cmbBoxSql";
             this.cmbBoxSql.Size = new System.Drawing.Size(121, 28);
             this.cmbBoxSql.TabIndex = 17;
@@ -303,7 +303,7 @@
             this.btnCopyToClipboard.FlatAppearance.BorderSize = 4;
             this.btnCopyToClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopyToClipboard.ForeColor = System.Drawing.Color.White;
-            this.btnCopyToClipboard.Location = new System.Drawing.Point(1289, 615);
+            this.btnCopyToClipboard.Location = new System.Drawing.Point(1289, 595);
             this.btnCopyToClipboard.Name = "btnCopyToClipboard";
             this.btnCopyToClipboard.Size = new System.Drawing.Size(37, 33);
             this.btnCopyToClipboard.TabIndex = 10;
@@ -329,12 +329,12 @@
             this.btnFindXML.UseVisualStyleBackColor = false;
             this.btnFindXML.Click += new System.EventHandler(this.btnFindXML_Click);
             // 
-            // Form1
+            // BitwiseCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1400, 681);
+            this.ClientSize = new System.Drawing.Size(1400, 661);
             this.Controls.Add(this.cmbBoxSql);
             this.Controls.Add(this.btnFindXMLs);
             this.Controls.Add(this.btnQuestionMark);
@@ -354,7 +354,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.MinimumSize = new System.Drawing.Size(1400, 400);
+            this.Name = "BitwiseCalculator";
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
