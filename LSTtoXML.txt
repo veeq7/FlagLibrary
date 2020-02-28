@@ -4,7 +4,7 @@
 Calc Format:
 
 Find: // REGEX LIKES TO EAT DESCRIPTION WITH '-' char BE CAREFUL!
-([0123456789,]*)( bit).*- (.*)
+([0123456789,]*).*(:).*- (.*)
 
 Replace:
 <Bit Index="${1}">\n <Comment>${3}</Comment>\n</Bit>
@@ -19,7 +19,7 @@ Replace:
 Vendo Format:
 
 Find: // REGEX LIKES TO EAT DESCRIPTION WITH '-' char BE CAREFUL!
-([0123456789,]*)( bit).*- (.*)
+([0123456789,]*).*(:)(.*)
 
 Replace:
 
