@@ -19,19 +19,13 @@ namespace FlagLibrary.Connections
             string[] fileEntries = Directory.GetFiles(folderPath);
             foreach (string fileName in fileEntries)
             {
-                Dictionary<string, FlagList> flagLists = new Dictionary<string, FlagList>();
                 if (fileName.EndsWith(".xml"))
                 {
-                    AddToFlagList(flagList, xmlLoader.GetFlagLists(fileName));
+                    AddToFlagList(xmlLoader.GetFlagLists(fileName), ref flagList);
                 }
                 else
                 {
                     continue;
-                }
-
-                foreach (KeyValuePair<string, FlagList> kv in flagLists)
-                {
-                    flagList.Add(kv.Key, kv.Value);
                 }
             }
 
@@ -44,7 +38,7 @@ namespace FlagLibrary.Connections
             return flagList;
         }
 
-        void AddToFlagList(Dictionary<string, FlagList> source, Dictionary<string, FlagList> target)
+        void AddToFlagList(Dictionary<string, FlagList> source, ref Dictionary<string, FlagList> target)
         {
             foreach (KeyValuePair<string, FlagList> kv in source)
                 target.Add(kv.Key, kv.Value);

@@ -62,9 +62,6 @@ namespace BitwiseCalculatorUI
             LoadFlagLists(loader);
 
             cmbBoxSql.SelectedIndex = 0;
-
-            ToXmlConversion x = new ToXmlConversion();
-            x.Convert(flagLists, "plik.xml");
         }
 
         void LoadFlagLists(ILoader loader)
@@ -393,18 +390,18 @@ namespace BitwiseCalculatorUI
 
             if (type == SqlCommandType.Insert)
             {
-                bits = generateBitString('0');
+                bits = GenerateBitString('0');
                 SetStringInSqlOutput(generator.GenerateInsert(bits, selectedFlagList.name));
             }
             else if (type == SqlCommandType.Update)
             {
-                bits = generateBitString('?');
+                bits = GenerateBitString('?');
                 SetStringInSqlOutput(generator.GenerateUpdate(bits, selectedFlagList.name));
             }
 
         }
 
-        public string generateBitString(char startingChar)
+        public string GenerateBitString(char startingChar)
         {
             string bits = "";
 
