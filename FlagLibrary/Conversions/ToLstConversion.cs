@@ -20,10 +20,13 @@ namespace FlagLibrary.Conversions
         public void Convert(Dictionary<string, FlagList> source, string sourceFileName, string targetFilePath, string errorFilePath = "")
         {
             string text = "";
+            text += "-----------------------------------------------------------------------------------------------------------------------------------\n";
+            text += sourceFileName + Environment.NewLine;
+            text += "-----------------------------------------------------------------------------------------------------------------------------------\n";
 
             foreach (var kv in source)
             {
-                text += kv.Value.name;
+                text += "\t"+kv.Value.name;
                 text += Environment.NewLine;
 
                 try
@@ -50,8 +53,10 @@ namespace FlagLibrary.Conversions
                             if (description.Value != "???" && CommonUtils.ReturnIfStringContainsLetters(description.Value))   //pominąć liczby
                             {
                                 text += "\n\t\t\t\t";
+                                text += description.Key;
+                                text += ": ";
                                 text += description.Value;
-                                //MessageBox.Show("a");
+
                             }
                         }
                         text += Environment.NewLine;
@@ -62,12 +67,9 @@ namespace FlagLibrary.Conversions
                     MessageBox.Show(e.Message);
                 }
 
-                text += "\n <===============================================================================>\n" + Environment.NewLine;
+                text += "\n-----------------------------------------------------------------------------------------------------------------------------------\n";
             }
-            
             File.WriteAllText(targetFilePath, text);
         }
-
-   
     }
 }

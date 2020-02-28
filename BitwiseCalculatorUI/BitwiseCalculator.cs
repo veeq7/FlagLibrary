@@ -137,6 +137,7 @@ namespace BitwiseCalculatorUI
                 if (e.ColumnIndex == CurrentOptionColumnIndex) RefreshValueInDataGridView(e.RowIndex);
                 if (e.ColumnIndex == ValueColumnIndex) RefreshCurrentOptionInDataGridView(e.RowIndex);
 
+                BitButtons.RefreshAll();
                 SetColorsInDataGridView();
             }
         }
@@ -224,6 +225,7 @@ namespace BitwiseCalculatorUI
                 dataGridView.Rows[i].Cells[CurrentOptionColumnIndex] = c;
                 dataGridView.Rows[i].Height = 25;
             }
+            BitButtons.RefreshAll();
             SetColorsInDataGridView();
         }
 
@@ -419,12 +421,13 @@ namespace BitwiseCalculatorUI
                     var col = row.Cells[CurrentOptionColumnIndex].Value.ToString();
                     var val = int.Parse(row.Cells[ValueColumnIndex].Value.ToString());
                     var flag = selectedFlagList.flags[id];
+                    var i32 = GetValueFromTextBox();
                     foreach (var bitRef in flag.bitRefs)
                     {
 
                         char ch = '0';
                         if (col == "???") ch = '?';
-                        else if (((val << bitRef) & (1 << bitRef)) == (1 << bitRef))
+                        else if (CommonUtils.GetBitFromNumber(i32, bitRef) == 1)
                         {
                             ch = '1';
                         }
@@ -473,7 +476,7 @@ namespace BitwiseCalculatorUI
                 ((DataGridViewTextBoxCell)dataGridView[ValueColumnIndex, i]).Value = "0";
             }
             txtBoxBits.Text = "0";
-
+            BitButtons.RefreshAll();
             SetColorsInDataGridView();
         }
 

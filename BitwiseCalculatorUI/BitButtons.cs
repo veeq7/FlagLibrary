@@ -91,5 +91,32 @@ namespace BitwiseCalculatorUI
                 else buttons[i].Text = "0";
             }
         }
+
+        public static void RefreshAll()
+        {
+            string text = "";
+
+            try
+            {
+                int x = Int32.Parse(BitwiseCalculator.form.ReturnTxtBoxBits().Text);
+                text = Convert.ToString(x, 2);
+            }
+            catch
+            {
+            }
+
+            for (int i = 0; i < 32; i++)
+            {
+                Button btn = BitwiseCalculator.form.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
+                btn.Text = "0";
+            }
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                Button btn = BitwiseCalculator.form.Controls.Find("btn" + (i + 32 - text.Length).ToString(), true).FirstOrDefault() as Button;
+                string bits = text;
+                btn.Text = bits.Substring(i, 1);
+            }
+        }
     }
 }
