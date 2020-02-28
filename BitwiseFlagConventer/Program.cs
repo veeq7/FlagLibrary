@@ -24,20 +24,22 @@ namespace BitwiseFlagConventer
             }
             while (!isValid(source))
             {
-                Console.Write("Source: ");
-                source =  Console.ReadLine();
+                Console.Write("Source File: ");
+                source = Console.ReadLine();
             }
             while (!isValid(target))
             {
-                Console.Write("Target: ");
+                Console.Write("Target File: ");
                 target = Console.ReadLine();
             }
+
             try
             {
-                ILoader loader = GetLoader(source);
+                ILoader loader = GetLoader(target);
                 var flagList = loader.GetFlagLists(source);
                 IConversion conversion = GetConversion(Path.GetExtension(target));
-                conversion.Convert(flagList, Path.GetFileNameWithoutExtension(source), target, "error.txt");
+                conversion.Convert(flagList, Path.GetFileName(source), target, "error.txt");
+                Console.WriteLine("Success!!");
             }
             catch (Exception e)
             {
@@ -77,8 +79,14 @@ namespace BitwiseFlagConventer
 
 
         static bool isValid(string filePath)
+<<<<<<< HEAD
         {
             if (Path.GetFileName(filePath) == "") return false;
+=======
+        {    
+            if (Path.GetFileName(filePath) == "") return false;
+            if (!File.Exists(filePath) && !Directory.Exists(filePath)) return false;
+>>>>>>> f088605914f379a613e9608e1916eca115964f23
             var ext = Path.GetExtension(filePath);
             return ext == ".xml" || ext == ".lst" || ext == "";
         }
