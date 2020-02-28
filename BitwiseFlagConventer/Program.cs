@@ -82,6 +82,7 @@ namespace BitwiseFlagConventer
         {    
             if (Path.GetFileName(filePath) == "") return false;
             if (!File.Exists(filePath) && !Directory.Exists(filePath)) return false;
+
             var ext = Path.GetExtension(filePath);
             return ext == ".xml" || ext == ".lst" || ext == "";
         }
