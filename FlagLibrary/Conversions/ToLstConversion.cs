@@ -50,7 +50,7 @@ namespace FlagLibrary.Conversions
                         foreach (var description in k.Value.bitDescriptions)
                         {
                             //text += "++++" + description.Value;
-                            if (description.Value != "???" && CommonUtils.ReturnIfStringContainsLetters(description.Value))   //pominąć liczby
+                            if (description.Value != "???" && CommonUtils.DoesContainLetters(description.Value))   //pominąć liczby
                             {
                                 text += "\n\t\t\t\t";
                                 text += description.Key;

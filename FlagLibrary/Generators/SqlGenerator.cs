@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace FlagLibrary.Generators
 {
-    public class SqlGenerator
+    public static class SqlGenerator
     {
-        private bool CheckIfBitStringIsEmpty(string bits, char blankChar)
+        private static bool CheckIfBitStringIsEmpty(string bits, char blankChar)
         {
             if (!bits.Contains('1') && !bits.Contains(blankChar))
                 return true;
             return false;
         }
 
-        public string GenerateInsert(string bits, string flagName)
+        public static string GenerateInsert(string bits, string flagName)
         {
             if (CheckIfBitStringIsEmpty(bits, '0')) return flagName + "=()";
             string insertString = flagName + "=(";
@@ -39,7 +39,7 @@ namespace FlagLibrary.Generators
             return insertString;
         }
 
-        public string GenerateUpdate(string bits, string flagName)
+        public static string GenerateUpdate(string bits, string flagName)
         {
             if (CheckIfBitStringIsEmpty(bits, '?')) return ""; ;
 
@@ -81,7 +81,7 @@ namespace FlagLibrary.Generators
             return returnString;
         }
 
-        private string GenerateCommandBitFragment(int i, bool isFirst)
+        private static string GenerateCommandBitFragment(int i, bool isFirst)
         {
             string str = "";
             if (!isFirst) str += '|';

@@ -41,7 +41,7 @@ namespace FlagLibrary.Conversions
                         writer.WriteElementString("Comment", flag.description);
                         foreach (var desc in flag.bitDescriptions)
                         {
-                            if (desc.Value != "???" && CommonUtils.ReturnIfStringContainsLetters(desc.Value))
+                            if (desc.Value != "???" && CommonUtils.DoesContainLetters(desc.Value))
                             {
                                 writer.WriteStartElement("Option");
                                 writer.WriteAttributeString("Value", desc.Key.ToString());
